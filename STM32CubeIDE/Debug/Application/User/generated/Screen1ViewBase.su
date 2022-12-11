@@ -32,6 +32,7 @@
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:21:13:Screen1ViewBase::~Screen1ViewBase()	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:27:18:virtual void Screen1ViewBase::ButtonDownClicked()	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:32:18:virtual void Screen1ViewBase::ButtonUpClicked()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:37:18:virtual void Screen1ViewBase::ButtonStartClicked()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:86:6:virtual void Screen1ViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:41:7:touchgfx::BoxWithBorderButtonStyle<touchgfx::ClickButtonTrigger>::~BoxWithBorderButtonStyle()	0	static
@@ -59,7 +60,7 @@ C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screen
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:21:13:virtual Screen1ViewBase::~Screen1ViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:99:18:virtual void touchgfx::AbstractButtonContainer::executeAction()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:102:6:void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:107:6:void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:47:18:virtual void touchgfx::ClickButtonTrigger::handleClickEvent(const touchgfx::ClickEvent&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	16	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:91:6:void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static

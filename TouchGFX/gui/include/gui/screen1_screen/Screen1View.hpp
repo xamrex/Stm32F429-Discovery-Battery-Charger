@@ -3,7 +3,6 @@
 
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
-
 class Screen1View : public Screen1ViewBase
 {
 public:
@@ -14,8 +13,9 @@ public:
 	virtual void ButtonUpClicked();
 	virtual void ButtonDownClicked();
 	virtual void DisplayBatteryVoltage();
+	virtual void ButtonStartClicked();
 protected:
-	int PradLadowania;
+	//int PradLadowania=400;
 };
 
 #endif // SCREEN1VIEW_HPP

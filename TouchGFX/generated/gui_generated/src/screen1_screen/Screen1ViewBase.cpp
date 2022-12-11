@@ -92,10 +92,15 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &buttonStart)
     {
-        //Interaction1
+        //ButtonStartInteraction
         //When buttonStart clicked change screen to ScreenGraph
         //Go to ScreenGraph with screen transition towards East
         application().gotoScreenGraphScreenWipeTransitionEast();
+
+        //InteractionButtonStartClicked
+        //When buttonStart clicked call virtual function
+        //Call ButtonStartClicked
+        ButtonStartClicked();
     }
 }
 

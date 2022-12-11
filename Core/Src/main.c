@@ -31,6 +31,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -131,7 +132,8 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 static LCD_DrvTypeDef* LcdDrv;
-volatile float BatteryVoltage=1.23;
+volatile float BatteryVoltage=1.23;  //napiecie baterii co 1ms jest wypluwane na mian screen
+volatile int LoadingCurrent=0; //prad ladowania akumulatora
 
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */  
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */  
@@ -173,6 +175,8 @@ int main(void)
   MX_DMA2D_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
+
+  //ustawienie domyslnych wartosci  w strukturze
 
   /* USER CODE END 2 */
 

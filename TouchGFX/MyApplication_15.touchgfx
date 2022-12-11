@@ -233,7 +233,8 @@
             }
           },
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "ButtonStartInteraction",
+            "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonStart"
@@ -243,6 +244,17 @@
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "ScreenGraph"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonStartClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonStart"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ButtonStartClicked"
             }
           }
         ]
