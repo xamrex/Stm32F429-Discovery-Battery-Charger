@@ -320,9 +320,9 @@ static void MX_ADC1_Init(void)
   }
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_VREFINT;
+  sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_15CYCLES;
+  sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -1056,7 +1056,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		HAL_ADC_Start(&hadc1);
 //		HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 		volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
-		BatteryVoltage= 3.3f *value / 4096.0f;
+		BatteryVoltage= 2.84f *value / 4096.0f;
   }
 
   /* USER CODE END Callback 1 */
