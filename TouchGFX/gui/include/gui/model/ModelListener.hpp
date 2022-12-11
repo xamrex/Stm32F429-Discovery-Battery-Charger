@@ -3,12 +3,15 @@
 
 #include <gui/model/Model.hpp>
 
+
 class ModelListener
 {
 public:
     ModelListener() : model(0) {}
     
     virtual ~ModelListener() {}
+    virtual void UpdateBatteryVoltage () {};
+
 
     void bind(Model* m)
     {

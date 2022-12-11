@@ -1,3 +1,4 @@
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:13:18:virtual void ModelListener::UpdateBatteryVoltage()	0	static
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphPresenter.hpp:28:13:ScreenGraphPresenter::~ScreenGraphPresenter()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphPresenter.cpp:10:6:virtual void ScreenGraphPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphPresenter.hpp:28:13:virtual ScreenGraphPresenter::~ScreenGraphPresenter()	8	static

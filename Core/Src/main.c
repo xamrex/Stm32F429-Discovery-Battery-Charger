@@ -131,6 +131,7 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 static LCD_DrvTypeDef* LcdDrv;
+volatile float BatteryVoltage=1.23;
 
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */  
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */  

@@ -1,5 +1,7 @@
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <touchgfx/Utils.hpp>
+extern float BatteryVoltage; //zmienna z mian.c
+
 Screen1View::Screen1View()
 {
 PradLadowania=400;
@@ -32,4 +34,10 @@ void Screen1View::ButtonDownClicked()
 	PradLadowania=10;}
 	Unicode::snprintf(txtPradLadowaniaBuffer,TXTPRADLADOWANIA_SIZE,"%d",PradLadowania);
 	txtPradLadowania.invalidate();
+}
+void Screen1View::DisplayBatteryVoltage(){
+#ifndef SIMULATOR
+	Unicode::snprintfFloat(txtNapiecieBateriiBuffer,TXTNAPIECIEBATERII_SIZE,"%.3f",BatteryVoltage);
+	txtNapiecieBaterii.invalidate();
+#endif
 }

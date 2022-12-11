@@ -26,6 +26,7 @@ public:
     virtual void deactivate();
 
     virtual ~Screen1Presenter() {};
+    virtual void UpdateBatteryVoltage();
 
 private:
     Screen1Presenter();

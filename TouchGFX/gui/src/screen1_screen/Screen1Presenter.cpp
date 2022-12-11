@@ -16,3 +16,7 @@ void Screen1Presenter::deactivate()
 {
 
 }
+
+void Screen1Presenter:: UpdateBatteryVoltage(){
+view.DisplayBatteryVoltage();
+}

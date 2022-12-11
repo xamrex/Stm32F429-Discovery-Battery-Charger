@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
 	virtual void ButtonUpClicked();
 	virtual void ButtonDownClicked();
+	virtual void DisplayBatteryVoltage();
 protected:
 	int PradLadowania;
 };
