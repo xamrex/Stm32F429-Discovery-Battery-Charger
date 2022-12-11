@@ -3,6 +3,7 @@
 extern float BatteryVoltage; //zmienna z mian.c
 extern int PradLadowania;
 extern int LoadingCurrent; //zmienna z main.c
+extern int ChargeStarted; //zmienna z main.c
 
 Screen1View::Screen1View()
 {
@@ -50,6 +51,7 @@ void Screen1View::ButtonStartClicked()
 {
 #ifndef SIMULATOR
  LoadingCurrent=PradLadowania;
+ ChargeStarted=1;
 #endif
 }
 

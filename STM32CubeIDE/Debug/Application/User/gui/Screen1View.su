@@ -2,11 +2,11 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:10:13:Screen1View::~Screen1View()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:21:6:virtual void Screen1View::tearDownScreen()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:49:6:virtual void Screen1View::ButtonStartClicked()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:25:6:virtual void Screen1View::ButtonUpClicked()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:34:6:virtual void Screen1View::ButtonDownClicked()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:16:6:virtual void Screen1View::setupScreen()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:42:6:virtual void Screen1View::DisplayBatteryVoltage()	16	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:22:6:virtual void Screen1View::tearDownScreen()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:50:6:virtual void Screen1View::ButtonStartClicked()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:26:6:virtual void Screen1View::ButtonUpClicked()	8	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:35:6:virtual void Screen1View::ButtonDownClicked()	8	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:17:6:virtual void Screen1View::setupScreen()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:43:6:virtual void Screen1View::DisplayBatteryVoltage()	16	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:10:13:virtual Screen1View::~Screen1View()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:7:1:Screen1View::Screen1View()	8	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:8:1:Screen1View::Screen1View()	8	static
