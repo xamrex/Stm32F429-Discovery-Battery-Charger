@@ -55,6 +55,8 @@
 "./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc_ex.o"
 "./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o"
 "./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o"
+"./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o"
+"./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac_ex.o"
 "./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma.o"
 "./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o"
 "./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma_ex.o"

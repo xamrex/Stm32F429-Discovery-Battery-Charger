@@ -68,6 +68,8 @@ ADC_HandleTypeDef hadc1;
 
 CRC_HandleTypeDef hcrc;
 
+DAC_HandleTypeDef hdac;
+
 DMA2D_HandleTypeDef hdma2d;
 
 I2C_HandleTypeDef hi2c3;
@@ -102,6 +104,7 @@ static void MX_LTDC_Init(void);
 static void MX_DMA2D_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM7_Init(void);
+static void MX_DAC_Init(void);
 void TouchGFX_Task(void *argument);
 
 /* USER CODE BEGIN PFP */
@@ -146,8 +149,9 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 
 static LCD_DrvTypeDef* LcdDrv;
 volatile float BatteryVoltage=1.23;  //napiecie baterii co 1ms jest wypluwane na mian screen
-volatile int LoadingCurrent=0; //prad ladowania akumulatora
-volatile int ChargeStarted=0; //ladowaine rozpoczete
+volatile int LoadingCurrent=0; //prad ladowania akumulatora 		DANA Z GIU
+volatile int ChargeStarted=0; //ladowaine rozpoczete				DANA Z GIU
+volatile int UstawioneNapiecieNaopAmpie=0;
 
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */  
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */  
@@ -189,11 +193,13 @@ int main(void)
   MX_DMA2D_Init();
   MX_ADC1_Init();
   MX_TIM7_Init();
+  MX_DAC_Init();
+  HAL_DAC_Start(&hdac, DAC_CHANNEL_2); //uruchomienie DAC
+  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2); //ustawienie max napiecia (prad =0);
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
-
 
   /* USER CODE END 2 */
 
@@ -363,6 +369,44 @@ static void MX_CRC_Init(void)
   /* USER CODE BEGIN CRC_Init 2 */
 
   /* USER CODE END CRC_Init 2 */
+
+}
+
+/**
+  * @brief DAC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_DAC_Init(void)
+{
+
+  /* USER CODE BEGIN DAC_Init 0 */
+
+  /* USER CODE END DAC_Init 0 */
+
+  DAC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN DAC_Init 1 */
+
+  /* USER CODE END DAC_Init 1 */
+  /** DAC Initialization
+  */
+  hdac.Instance = DAC;
+  if (HAL_DAC_Init(&hdac) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** DAC channel OUT2 config
+  */
+  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
+  sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
+  if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN DAC_Init 2 */
+
+  /* USER CODE END DAC_Init 2 */
 
 }
 
@@ -1042,7 +1086,7 @@ __weak void TouchGFX_Task(void *argument)
 
  /**
   * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM6 interrupt took place, inside
+  * @note   This function is called  when TIM8 interrupt took place, inside
   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
   * a global variable "uwTick" used as application time base.
   * @param  htim : TIM handle
@@ -1053,7 +1097,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM6) {
+  if (htim->Instance == TIM8) {
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
@@ -1066,6 +1110,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		BatteryVoltage= 2.84f *value / 4096.0f;
 
 		//generowanie napiecia
+		if(ChargeStarted==1 && UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
+				HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2);
+				UstawioneNapiecieNaopAmpie=1;
+		}
 
   }
 
