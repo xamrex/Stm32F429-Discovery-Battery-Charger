@@ -137,6 +137,13 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/***** OPIS PROGRAMU********************
+** Na Pinie PA7 (ADC1_IN7 jest dokonoywany pomiar napiecia co 1000ms
+** Na Pinie PA5 (DAC_Out2 jest generowane napiecie) NIE JEST
+**
+**
+******KONIEC OPISU ***********************/
+
 static LCD_DrvTypeDef* LcdDrv;
 volatile float BatteryVoltage=1.23;  //napiecie baterii co 1ms jest wypluwane na mian screen
 volatile int LoadingCurrent=0; //prad ladowania akumulatora
@@ -320,7 +327,7 @@ static void MX_ADC1_Init(void)
   }
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_5;
+  sConfig.Channel = ADC_CHANNEL_7;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -1050,13 +1057,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-  if (htim->Instance == TIM7){
+  if (htim->Instance == TIM7){ //timer co 1000ms
 
-
+	   //pomiar napiecia
 		HAL_ADC_Start(&hadc1);
 //		HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 		volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
 		BatteryVoltage= 2.84f *value / 4096.0f;
+
+		//generowanie napiecia
+
   }
 
   /* USER CODE END Callback 1 */
