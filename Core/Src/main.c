@@ -15,7 +15,12 @@
   *                             www.st.com/SLA0044
   *
   ******************************************************************************
+  * TODO: zrobic w touchgfxie screen co bedzie dodawal wartosci z tablic  NapiecieBateriilast60Sec co 60 sek na graph
+  * i NapiecieBaterii co minute na graph.
+  * zrobic ustawienie napiecia na OPAMPIE po klikniecu start.
+   *
   */
+
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -152,7 +157,10 @@ volatile float BatteryVoltage=1.23;  //napiecie baterii co 1ms jest wypluwane na
 volatile int LoadingCurrent=0; //prad ladowania akumulatora 		DANA Z GIU
 volatile int ChargeStarted=0; //ladowaine rozpoczete				DANA Z GIU
 volatile int UstawioneNapiecieNaopAmpie=0;
-
+volatile float NapiecieBaterii[3600]={0};
+volatile float NapiecieBateriilast60Sec[60]={0};
+volatile uint16_t CzsasLadowaniaWSec;
+volatile uint16_t CzsasLadowaniaWMin;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */  
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */  
 /* USER CODE END 0 */
@@ -1109,6 +1117,20 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
 		BatteryVoltage= 2.84f *value / 4096.0f;
 
+
+		if (ChargeStarted) {
+			NapiecieBateriilast60Sec[CzsasLadowaniaWSec] =BatteryVoltage;
+			if (CzsasLadowaniaWMin==0 & CzsasLadowaniaWSec==0)NapiecieBaterii[0]=BatteryVoltage; //jesli dopiero co rozpoczety pomiar dodaj pierwsza wartosc do tabeli minut
+			CzsasLadowaniaWSec++;
+		}
+
+			//jesli uplynela minuta
+		if (CzsasLadowaniaWSec >59 ) {
+			CzsasLadowaniaWSec=0;
+			CzsasLadowaniaWMin++;
+
+			NapiecieBaterii[CzsasLadowaniaWMin]=BatteryVoltage; //napiecie aktaalizowane co min jest odczytem ostatniego napiecia
+		}
 		//generowanie napiecia
 		if(ChargeStarted==1 && UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
 				HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2);
