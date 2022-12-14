@@ -9,7 +9,7 @@
 #include <gui/screengraph_screen/ScreenGraphPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Button.hpp>
-#include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
+#include <touchgfx/widgets/graph/GraphScroll.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
@@ -37,7 +37,7 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box box1;
     touchgfx::Button button1;
-    touchgfx::GraphWrapAndClear<60> dynamicGraph1;
+    touchgfx::GraphScroll<60> dynamicGraph1;
     touchgfx::GraphElementLine dynamicGraph1Line1;
     touchgfx::PainterRGB565 dynamicGraph1Line1Painter;
     touchgfx::GraphElementGridY dynamicGraph1MinorYAxisGrid;

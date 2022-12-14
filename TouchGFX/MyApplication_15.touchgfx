@@ -293,26 +293,22 @@
             "Height": 178,
             "DataSeed": 1361910227,
             "NumberOfValues": 60,
-            "MaxY": 1.5,
-            "MinY": 1.0,
+            "MaxY": 3.0,
             "Precision": "0.001",
             "LastIndex": 59,
-            "MapDataPointIndexToCustomValue": true,
             "XAxisScale": 1.0,
-            "InsertRandomValues": true,
             "LabelSizeTop": 10,
             "LabelSizeBottom": 20,
             "LabelSizeLeft": 30,
-            "GraphType": "GraphWrapClear",
+            "GraphType": "GraphScroll",
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
                 "LineWidth": 2,
-                "FileNameImage": "",
                 "Color": {
-                  "Red": 20,
-                  "Green": 151,
-                  "Blue": 197
+                  "Red": 22,
+                  "Green": 36,
+                  "Blue": 196
                 }
               }
             ],
@@ -334,7 +330,7 @@
                 "Blue": 197
               },
               "Interval": 1.0,
-              "LineWidth": 1
+              "LineWidth": 2
             },
             "MinorYAxisGrid": {
               "Type": "GraphGrid",

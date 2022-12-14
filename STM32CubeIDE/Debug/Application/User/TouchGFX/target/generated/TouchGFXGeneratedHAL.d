@@ -80,7 +80,7 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp \
  ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphPresenter.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphWrapAndClear.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphScroll.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
@@ -219,7 +219,7 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphPresenter.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphWrapAndClear.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphScroll.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp:

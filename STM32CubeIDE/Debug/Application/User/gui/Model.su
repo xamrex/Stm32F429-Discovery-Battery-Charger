@@ -1,2 +1,2 @@
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/model/Model.cpp:6:1:Model::Model()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/model/Model.cpp:11:6:void Model::tick()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/model/Model.cpp:7:1:Model::Model()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/model/Model.cpp:12:6:void Model::tick()	16	static

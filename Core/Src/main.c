@@ -164,10 +164,11 @@ static LCD_DrvTypeDef* LcdDrv;
 volatile float BatteryVoltage=1.23;  //napiecie baterii co 1ms jest wypluwane na mian screen
 volatile int LoadingCurrent=0; //prad ladowania akumulatora 		DANA Z GIU
 volatile int ChargeStarted=0; //ladowaine rozpoczete				DANA Z GIU
-volatile int UstawioneNapiecieNaopAmpie=0;
+volatile int UstawioneNapiecieNaopAmpie=0;							//jesli 1, to napiecie nie bedzie na pinie juz sie zmieniac
 volatile float NapiecieBaterii[3600]={0};
 volatile float NapiecieBateriilast60Sec[60]={0};
 volatile uint8_t Minelasekunda;										//timer co 1sek ustawia to na wartosc 1.
+volatile int narysujPunktNaWykresie;							//jesli 1 to dodaje punkt na wykresie.
 volatile uint16_t CzsasLadowaniaWSec;								//od 0 do 59
 volatile uint16_t CzsasLadowaniaWMin;								//od 0 do 65535
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */  
@@ -1124,6 +1125,8 @@ __weak void TouchGFX_Task(void *argument)
 					HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 					volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
 					BatteryVoltage= 2.84f *value / 4096.0f;
+					narysujPunktNaWykresie=1; //zezwul na narysowanie danej na wykresie
+
 
 
 					if (ChargeStarted) { //jesli zostal kliniety button na GUI, i chcemy ladowac baterie.

@@ -16,3 +16,7 @@ void ScreenGraphPresenter::deactivate()
 {
 
 }
+void ScreenGraphPresenter::DrawPoint()
+{
+	view.DrawPoint2();
+}

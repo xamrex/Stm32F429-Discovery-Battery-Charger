@@ -26,6 +26,7 @@ public:
     virtual void deactivate();
 
     virtual ~ScreenGraphPresenter() {};
+    virtual void DrawPoint();
 
 private:
     ScreenGraphPresenter();

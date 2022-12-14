@@ -2,6 +2,7 @@
 #include <gui/model/ModelListener.hpp>
 int PradLadowania=400; //ustawienie na sztywno pradu ladowania
 extern int LoadingCurrent;
+extern int narysujPunktNaWykresie;
 int licznik;
 Model::Model() : modelListener(0)
 {
@@ -16,4 +17,9 @@ void Model::tick()
 //	if (licznik%100) modelListener->UpdateBatteryVoltage();
 
 modelListener->UpdateBatteryVoltage();
+
+if(narysujPunktNaWykresie){
+	modelListener->DrawPoint();
+	narysujPunktNaWykresie=0;
+}
 }

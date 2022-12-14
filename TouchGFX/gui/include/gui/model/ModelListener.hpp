@@ -11,7 +11,7 @@ public:
     
     virtual ~ModelListener() {}
     virtual void UpdateBatteryVoltage () {};
-
+    virtual void DrawPoint () {};
 
     void bind(Model* m)
     {
