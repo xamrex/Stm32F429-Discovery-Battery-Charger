@@ -22,7 +22,6 @@
   */
 
 /* USER CODE END Header */
-
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
@@ -155,7 +154,7 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 /* USER CODE BEGIN 0 */
 /***** OPIS PROGRAMU********************
 ** Na Pinie PA7 (ADC1_IN7 jest dokonoywany pomiar napiecia co 1000ms
-** Na Pinie PA5 (DAC_Out2 jest generowane napiecie) NIE JEST
+** Na Pinie PA5 (DAC_Out2 jest generowane napiecie)
 **
 **
 ******KONIEC OPISU ***********************/
@@ -214,8 +213,11 @@ int main(void)
   MX_DAC_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
-  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096); //ustaw max napiecie na ADC, zeby nie plynal zaden prad
-  HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
+
+HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
+HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
+HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napiecie na ADC, zeby nie plynal zaden prad
+
 
   /* USER CODE END 2 */
 
@@ -1143,7 +1145,7 @@ __weak void TouchGFX_Task(void *argument)
 					}
 					//generowanie napiecia
 					if(ChargeStarted==1 && UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2);  //ustaw poprawne napiece tutaj
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095/2);  //ustaw poprawne napiece tutaj
 							UstawioneNapiecieNaopAmpie=1;
 					}
 
