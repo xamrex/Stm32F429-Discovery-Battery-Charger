@@ -10,22 +10,126 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:703:18:virtual void touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:93:18:virtual void touchgfx::Screen::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:61:34:virtual touchgfx::HAL::RenderingMethod touchgfx::AbstractPainter::getRenderingMethod() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:78:18:virtual bool touchgfx::AbstractPainter::setup(const touchgfx::Rect&) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:90:18:virtual void touchgfx::AbstractPainter::tearDown() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:170:18:virtual void touchgfx::AbstractDataGraph::setAlpha(uint8_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:438:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeX(int, int)	4	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:444:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeX(float, float)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:476:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeXAuto(bool, int)	4	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:482:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeXAuto(bool, float)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:505:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeY(int, int)	4	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:513:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeY(float, float)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:541:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeYAuto(bool, int)	4	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:547:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeYAuto(bool, float)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:557:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeXMinAsInt() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:567:19:virtual float touchgfx::AbstractDataGraph::getGraphRangeXMinAsFloat() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:581:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeXMinScaled() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:591:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeXMaxAsInt() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:601:19:virtual float touchgfx::AbstractDataGraph::getGraphRangeXMaxAsFloat() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:615:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeXMaxScaled() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:625:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeYMinAsInt() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:635:19:virtual float touchgfx::AbstractDataGraph::getGraphRangeYMinAsFloat() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:647:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeYMinScaled() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:657:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeYMaxAsInt() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:667:19:virtual float touchgfx::AbstractDataGraph::getGraphRangeYMaxAsFloat() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:679:17:virtual int touchgfx::AbstractDataGraph::getGraphRangeYMaxScaled() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1358:18:virtual void touchgfx::DynamicDataGraph::setScale(int, bool)	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1371:17:virtual int touchgfx::DynamicDataGraph::getScale() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1409:17:virtual int touchgfx::DynamicDataGraph::getGraphRangeXMin() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1419:17:virtual int touchgfx::DynamicDataGraph::getGraphRangeXMax() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1426:18:virtual void touchgfx::DynamicDataGraph::setGraphRangeXAutoScaled(bool, int)	4	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1432:5:virtual void touchgfx::DynamicDataGraph::setXAxisScale(int)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1444:18:virtual void touchgfx::DynamicDataGraph::setXAxisFactor(int)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1450:5:virtual void touchgfx::DynamicDataGraph::setXAxisScale(float)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1457:18:virtual void touchgfx::DynamicDataGraph::setXAxisFactor(float)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1470:18:virtual void touchgfx::DynamicDataGraph::setXAxisFactorScaled(int)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1476:5:virtual int touchgfx::DynamicDataGraph::getXAxisScaleAsInt() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1488:17:virtual int touchgfx::DynamicDataGraph::getXAxisFactorAsInt() const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1494:5:virtual float touchgfx::DynamicDataGraph::getXAxisScaleAsFloat() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1501:19:virtual float touchgfx::DynamicDataGraph::getXAxisFactorAsFloat() const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1513:17:virtual int touchgfx::DynamicDataGraph::getXAxisFactorScaled() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1524:18:virtual void touchgfx::DynamicDataGraph::setXAxisOffset(int)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1530:18:virtual void touchgfx::DynamicDataGraph::setXAxisOffset(float)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1545:18:virtual void touchgfx::DynamicDataGraph::setXAxisOffsetScaled(int)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1556:17:virtual int touchgfx::DynamicDataGraph::getXAxisOffsetAsInt() const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1562:19:virtual float touchgfx::DynamicDataGraph::getXAxisOffsetAsFloat() const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1574:17:virtual int touchgfx::DynamicDataGraph::getXAxisOffsetScaled() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1624:21:virtual int16_t touchgfx::DynamicDataGraph::dataIndex(int16_t) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1642:17:virtual int touchgfx::DynamicDataGraph::indexToXAxis(int, int) const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1652:17:virtual int touchgfx::DynamicDataGraph::getScaleX() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1659:17:virtual int touchgfx::DynamicDataGraph::getScaleY() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1665:5:virtual void touchgfx::DynamicDataGraph::setXAxisScaleScaled(int)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1672:5:virtual int touchgfx::DynamicDataGraph::getXAxisScaleScaled() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1678:25:virtual touchgfx::CWRUtil::Q5 touchgfx::DynamicDataGraph::indexToScreenXQ5(int16_t) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1683:25:virtual touchgfx::CWRUtil::Q5 touchgfx::DynamicDataGraph::indexToScreenYQ5(int16_t) const	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphWrapAndClear.hpp:47:21:virtual int32_t touchgfx::GraphWrapAndClearData::indexToGlobalIndex(int16_t) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:66:18:virtual void touchgfx::CanvasWidget::setAlpha(uint8_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:72:21:virtual uint8_t touchgfx::CanvasWidget::getAlpha() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:118:18:virtual touchgfx::Rect touchgfx::CanvasWidget::getMinimalRect() const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:134:18:virtual touchgfx::Rect touchgfx::CanvasWidget::getSolidRect() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:238:18:virtual void touchgfx::AbstractGraphElementNoCWR::setColor(touchgfx::colortype)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:250:23:virtual touchgfx::colortype touchgfx::AbstractGraphElementNoCWR::getColor() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:255:18:virtual bool touchgfx::AbstractGraphElementNoCWR::drawCanvasWidget(const touchgfx::Rect&) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:272:18:virtual void touchgfx::AbstractGraphElementNoCWR::setPainter(touchgfx::AbstractPainter&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:414:18:virtual void touchgfx::GraphElementGridBase::invalidateGraphPointAt(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:436:17:virtual int touchgfx::GraphElementGridBase::getCorrectlyScaledMajorInterval(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:566:18:virtual touchgfx::Rect touchgfx::GraphElementGridX::enclosingArea(const touchgfx::AbstractDataGraph*) const	12	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:571:18:virtual touchgfx::Rect touchgfx::GraphElementGridX::lineRect(int16_t, int16_t, int16_t, int16_t) const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:576:17:virtual int touchgfx::GraphElementGridX::getGraphRangeMinScaled(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:581:17:virtual int touchgfx::GraphElementGridX::getGraphRangeMaxScaled(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:586:17:virtual int touchgfx::GraphElementGridX::getGraphAreaStart(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:591:17:virtual int touchgfx::GraphElementGridX::getGraphAreaLength(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:596:17:virtual int touchgfx::GraphElementGridX::getGraphAreaStartPos(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:601:17:virtual int touchgfx::GraphElementGridX::getGraphAreaEndPos(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:606:25:virtual touchgfx::CWRUtil::Q5 touchgfx::GraphElementGridX::valueToScreenQ5(const touchgfx::AbstractDataGraph*, int) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:627:18:virtual touchgfx::Rect touchgfx::GraphElementGridY::enclosingArea(const touchgfx::AbstractDataGraph*) const	12	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:632:18:virtual touchgfx::Rect touchgfx::GraphElementGridY::lineRect(int16_t, int16_t, int16_t, int16_t) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:637:17:virtual int touchgfx::GraphElementGridY::getGraphRangeMinScaled(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:642:17:virtual int touchgfx::GraphElementGridY::getGraphRangeMaxScaled(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:647:17:virtual int touchgfx::GraphElementGridY::getGraphAreaStart(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:652:17:virtual int touchgfx::GraphElementGridY::getGraphAreaLength(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:657:17:virtual int touchgfx::GraphElementGridY::getGraphAreaStartPos(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:662:17:virtual int touchgfx::GraphElementGridY::getGraphAreaEndPos(const touchgfx::AbstractDataGraph*) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:667:25:virtual touchgfx::CWRUtil::Q5 touchgfx::GraphElementGridY::valueToScreenQ5(const touchgfx::AbstractDataGraph*, int) const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<ScreenGraphPresenter>::~View()	0	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:17:13:ScreenGraphViewBase::~ScreenGraphViewBase()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:23:6:virtual void ScreenGraphViewBase::setupScreen()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:21:13:ScreenGraphViewBase::~ScreenGraphViewBase()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:139:6:virtual void ScreenGraphViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<ScreenGraphViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphWrapAndClear.hpp:66:7:touchgfx::GraphWrapAndClear<60>::~GraphWrapAndClear()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:618:7:touchgfx::GraphElementGridY::~GraphElementGridY()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:557:7:touchgfx::GraphElementGridX::~GraphElementGridX()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = ScreenGraphViewBase; T1 = const touchgfx::AbstractButton&]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = ScreenGraphViewBase; T1 = const touchgfx::AbstractButton&]	0	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<ScreenGraphViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<ScreenGraphPresenter>::~View()	8	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:17:13:virtual ScreenGraphViewBase::~ScreenGraphViewBase()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:557:7:virtual touchgfx::GraphElementGridX::~GraphElementGridX()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:618:7:virtual touchgfx::GraphElementGridY::~GraphElementGridY()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphWrapAndClear.hpp:66:7:virtual touchgfx::GraphWrapAndClear<60>::~GraphWrapAndClear()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<ScreenGraphViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:21:13:virtual ScreenGraphViewBase::~ScreenGraphViewBase()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1174:18:virtual void touchgfx::AbstractDataGraph::invalidateContent() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:560:17:virtual int touchgfx::GraphElementGridX::getCorrectlyScaledGridInterval(const touchgfx::AbstractDataGraph*) const	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:621:17:virtual int touchgfx::GraphElementGridY::getCorrectlyScaledGridInterval(const touchgfx::AbstractDataGraph*) const	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:28:6:void ScreenGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1585:17:virtual int touchgfx::DynamicDataGraph::indexToDataPointYScaled(int16_t) const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1579:17:virtual int touchgfx::DynamicDataGraph::indexToDataPointXScaled(int16_t) const	8	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:149:6:void ScreenGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:8:1:ScreenGraphViewBase::ScreenGraphViewBase()	32	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:828:15:static touchgfx::CWRUtil::Q5 touchgfx::CWRUtil::muldiv_toQ5(int32_t, int32_t, int32_t)	24	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1280:25:virtual touchgfx::CWRUtil::Q5 touchgfx::AbstractDataGraph::valueToScreenYQ5(int) const	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1268:25:virtual touchgfx::CWRUtil::Q5 touchgfx::AbstractDataGraph::valueToScreenXQ5(int) const	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:285:5:touchgfx::GraphElementGridBase::GraphElementGridBase()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:41:5:touchgfx::AbstractPainterRGB565::AbstractPainterRGB565()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp:43:5:touchgfx::GraphLabelsBase::GraphLabelsBase()	8	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:11:1:ScreenGraphViewBase::ScreenGraphViewBase()	88	static

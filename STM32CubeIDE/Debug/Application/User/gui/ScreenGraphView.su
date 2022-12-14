@@ -2,7 +2,7 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphView.hpp:11:13:ScreenGraphView::~ScreenGraphView()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:13:6:virtual void ScreenGraphView::tearDownScreen()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:8:6:virtual void ScreenGraphView::setupScreen()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:22:6:virtual void ScreenGraphView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphView.hpp:11:13:virtual ScreenGraphView::~ScreenGraphView()	8	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:12:6:virtual void ScreenGraphView::setupScreen()	8	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:3:1:ScreenGraphView::ScreenGraphView()	8	static

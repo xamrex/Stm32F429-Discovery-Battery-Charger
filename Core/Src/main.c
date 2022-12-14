@@ -94,6 +94,13 @@ const osThreadAttr_t GUI_Task_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
   .stack_size = 8192 * 4
 };
+/* Definitions for TaskDwa */
+osThreadId_t TaskDwaHandle;
+const osThreadAttr_t TaskDwa_attributes = {
+  .name = "TaskDwa",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 512 * 4
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -111,6 +118,7 @@ static void MX_ADC1_Init(void);
 static void MX_TIM7_Init(void);
 static void MX_DAC_Init(void);
 void TouchGFX_Task(void *argument);
+void ZadanieDwa(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -159,8 +167,9 @@ volatile int ChargeStarted=0; //ladowaine rozpoczete				DANA Z GIU
 volatile int UstawioneNapiecieNaopAmpie=0;
 volatile float NapiecieBaterii[3600]={0};
 volatile float NapiecieBateriilast60Sec[60]={0};
-volatile uint16_t CzsasLadowaniaWSec;
-volatile uint16_t CzsasLadowaniaWMin;
+volatile uint8_t Minelasekunda;										//timer co 1sek ustawia to na wartosc 1.
+volatile uint16_t CzsasLadowaniaWSec;								//od 0 do 59
+volatile uint16_t CzsasLadowaniaWMin;								//od 0 do 65535
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */  
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */  
 /* USER CODE END 0 */
@@ -202,11 +211,9 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM7_Init();
   MX_DAC_Init();
-  HAL_DAC_Start(&hdac, DAC_CHANNEL_2); //uruchomienie DAC
-  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2); //ustawienie max napiecia (prad =0);
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096); //ustaw max napiecie na ADC, zeby nie plynal zaden prad
   HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
 
   /* USER CODE END 2 */
@@ -233,6 +240,9 @@ int main(void)
   /* Create the thread(s) */
   /* creation of GUI_Task */
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
+
+  /* creation of TaskDwa */
+  TaskDwaHandle = osThreadNew(ZadanieDwa, NULL, &TaskDwa_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1092,6 +1102,55 @@ __weak void TouchGFX_Task(void *argument)
   /* USER CODE END 5 */
 }
 
+/* USER CODE BEGIN Header_ZadanieDwa */
+/**
+* @brief Function implementing the TaskDwa thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_ZadanieDwa */
+ void ZadanieDwa(void *argument)
+{
+  /* USER CODE BEGIN ZadanieDwa */
+
+  /* Infinite loop */
+  for(;;)
+  {
+		if(Minelasekunda){ //jesli zostalo wykryte przerwanie z liniczka7
+			Minelasekunda=0; //kasuj flage
+
+					//pomiar napiecia
+					HAL_ADC_Start(&hadc1);
+					HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+					volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
+					BatteryVoltage= 2.84f *value / 4096.0f;
+
+
+					if (ChargeStarted) { //jesli zostal kliniety button na GUI, i chcemy ladowac baterie.
+						NapiecieBateriilast60Sec[CzsasLadowaniaWSec] =BatteryVoltage;
+						if (CzsasLadowaniaWMin==0 && CzsasLadowaniaWSec==0)NapiecieBaterii[0]=BatteryVoltage; //jesli dopiero co rozpoczety pomiar dodaj pierwsza wartosc do tabeli minut
+						CzsasLadowaniaWSec++;
+					}
+
+					//jesli uplynela minuta dodaj dane do tabel
+					if (CzsasLadowaniaWSec >59 ) {
+						CzsasLadowaniaWSec=0;
+						CzsasLadowaniaWMin++;
+						NapiecieBaterii[CzsasLadowaniaWMin]=BatteryVoltage; //napiecie aktaalizowane co min jest odczytem ostatniego napiecia
+					}
+					//generowanie napiecia
+					if(ChargeStarted==1 && UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2);  //ustaw poprawne napiece tutaj
+							UstawioneNapiecieNaopAmpie=1;
+					}
+
+		}
+
+    osDelay(1); //to chyba ma zostac?
+  }
+  /* USER CODE END ZadanieDwa */
+}
+
  /**
   * @brief  Period elapsed callback in non blocking mode
   * @note   This function is called  when TIM8 interrupt took place, inside
@@ -1110,33 +1169,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM7){ //timer co 1000ms
-
-	   //pomiar napiecia
-		HAL_ADC_Start(&hadc1);
-//		HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
-		volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
-		BatteryVoltage= 2.84f *value / 4096.0f;
-
-
-		if (ChargeStarted) {
-			NapiecieBateriilast60Sec[CzsasLadowaniaWSec] =BatteryVoltage;
-			if (CzsasLadowaniaWMin==0 & CzsasLadowaniaWSec==0)NapiecieBaterii[0]=BatteryVoltage; //jesli dopiero co rozpoczety pomiar dodaj pierwsza wartosc do tabeli minut
-			CzsasLadowaniaWSec++;
-		}
-
-			//jesli uplynela minuta
-		if (CzsasLadowaniaWSec >59 ) {
-			CzsasLadowaniaWSec=0;
-			CzsasLadowaniaWMin++;
-
-			NapiecieBaterii[CzsasLadowaniaWMin]=BatteryVoltage; //napiecie aktaalizowane co min jest odczytem ostatniego napiecia
-		}
-		//generowanie napiecia
-		if(ChargeStarted==1 && UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
-				HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2);
-				UstawioneNapiecieNaopAmpie=1;
-		}
-
+	  Minelasekunda=1;
   }
 
   /* USER CODE END Callback 1 */

@@ -261,17 +261,118 @@
       },
       {
         "Name": "ScreenGraph",
+        "CanvasBufferSize": 4800,
         "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 320,
+            "Height": 240,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
           {
             "Type": "Button",
             "Name": "button1",
-            "X": 64,
-            "Y": 167,
+            "X": 75,
+            "Y": 180,
             "Width": 170,
             "Height": 60,
             "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
             "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
             "Style": "Style4"
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dynamicGraph1",
+            "Y": 2,
+            "Width": 320,
+            "Height": 178,
+            "DataSeed": 1361910227,
+            "NumberOfValues": 60,
+            "MaxY": 1.5,
+            "MinY": 1.0,
+            "Precision": "0.001",
+            "LastIndex": 59,
+            "MapDataPointIndexToCustomValue": true,
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "LabelSizeTop": 10,
+            "LabelSizeBottom": 20,
+            "LabelSizeLeft": 30,
+            "GraphType": "GraphWrapClear",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 20,
+                  "Green": 151,
+                  "Blue": 197
+                }
+              }
+            ],
+            "XAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 10.0,
+              "LineWidth": 1
+            },
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 1.0,
+              "LineWidth": 1
+            },
+            "MinorYAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 0.5,
+              "LineWidth": 1
+            },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 10.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "TextId": "__SingleUse_8PEK",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 0.15,
+              "NumberOfDecimals": 1,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "TextId": "__SingleUse_CBWT",
+              "TextRotation": "0",
+              "Position": "Left"
+            }
           }
         ],
         "Interactions": [
@@ -287,6 +388,11 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Screen1"
             }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "action1"
           }
         ]
       }

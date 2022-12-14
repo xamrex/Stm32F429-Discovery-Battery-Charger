@@ -4,23 +4,144 @@
 #include <gui_generated/screengraph_screen/ScreenGraphViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
+
 
 ScreenGraphViewBase::ScreenGraphViewBase() :
     buttonCallback(this, &ScreenGraphViewBase::buttonCallbackHandler)
 {
 
+    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
+
     __background.setPosition(0, 0, 320, 240);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    button1.setXY(64, 167);
+    box1.setPosition(0, 0, 320, 240);
+    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+
+    button1.setXY(75, 180);
     button1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     button1.setAction(buttonCallback);
 
+    dynamicGraph1.setScale(1000);
+    dynamicGraph1.setXAxisFactor(1);
+    dynamicGraph1.setXAxisOffset(0);
+    dynamicGraph1.setPosition(0, 2, 320, 178);
+    dynamicGraph1.setGraphAreaMargin(10, 30, 0, 20);
+    dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
+    dynamicGraph1.setGraphRangeY(1.0f, 1.5f);
+
+    dynamicGraph1MinorYAxisGrid.setScale(1000);
+    dynamicGraph1MinorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1MinorYAxisGrid.setInterval(0.5f);
+    dynamicGraph1MinorYAxisGrid.setLineWidth(1);
+    dynamicGraph1MinorYAxisGrid.setMajorGrid(dynamicGraph1MajorYAxisGrid);
+    dynamicGraph1.addGraphElement(dynamicGraph1MinorYAxisGrid);
+
+    dynamicGraph1MajorXAxisGrid.setScale(1000);
+    dynamicGraph1MajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1MajorXAxisGrid.setInterval(10);
+    dynamicGraph1MajorXAxisGrid.setLineWidth(1);
+    dynamicGraph1.addGraphElement(dynamicGraph1MajorXAxisGrid);
+
+    dynamicGraph1MajorYAxisGrid.setScale(1000);
+    dynamicGraph1MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1MajorYAxisGrid.setInterval(1);
+    dynamicGraph1MajorYAxisGrid.setLineWidth(1);
+    dynamicGraph1.addGraphElement(dynamicGraph1MajorYAxisGrid);
+
+    dynamicGraph1MajorXAxisLabel.setScale(1000);
+    dynamicGraph1MajorXAxisLabel.setInterval(10);
+    dynamicGraph1MajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_8PEK));
+    dynamicGraph1MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1.addBottomElement(dynamicGraph1MajorXAxisLabel);
+
+    dynamicGraph1MajorYAxisLabel.setScale(1000);
+    dynamicGraph1MajorYAxisLabel.setInterval(0.15f);
+    dynamicGraph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_CBWT));
+    dynamicGraph1MajorYAxisLabel.setLabelDecimals(1);
+    dynamicGraph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1.addLeftElement(dynamicGraph1MajorYAxisLabel);
+
+    dynamicGraph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1Line1.setPainter(dynamicGraph1Line1Painter);
+    dynamicGraph1Line1.setLineWidth(2);
+    dynamicGraph1.addGraphElement(dynamicGraph1Line1);
+
+    dynamicGraph1.addDataPoint(1.12896f);
+    dynamicGraph1.addDataPoint(1.19148f);
+    dynamicGraph1.addDataPoint(1.24851f);
+    dynamicGraph1.addDataPoint(1.24804f);
+    dynamicGraph1.addDataPoint(1.18214f);
+    dynamicGraph1.addDataPoint(1.09313f);
+    dynamicGraph1.addDataPoint(1.04587f);
+    dynamicGraph1.addDataPoint(1.08463f);
+    dynamicGraph1.addDataPoint(1.20253f);
+    dynamicGraph1.addDataPoint(1.34408f);
+    dynamicGraph1.addDataPoint(1.43912f);
+    dynamicGraph1.addDataPoint(1.44628f);
+    dynamicGraph1.addDataPoint(1.3778f);
+    dynamicGraph1.addDataPoint(1.28967f);
+    dynamicGraph1.addDataPoint(1.24368f);
+    dynamicGraph1.addDataPoint(1.26651f);
+    dynamicGraph1.addDataPoint(1.33264f);
+    dynamicGraph1.addDataPoint(1.38223f);
+    dynamicGraph1.addDataPoint(1.36211f);
+    dynamicGraph1.addDataPoint(1.26295f);
+    dynamicGraph1.addDataPoint(1.1278f);
+    dynamicGraph1.addDataPoint(1.02633f);
+    dynamicGraph1.addDataPoint(1.01124f);
+    dynamicGraph1.addDataPoint(1.08526f);
+    dynamicGraph1.addDataPoint(1.20016f);
+    dynamicGraph1.addDataPoint(1.28829f);
+    dynamicGraph1.addDataPoint(1.3061f);
+    dynamicGraph1.addDataPoint(1.26107f);
+    dynamicGraph1.addDataPoint(1.20475f);
+    dynamicGraph1.addDataPoint(1.1965f);
+    dynamicGraph1.addDataPoint(1.26219f);
+    dynamicGraph1.addDataPoint(1.37494f);
+    dynamicGraph1.addDataPoint(1.47099f);
+    dynamicGraph1.addDataPoint(1.49034f);
+    dynamicGraph1.addDataPoint(1.41576f);
+    dynamicGraph1.addDataPoint(1.28455f);
+    dynamicGraph1.addDataPoint(1.16541f);
+    dynamicGraph1.addDataPoint(1.11528f);
+    dynamicGraph1.addDataPoint(1.14443f);
+    dynamicGraph1.addDataPoint(1.21215f);
+    dynamicGraph1.addDataPoint(1.25584f);
+    dynamicGraph1.addDataPoint(1.23401f);
+    dynamicGraph1.addDataPoint(1.15489f);
+    dynamicGraph1.addDataPoint(1.07172f);
+    dynamicGraph1.addDataPoint(1.04768f);
+    dynamicGraph1.addDataPoint(1.11357f);
+    dynamicGraph1.addDataPoint(1.24595f);
+    dynamicGraph1.addDataPoint(1.38036f);
+    dynamicGraph1.addDataPoint(1.45105f);
+    dynamicGraph1.addDataPoint(1.43166f);
+    dynamicGraph1.addDataPoint(1.35024f);
+    dynamicGraph1.addDataPoint(1.26922f);
+    dynamicGraph1.addDataPoint(1.24349f);
+    dynamicGraph1.addDataPoint(1.28424f);
+    dynamicGraph1.addDataPoint(1.35226f);
+    dynamicGraph1.addDataPoint(1.385f);
+    dynamicGraph1.addDataPoint(1.33953f);
+    dynamicGraph1.addDataPoint(1.22304f);
+    dynamicGraph1.addDataPoint(1.0906f);
+    dynamicGraph1.addDataPoint(1.01145f);
+
     add(__background);
+    add(box1);
     add(button1);
+    add(dynamicGraph1);
 }
 
 void ScreenGraphViewBase::setupScreen()
+{
+
+}
+
+void ScreenGraphViewBase::action1()
 {
 
 }

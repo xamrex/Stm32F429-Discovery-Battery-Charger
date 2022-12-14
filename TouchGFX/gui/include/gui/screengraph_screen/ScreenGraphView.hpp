@@ -11,6 +11,7 @@ public:
     virtual ~ScreenGraphView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
 protected:
 };
 

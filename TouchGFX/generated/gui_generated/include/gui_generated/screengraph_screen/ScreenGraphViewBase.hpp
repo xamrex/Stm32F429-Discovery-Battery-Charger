@@ -9,6 +9,10 @@
 #include <gui/screengraph_screen/ScreenGraphPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
+#include <touchgfx/widgets/graph/GraphElements.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/graph/GraphLabels.hpp>
 
 class ScreenGraphViewBase : public touchgfx::View<ScreenGraphPresenter>
 {
@@ -16,6 +20,11 @@ public:
     ScreenGraphViewBase();
     virtual ~ScreenGraphViewBase() {}
     virtual void setupScreen();
+
+    /*
+     * Custom Actions
+     */
+    virtual void action1();
 
 protected:
     FrontendApplication& application() {
@@ -26,7 +35,16 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Box box1;
     touchgfx::Button button1;
+    touchgfx::GraphWrapAndClear<60> dynamicGraph1;
+    touchgfx::GraphElementLine dynamicGraph1Line1;
+    touchgfx::PainterRGB565 dynamicGraph1Line1Painter;
+    touchgfx::GraphElementGridY dynamicGraph1MinorYAxisGrid;
+    touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
+    touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
+    touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
+    touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
 
 private:
 
@@ -40,6 +58,11 @@ private:
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 4800;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // SCREENGRAPHVIEWBASE_HPP
