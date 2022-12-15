@@ -28,7 +28,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1.setPosition(0, 2, 320, 178);
     dynamicGraph1.setGraphAreaMargin(10, 30, 0, 20);
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
-    dynamicGraph1.setGraphRangeY(0, 3);
+    dynamicGraph1.setGraphRangeY(0.9f, 1.5f);
 
     dynamicGraph1MinorYAxisGrid.setScale(1000);
     dynamicGraph1MinorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));

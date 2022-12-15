@@ -17,9 +17,10 @@ void Model::tick()
 //	if (licznik%100) modelListener->UpdateBatteryVoltage();
 
 modelListener->UpdateBatteryVoltage();
-
+#ifndef SIMULATOR
 if(narysujPunktNaWykresie){
 	modelListener->DrawPoint();
 	narysujPunktNaWykresie=0;
 }
+#endif
 }

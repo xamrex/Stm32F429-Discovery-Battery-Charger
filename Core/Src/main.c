@@ -15,8 +15,7 @@
   *                             www.st.com/SLA0044
   *
   ******************************************************************************
-  * TODO: zrobic w touchgfxie screen co bedzie dodawal wartosci z tablic  NapiecieBateriilast60Sec co 60 sek na graph
-  * i NapiecieBaterii co minute na graph.
+  * TODO:
   * zrobic ustawienie napiecia na OPAMPIE po klikniecu start.
    *
   */
@@ -1126,7 +1125,7 @@ __weak void TouchGFX_Task(void *argument)
 					HAL_ADC_Start(&hadc1);
 					HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 					volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
-					BatteryVoltage= 2.84f *value / 4096.0f;
+					BatteryVoltage= 3.3f *value / 4096.0f;
 					narysujPunktNaWykresie=1; //zezwul na narysowanie danej na wykresie
 
 
@@ -1145,7 +1144,7 @@ __weak void TouchGFX_Task(void *argument)
 					}
 					//generowanie napiecia
 					if(ChargeStarted==1 && UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095/2);  //ustaw poprawne napiece tutaj
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2);  //ustaw poprawne napiece tutaj (3V)
 							UstawioneNapiecieNaopAmpie=1;
 					}
 
