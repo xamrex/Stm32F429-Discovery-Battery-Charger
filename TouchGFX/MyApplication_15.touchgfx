@@ -294,7 +294,7 @@
             "DataSeed": 1361910227,
             "NumberOfValues": 60,
             "MaxY": 1.5,
-            "MinY": 0.9,
+            "MinY": 1.0,
             "Precision": "0.001",
             "LastIndex": 59,
             "XAxisScale": 1.0,
@@ -342,19 +342,6 @@
               },
               "Interval": 0.5,
               "LineWidth": 1
-            },
-            "XAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 10.0,
-              "DecimalSeparator": "Point",
-              "TextColor": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
-              },
-              "TextId": "__SingleUse_8PEK",
-              "TextRotation": "0",
-              "Position": "Bottom"
             },
             "YAxisLabel": {
               "Type": "GraphLabel",

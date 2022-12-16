@@ -163,7 +163,7 @@ volatile float BatteryVoltage=1.23;  //napiecie baterii co 1ms jest wypluwane na
 volatile int LoadingCurrent=0; //prad ladowania akumulatora 		DANA Z GIU
 volatile int ChargeStarted=0; //ladowaine rozpoczete				DANA Z GIU
 volatile int UstawioneNapiecieNaopAmpie=0;							//jesli 1, to napiecie nie bedzie na pinie juz sie zmieniac
-volatile float NapiecieBaterii[3600]={0};
+volatile float NapiecieBaterii[3600]={0};							//co 10 sek przylatuje tu zmienna.
 volatile float NapiecieBateriilast60Sec[60]={0};
 volatile uint8_t Minelasekunda;										//timer co 1sek ustawia to na wartosc 1.
 volatile int narysujPunktNaWykresie;							//jesli 1 to dodaje punkt na wykresie.
@@ -1126,7 +1126,9 @@ __weak void TouchGFX_Task(void *argument)
 					HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 					volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
 					BatteryVoltage= 3.3f *value / 4096.0f;
-					narysujPunktNaWykresie=1; //zezwul na narysowanie danej na wykresie
+
+					BatteryVoltage=1.1; //usunac
+					narysujPunktNaWykresie=1; //zezwol na narysowanie danej na wykresie
 
 
 
@@ -1136,8 +1138,8 @@ __weak void TouchGFX_Task(void *argument)
 						CzsasLadowaniaWSec++;
 					}
 
-					//jesli uplynela minuta dodaj dane do tabel
-					if (CzsasLadowaniaWSec >59 ) {
+					//jesli uplynelo 10 sek dodaj dane do tabeli
+					if (CzsasLadowaniaWSec >9 ) {
 						CzsasLadowaniaWSec=0;
 						CzsasLadowaniaWMin++;
 						NapiecieBaterii[CzsasLadowaniaWMin]=BatteryVoltage; //napiecie aktaalizowane co min jest odczytem ostatniego napiecia

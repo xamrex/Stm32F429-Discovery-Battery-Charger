@@ -9,9 +9,6 @@
       <Text Id="__SingleUse_CBWT" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_8PEK" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
       <Text Id="__SingleUse_JY89" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; [V]</Translation>
       </Text>

@@ -11,7 +11,6 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     59, // T___SINGLEUSE_CBWT: "<>"
-    59, // T___SINGLEUSE_8PEK: "<>"
     47, // T___SINGLEUSE_JY89: "<> [V]"
     22, // T___SINGLEUSE_O6MQ: "Napi?cie \nBaterii"
     53, // T___SINGLEUSE_KG9Q: "START"

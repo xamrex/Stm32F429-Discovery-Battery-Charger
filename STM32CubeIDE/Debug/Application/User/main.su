@@ -14,5 +14,5 @@ C:/TouchGFXProjects/MyApplication_15/Core/Src/main.c:1020:6:LCD_IO_WriteData	16	
 C:/TouchGFXProjects/MyApplication_15/Core/Src/main.c:1036:6:LCD_IO_WriteReg	16	static
 C:/TouchGFXProjects/MyApplication_15/Core/Src/main.c:1055:10:LCD_IO_ReadData	32	static
 C:/TouchGFXProjects/MyApplication_15/Core/Src/main.c:1082:6:LCD_Delay	0	static
-C:/TouchGFXProjects/MyApplication_15/Core/Src/main.c:1166:6:HAL_TIM_PeriodElapsedCallback	8	static
-C:/TouchGFXProjects/MyApplication_15/Core/Src/main.c:1186:6:Error_Handler	0	static
+C:/TouchGFXProjects/MyApplication_15/Core/Src/main.c:1168:6:HAL_TIM_PeriodElapsedCallback	8	static
+C:/TouchGFXProjects/MyApplication_15/Core/Src/main.c:1188:6:Error_Handler	0	static
