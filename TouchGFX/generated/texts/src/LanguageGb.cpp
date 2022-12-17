@@ -10,10 +10,18 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 // Remap all strings
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
-    59, // T___SINGLEUSE_CBWT: "<>"
-    47, // T___SINGLEUSE_JY89: "<> [V]"
-    22, // T___SINGLEUSE_O6MQ: "Napi?cie \nBaterii"
-    53, // T___SINGLEUSE_KG9Q: "START"
-    40, // T___SINGLEUSE_9VFQ: "<> [mA]"
-    0   // T___SINGLEUSE_OQ6C: "Ustaw pr?d\n ?adowania"
+    136, // T___SINGLEUSE_E1C6: "01:01:23"
+    47,  // T___SINGLEUSE_U9Q3: "Czas ?adowania:   <>"
+    145, // T___SINGLEUSE_JAK9: "1.234"
+    145, // T___SINGLEUSE_SQ4H: "1.234"
+    24,  // T___SINGLEUSE_5RGF: "Najwy?sza warto??:<>[V]"
+    0,   // T___SINGLEUSE_POMN: "Ostatnia warto??:  <>[V]"
+    107, // T___SINGLEUSE_DO01: "Poka? wszystko:"
+    65,  // T___SINGLEUSE_OCI4: "<>"
+    65,  // T___SINGLEUSE_CBWT: "<>"
+    130, // T___SINGLEUSE_JY89: "<> [V]"
+    89,  // T___SINGLEUSE_O6MQ: "Napi?cie \nBaterii"
+    151, // T___SINGLEUSE_KG9Q: "START"
+    123, // T___SINGLEUSE_9VFQ: "<> [mA]"
+    67   // T___SINGLEUSE_OQ6C: "Ustaw pr?d\n ?adowania"
 };

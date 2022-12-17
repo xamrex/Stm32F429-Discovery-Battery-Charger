@@ -264,21 +264,31 @@
         "CanvasBufferSize": 4800,
         "Components": [
           {
-            "Type": "Box",
-            "Name": "box1",
+            "Type": "Image",
+            "Name": "Background",
+            "X": -109,
+            "Y": -23,
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "__designer\\Dark_Backgrounds_Main_bg_texture_480x272px.png"
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
             "Width": 320,
-            "Height": 240,
+            "Height": 166,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            }
+            },
+            "BorderSize": 1
           },
           {
             "Type": "Button",
             "Name": "button1",
-            "X": 75,
-            "Y": 180,
+            "X": 187,
+            "Y": 189,
             "Width": 170,
             "Height": 60,
             "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
@@ -288,9 +298,8 @@
           {
             "Type": "DynamicGraph",
             "Name": "dynamicGraph1",
-            "Y": 2,
             "Width": 320,
-            "Height": 178,
+            "Height": 166,
             "DataSeed": 1361910227,
             "NumberOfValues": 60,
             "MaxY": 1.5,
@@ -298,9 +307,9 @@
             "Precision": "0.001",
             "LastIndex": 59,
             "XAxisScale": 1.0,
-            "LabelSizeTop": 10,
-            "LabelSizeBottom": 20,
-            "LabelSizeLeft": 30,
+            "LabelSizeTop": 6,
+            "LabelSizeBottom": 15,
+            "LabelSizeLeft": 20,
             "GraphType": "GraphScroll",
             "GraphDrawers": [
               {
@@ -343,6 +352,19 @@
               "Interval": 0.5,
               "LineWidth": 1
             },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 6.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "TextId": "__SingleUse_OCI4",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
             "YAxisLabel": {
               "Type": "GraphLabel",
               "Interval": 0.15,
@@ -356,6 +378,75 @@
               "TextId": "__SingleUse_CBWT",
               "TextRotation": "0",
               "Position": "Left"
+            }
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton1",
+            "X": 85,
+            "Y": 211,
+            "Width": 72,
+            "Height": 29,
+            "Pressed": "rsz_toggle_re_small_button_on.png",
+            "Released": "rsz_toggle_re_small_button_off.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "txtShowWholeGraph",
+            "X": 2,
+            "Y": 218,
+            "Width": 83,
+            "Height": 12,
+            "TextId": "__SingleUse_DO01",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "txtLastValue",
+            "X": 2,
+            "Y": 168,
+            "Width": 141,
+            "Height": 12,
+            "TextId": "__SingleUse_POMN",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_SQ4H",
+              "UseBuffer": true,
+              "BufferSize": 8
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "txtMaxValue",
+            "X": 2,
+            "Y": 183,
+            "Width": 145,
+            "Height": 12,
+            "TextId": "__SingleUse_5RGF",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_JAK9",
+              "UseBuffer": true,
+              "BufferSize": 8
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textChargingTme",
+            "X": 2,
+            "Y": 198,
+            "Width": 140,
+            "Height": 12,
+            "TextId": "__SingleUse_U9Q3",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_E1C6",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           }
         ],

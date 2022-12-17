@@ -17,16 +17,21 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     __background.setPosition(0, 0, 320, 240);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    box1.setPosition(0, 0, 320, 240);
-    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Background.setXY(-109, -23);
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_DARK_BACKGROUNDS_MAIN_BG_TEXTURE_480X272PX_ID));
 
-    button1.setXY(75, 180);
+    boxWithBorder1.setPosition(0, 0, 320, 166);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder1.setBorderSize(1);
+
+    button1.setXY(187, 189);
     button1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     button1.setAction(buttonCallback);
 
     dynamicGraph1.setScale(1000);
-    dynamicGraph1.setPosition(0, 2, 320, 178);
-    dynamicGraph1.setGraphAreaMargin(10, 30, 0, 20);
+    dynamicGraph1.setPosition(0, 0, 320, 166);
+    dynamicGraph1.setGraphAreaMargin(6, 20, 0, 15);
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
     dynamicGraph1.setGraphRangeY(1.0f, 1.5f);
 
@@ -49,6 +54,12 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1MajorYAxisGrid.setLineWidth(2);
     dynamicGraph1.addGraphElement(dynamicGraph1MajorYAxisGrid);
 
+    dynamicGraph1MajorXAxisLabel.setScale(1000);
+    dynamicGraph1MajorXAxisLabel.setInterval(6);
+    dynamicGraph1MajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_OCI4));
+    dynamicGraph1MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1.addBottomElement(dynamicGraph1MajorXAxisLabel);
+
     dynamicGraph1MajorYAxisLabel.setScale(1000);
     dynamicGraph1MajorYAxisLabel.setInterval(0.15f);
     dynamicGraph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_CBWT));
@@ -61,10 +72,48 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1Line1.setLineWidth(2);
     dynamicGraph1.addGraphElement(dynamicGraph1Line1);
 
+    toggleButton1.setXY(85, 211);
+    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_RSZ_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_RSZ_TOGGLE_RE_SMALL_BUTTON_ON_ID));
+
+    txtShowWholeGraph.setXY(2, 218);
+    txtShowWholeGraph.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    txtShowWholeGraph.setLinespacing(0);
+    txtShowWholeGraph.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DO01));
+
+    txtLastValue.setXY(2, 168);
+    txtLastValue.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    txtLastValue.setLinespacing(0);
+    Unicode::snprintf(txtLastValueBuffer, TXTLASTVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SQ4H).getText());
+    txtLastValue.setWildcard(txtLastValueBuffer);
+    txtLastValue.resizeToCurrentText();
+    txtLastValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_POMN));
+
+    txtMaxValue.setXY(2, 183);
+    txtMaxValue.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    txtMaxValue.setLinespacing(0);
+    Unicode::snprintf(txtMaxValueBuffer, TXTMAXVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JAK9).getText());
+    txtMaxValue.setWildcard(txtMaxValueBuffer);
+    txtMaxValue.resizeToCurrentText();
+    txtMaxValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5RGF));
+
+    textChargingTme.setXY(2, 198);
+    textChargingTme.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textChargingTme.setLinespacing(0);
+    Unicode::snprintf(textChargingTmeBuffer, TEXTCHARGINGTME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_E1C6).getText());
+    textChargingTme.setWildcard(textChargingTmeBuffer);
+    textChargingTme.resizeToCurrentText();
+    textChargingTme.setTypedText(touchgfx::TypedText(T___SINGLEUSE_U9Q3));
+
     add(__background);
-    add(box1);
+    add(Background);
+    add(boxWithBorder1);
     add(button1);
     add(dynamicGraph1);
+    add(toggleButton1);
+    add(txtShowWholeGraph);
+    add(txtLastValue);
+    add(txtMaxValue);
+    add(textChargingTme);
 }
 
 void ScreenGraphViewBase::setupScreen()

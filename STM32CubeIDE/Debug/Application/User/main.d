@@ -54,7 +54,8 @@ Application/User/main.o: \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../../TouchGFX/App/app_touchgfx.h \
  ../../Drivers/BSP/Components/ili9341/ili9341.h \
- ../../Drivers/BSP/Components/ili9341/../Common/lcd.h
+ ../../Drivers/BSP/Components/ili9341/../Common/lcd.h \
+ ../../Core/Inc/Charger.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../../Core/Inc/stm32f4xx_hal_conf.h:
@@ -110,3 +111,4 @@ Application/User/main.o: \
 ../../TouchGFX/App/app_touchgfx.h:
 ../../Drivers/BSP/Components/ili9341/ili9341.h:
 ../../Drivers/BSP/Components/ili9341/../Common/lcd.h:
+../../Core/Inc/Charger.h:

@@ -12,6 +12,7 @@ public:
     virtual ~ModelListener() {}
     virtual void UpdateBatteryVoltage () {};
     virtual void DrawPoint () {};
+    virtual void DisplayLastAndMaxVlt() {} ;
 
     void bind(Model* m)
     {

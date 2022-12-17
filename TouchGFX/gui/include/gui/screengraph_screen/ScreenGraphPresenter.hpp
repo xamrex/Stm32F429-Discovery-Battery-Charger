@@ -27,6 +27,7 @@ public:
 
     virtual ~ScreenGraphPresenter() {};
     virtual void DrawPoint();
+    virtual void DisplayLastAndMaxVlt();
 
 private:
     ScreenGraphPresenter();

@@ -14,6 +14,8 @@ public:
 	virtual void ButtonDownClicked();
 	virtual void DisplayBatteryVoltage();
 	virtual void ButtonStartClicked();
+
+
 protected:
 	//int PradLadowania=400;
 };

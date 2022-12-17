@@ -8,11 +8,16 @@
 #include <mvp/View.hpp>
 #include <gui/screengraph_screen/ScreenGraphPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/graph/GraphScroll.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class ScreenGraphViewBase : public touchgfx::View<ScreenGraphPresenter>
 {
@@ -35,7 +40,8 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Box box1;
+    touchgfx::Image Background;
+    touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::Button button1;
     touchgfx::GraphScroll<60> dynamicGraph1;
     touchgfx::GraphElementLine dynamicGraph1Line1;
@@ -43,7 +49,23 @@ protected:
     touchgfx::GraphElementGridY dynamicGraph1MinorYAxisGrid;
     touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
     touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
+    touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
     touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
+    touchgfx::ToggleButton toggleButton1;
+    touchgfx::TextArea txtShowWholeGraph;
+    touchgfx::TextAreaWithOneWildcard txtLastValue;
+    touchgfx::TextAreaWithOneWildcard txtMaxValue;
+    touchgfx::TextAreaWithOneWildcard textChargingTme;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TXTLASTVALUE_SIZE = 8;
+    touchgfx::Unicode::UnicodeChar txtLastValueBuffer[TXTLASTVALUE_SIZE];
+    static const uint16_t TXTMAXVALUE_SIZE = 8;
+    touchgfx::Unicode::UnicodeChar txtMaxValueBuffer[TXTMAXVALUE_SIZE];
+    static const uint16_t TEXTCHARGINGTME_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textChargingTmeBuffer[TEXTCHARGINGTME_SIZE];
 
 private:
 

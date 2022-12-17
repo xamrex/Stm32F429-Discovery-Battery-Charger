@@ -16,8 +16,8 @@
   *
   ******************************************************************************
   * TODO:
-  * zrobic ustawienie napiecia na OPAMPIE po klikniecu start.
-   *
+  *	zrobic zeby max napiecie baterii bylo zapisywane w zmiennej MaxBatteryVoltage
+  *  usrednic pomar z 10 wynikow i dodac BatteryVoltage
   */
 
 /* USER CODE END Header */
@@ -29,6 +29,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
+#include "Charger.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -63,7 +64,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+LadowarkaStruct ladowarka;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -159,16 +160,6 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 ******KONIEC OPISU ***********************/
 
 static LCD_DrvTypeDef* LcdDrv;
-volatile float BatteryVoltage=1.23;  //napiecie baterii co 1ms jest wypluwane na mian screen
-volatile int LoadingCurrent=0; //prad ladowania akumulatora 		DANA Z GIU
-volatile int ChargeStarted=0; //ladowaine rozpoczete				DANA Z GIU
-volatile int UstawioneNapiecieNaopAmpie=0;							//jesli 1, to napiecie nie bedzie na pinie juz sie zmieniac
-volatile float NapiecieBaterii[3600]={0};							//co 10 sek przylatuje tu zmienna.
-volatile float NapiecieBateriilast60Sec[60]={0};
-volatile uint8_t Minelasekunda;										//timer co 1sek ustawia to na wartosc 1.
-volatile int narysujPunktNaWykresie;							//jesli 1 to dodaje punkt na wykresie.
-volatile uint16_t CzsasLadowaniaWSec;								//od 0 do 59
-volatile uint16_t CzsasLadowaniaWMin;								//od 0 do 65535
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */  
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */  
 /* USER CODE END 0 */
@@ -189,6 +180,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+
 
   /* USER CODE END Init */
 
@@ -1118,36 +1110,37 @@ __weak void TouchGFX_Task(void *argument)
   /* Infinite loop */
   for(;;)
   {
-		if(Minelasekunda){ //jesli zostalo wykryte przerwanie z liniczka7
-			Minelasekunda=0; //kasuj flage
+		if(ladowarka.Minelasekunda){ //jesli zostalo wykryte przerwanie z liniczka7
+			ladowarka.Minelasekunda=0; //kasuj flage
 
 					//pomiar napiecia
 					HAL_ADC_Start(&hadc1);
 					HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 					volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
-					BatteryVoltage= 3.3f *value / 4096.0f;
-
-					BatteryVoltage=1.1; //usunac
-					narysujPunktNaWykresie=1; //zezwol na narysowanie danej na wykresie
+					ladowarka.BatteryVoltage= 3.3f *value / 4096.0f;
 
 
+					ladowarka.BatteryVoltage=1.1; //usunac
+					ladowarka.narysujPunktNaWykresie=1; //zezwol na narysowanie danej na wykresie
 
-					if (ChargeStarted) { //jesli zostal kliniety button na GUI, i chcemy ladowac baterie.
-						NapiecieBateriilast60Sec[CzsasLadowaniaWSec] =BatteryVoltage;
-						if (CzsasLadowaniaWMin==0 && CzsasLadowaniaWSec==0)NapiecieBaterii[0]=BatteryVoltage; //jesli dopiero co rozpoczety pomiar dodaj pierwsza wartosc do tabeli minut
-						CzsasLadowaniaWSec++;
+
+
+					if (ladowarka.ChargeStarted) { //jesli zostal kliniety button na GUI, i chcemy ladowac baterie.
+						ladowarka.NapiecieBateriilast60Sec[ladowarka.CzsasLadowaniaWSec] =ladowarka.BatteryVoltage;
+						if (ladowarka.CzsasLadowaniaW10Sec==0 && ladowarka.CzsasLadowaniaWSec==0)ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; //jesli dopiero co rozpoczety pomiar dodaj pierwsza wartosc do tabeli minut
+						ladowarka.CzsasLadowaniaWSec++;
 					}
 
 					//jesli uplynelo 10 sek dodaj dane do tabeli
-					if (CzsasLadowaniaWSec >9 ) {
-						CzsasLadowaniaWSec=0;
-						CzsasLadowaniaWMin++;
-						NapiecieBaterii[CzsasLadowaniaWMin]=BatteryVoltage; //napiecie aktaalizowane co min jest odczytem ostatniego napiecia
+					if (ladowarka.CzsasLadowaniaWSec >9 ) {
+						ladowarka.CzsasLadowaniaWSec=0;
+						ladowarka.CzsasLadowaniaW10Sec++;
+						ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaW10Sec]=ladowarka.BatteryVoltage; //napiecie aktaalizowane co min jest odczytem ostatniego napiecia
 					}
 					//generowanie napiecia
-					if(ChargeStarted==1 && UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
+					if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
 							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2);  //ustaw poprawne napiece tutaj (3V)
-							UstawioneNapiecieNaopAmpie=1;
+							ladowarka.UstawioneNapiecieNaopAmpie=1;
 					}
 
 		}
@@ -1175,7 +1168,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM7){ //timer co 1000ms
-	  Minelasekunda=1;
+	  ladowarka.Minelasekunda=1;
   }
 
   /* USER CODE END Callback 1 */

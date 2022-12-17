@@ -1,9 +1,14 @@
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <touchgfx/Utils.hpp>
-extern float BatteryVoltage; //zmienna z mian.c
-extern int PradLadowania;
-extern int LoadingCurrent; //zmienna z main.c
-extern int ChargeStarted; //zmienna z main.c
+#ifndef SIMULATOR
+#include "Charger.h"
+extern LadowarkaStruct ladowarka;
+#endif
+extern int PradLadowania; // z GIU do charger.h
+
+//BatteryVoltage; //zmienna z charger.h
+//LoadingCurrent; //zmienna z charger.h
+// ChargeStarted; //zmienna z charger.h
 
 Screen1View::Screen1View()
 {
@@ -42,7 +47,7 @@ void Screen1View::ButtonDownClicked() //zwiekszenie wartosci pradu ladowania
 }
 void Screen1View::DisplayBatteryVoltage(){
 #ifndef SIMULATOR
-	Unicode::snprintfFloat(txtNapiecieBateriiBuffer,TXTNAPIECIEBATERII_SIZE,"%.3f",BatteryVoltage);
+	Unicode::snprintfFloat(txtNapiecieBateriiBuffer,TXTNAPIECIEBATERII_SIZE,"%.3f",ladowarka.BatteryVoltage);
 	txtNapiecieBaterii.invalidate();
 #endif
 }
@@ -50,8 +55,8 @@ void Screen1View::DisplayBatteryVoltage(){
 void Screen1View::ButtonStartClicked()
 {
 #ifndef SIMULATOR
- LoadingCurrent=PradLadowania;
- ChargeStarted=1;
+ ladowarka.LoadingCurrent=PradLadowania;
+ ladowarka.ChargeStarted=1;
 #endif
 }
 

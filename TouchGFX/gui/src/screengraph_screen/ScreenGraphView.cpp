@@ -1,6 +1,9 @@
 #include <gui/screengraph_screen/ScreenGraphView.hpp>
 #ifndef SIMULATOR
-extern float BatteryVoltage; //zmienna z mian.c
+#ifndef SIMULATOR
+#include "Charger.h"
+extern LadowarkaStruct ladowarka;
+#endif
 #endif
 ScreenGraphView::ScreenGraphView()
 {
@@ -27,6 +30,15 @@ void ScreenGraphView::tearDownScreen()
 
 void ScreenGraphView::DrawPoint2(){
 #ifndef SIMULATOR
-	dynamicGraph1.addDataPoint(BatteryVoltage);
+	dynamicGraph1.addDataPoint(ladowarka.BatteryVoltage);
+
+#endif
+}
+void ScreenGraphView::DisplayLastAndMaxVlt2(){
+#ifndef SIMULATOR
+	Unicode::snprintfFloat(txtLastValueBuffer,TXTLASTVALUE_SIZE,"%.3f",ladowarka.BatteryVoltage);
+	Unicode::snprintfFloat(txtMaxValueBuffer,TXTMAXVALUE_SIZE,"%.3f",ladowarka.MaxBatteryVoltage);
+	txtMaxValue.invalidate();
+	txtLastValue.invalidate();
 #endif
 }

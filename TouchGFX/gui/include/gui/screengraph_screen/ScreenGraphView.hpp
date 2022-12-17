@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void DrawPoint2();
+	virtual void DisplayLastAndMaxVlt2();
 
 protected:
 };
