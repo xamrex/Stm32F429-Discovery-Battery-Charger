@@ -18,7 +18,10 @@
   * TODO:
   *	zrobic zeby max napiecie baterii bylo zapisywane w zmiennej MaxBatteryVoltage
   *  usrednic pomar z 10 wynikow i dodac BatteryVoltage
+  * zmienic jezyk na angielski
+  * dodacakzcje op rzycisnieciu przycisku zeby pokazal caly przebieg wykresu
   */
+
 
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
