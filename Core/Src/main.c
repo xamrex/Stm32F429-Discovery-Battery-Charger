@@ -210,7 +210,7 @@ int main(void)
 
 HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
 HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
-HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napiecie na ADC, zeby nie plynal zaden prad
+HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 1365); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
 
 
   /* USER CODE END 2 */
@@ -1121,9 +1121,6 @@ __weak void TouchGFX_Task(void *argument)
 					HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 					volatile uint32_t value = HAL_ADC_GetValue(&hadc1);
 					ladowarka.BatteryVoltage= 3.3f *value / 4096.0f;
-
-
-					ladowarka.BatteryVoltage=1.1; //usunac
 					ladowarka.narysujPunktNaWykresie=1; //zezwol na narysowanie danej na wykresie
 
 
@@ -1142,7 +1139,7 @@ __weak void TouchGFX_Task(void *argument)
 					}
 					//generowanie napiecia
 					if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4096/2);  //ustaw poprawne napiece tutaj (3V)
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 1365);  //ustaw poprawne napiece tutaj (3V)
 							ladowarka.UstawioneNapiecieNaopAmpie=1;
 					}
 

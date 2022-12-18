@@ -314,12 +314,7 @@
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
-                "LineWidth": 2,
-                "Color": {
-                  "Red": 22,
-                  "Green": 36,
-                  "Blue": 196
-                }
+                "LineWidth": 2
               }
             ],
             "XAxisGrid": {
@@ -330,6 +325,16 @@
                 "Blue": 197
               },
               "Interval": 10.0,
+              "LineWidth": 2
+            },
+            "MinorXAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 5.0,
               "LineWidth": 1
             },
             "YAxisGrid": {

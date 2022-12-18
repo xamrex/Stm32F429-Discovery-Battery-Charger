@@ -35,6 +35,13 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
     dynamicGraph1.setGraphRangeY(1.0f, 1.5f);
 
+    dynamicGraph1MinorXAxisGrid.setScale(1000);
+    dynamicGraph1MinorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1MinorXAxisGrid.setInterval(5);
+    dynamicGraph1MinorXAxisGrid.setLineWidth(1);
+    dynamicGraph1MinorXAxisGrid.setMajorGrid(dynamicGraph1MajorXAxisGrid);
+    dynamicGraph1.addGraphElement(dynamicGraph1MinorXAxisGrid);
+
     dynamicGraph1MinorYAxisGrid.setScale(1000);
     dynamicGraph1MinorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     dynamicGraph1MinorYAxisGrid.setInterval(0.5f);
@@ -45,7 +52,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1MajorXAxisGrid.setScale(1000);
     dynamicGraph1MajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     dynamicGraph1MajorXAxisGrid.setInterval(10);
-    dynamicGraph1MajorXAxisGrid.setLineWidth(1);
+    dynamicGraph1MajorXAxisGrid.setLineWidth(2);
     dynamicGraph1.addGraphElement(dynamicGraph1MajorXAxisGrid);
 
     dynamicGraph1MajorYAxisGrid.setScale(1000);
@@ -67,7 +74,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     dynamicGraph1.addLeftElement(dynamicGraph1MajorYAxisLabel);
 
-    dynamicGraph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB(22, 36, 196));
+    dynamicGraph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     dynamicGraph1Line1.setPainter(dynamicGraph1Line1Painter);
     dynamicGraph1Line1.setLineWidth(2);
     dynamicGraph1.addGraphElement(dynamicGraph1Line1);
