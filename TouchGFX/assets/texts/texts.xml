@@ -27,9 +27,6 @@
       <Text Id="__SingleUse_DO01" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Pokaż wszystko:</Translation>
       </Text>
-      <Text Id="__SingleUse_OCI4" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
       <Text Id="__SingleUse_CBWT" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>

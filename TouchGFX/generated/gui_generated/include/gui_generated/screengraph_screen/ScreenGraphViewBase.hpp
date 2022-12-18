@@ -50,7 +50,6 @@ protected:
     touchgfx::GraphElementGridY dynamicGraph1MinorYAxisGrid;
     touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
     touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
-    touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
     touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
     touchgfx::ToggleButton toggleButton1;
     touchgfx::TextArea txtShowWholeGraph;

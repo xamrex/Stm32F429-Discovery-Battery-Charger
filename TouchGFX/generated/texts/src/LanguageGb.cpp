@@ -17,7 +17,6 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     24,  // T___SINGLEUSE_5RGF: "Najwy?sza warto??:<>[V]"
     0,   // T___SINGLEUSE_POMN: "Ostatnia warto??:  <>[V]"
     107, // T___SINGLEUSE_DO01: "Poka? wszystko:"
-    65,  // T___SINGLEUSE_OCI4: "<>"
     65,  // T___SINGLEUSE_CBWT: "<>"
     130, // T___SINGLEUSE_JY89: "<> [V]"
     89,  // T___SINGLEUSE_O6MQ: "Napi?cie \nBaterii"

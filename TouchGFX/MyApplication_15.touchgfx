@@ -357,19 +357,6 @@
               "Interval": 0.5,
               "LineWidth": 1
             },
-            "XAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 6.0,
-              "DecimalSeparator": "Point",
-              "TextColor": {
-                "Red": 20,
-                "Green": 151,
-                "Blue": 197
-              },
-              "TextId": "__SingleUse_OCI4",
-              "TextRotation": "0",
-              "Position": "Bottom"
-            },
             "YAxisLabel": {
               "Type": "GraphLabel",
               "Interval": 0.15,
