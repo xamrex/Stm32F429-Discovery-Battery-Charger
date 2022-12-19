@@ -1,6 +1,7 @@
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:14:18:virtual void ModelListener::DrawPoint()	0	static
-../../TouchGFX/gui/include/gui/model/ModelListener.hpp:15:18:virtual void ModelListener::DisplayLastAndMaxVlt()	0	static
-../../TouchGFX/gui/include/gui/model/ModelListener.hpp:16:18:virtual void ModelListener::DisplayRunningTime()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:15:18:virtual void ModelListener::DrawPointMin()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:16:18:virtual void ModelListener::DisplayLastAndMaxVlt()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:17:18:virtual void ModelListener::DisplayRunningTime()	0	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp:28:13:Screen1Presenter::~Screen1Presenter()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:10:6:virtual void Screen1Presenter::activate()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:20:6:virtual void Screen1Presenter::UpdateBatteryVoltage()	0	static

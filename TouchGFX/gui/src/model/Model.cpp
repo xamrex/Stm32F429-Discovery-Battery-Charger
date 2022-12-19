@@ -20,10 +20,19 @@ void Model::tick()
 
 /************* UPDATE BATT VOLTAGE ON GRAPH *********************/
 modelListener->UpdateBatteryVoltage();
+
 #ifndef SIMULATOR
+
 if(ladowarka.narysujPunktNaWykresie){
+	if (ladowarka.CzsasLadowaniaWSec==1)	modelListener->DrawPoint(); //dodanie jednego extra punktu bo zaczynamy od 0
 	modelListener->DrawPoint();
 	ladowarka.narysujPunktNaWykresie=0;
+}
+
+if (ladowarka.narysujPunktNaWykresieMin){
+	modelListener->DrawPointMin();
+	ladowarka.narysujPunktNaWykresieMin=0;
+
 }
 #endif
 

@@ -1137,20 +1137,26 @@ __weak void ZadanieDwa(void *argument)
 					liczbaPomiarow++;
 
 					/****** jesli minela sekunda ->10tickow co 100ms********/
+
 					if(liczbaPomiarow%10==0){ //jesli minela sekunda
 						ladowarka.BatteryVoltage=(value/10) * 3.3f / 4096.0f;
 
 						if (ladowarka.ChargeStarted){ //jesli zaczeto ladwowac
-							if (ladowarka.CzsasLadowaniaWSec<2) ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; //dla 0 pomiaru dodaj od razy do tablicy
+							if (ladowarka.CzsasLadowaniaWSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage;ladowarka.narysujPunktNaWykresieMin=1; }//dla 0 pomiaru dodaj od razy do tablicy oraz wyplotuj na obu wykreasch.
+
+
 							if (ladowarka.BatteryVoltage>ladowarka.MaxBatteryVoltage) ladowarka.MaxBatteryVoltage=ladowarka.BatteryVoltage; //uaktualnij max wartosc.
 							ladowarka.CzsasLadowaniaWSec++; //jesli zaczal sie proces ladowana ziwekszja wartosc czas ladowania w sec
 							ladowarka.narysujPunktNaWykresie=1; //zezwol na narysowanie danej na wykresie
+
 
 							/********* dodawanie co 1 sek wartosc pomiaru do tabeli********/
 							ladowarka.PomiaryCoSec[sec0to59++]=ladowarka.BatteryVoltage;
 							if (sec0to59>59) {	//jesli mamy 10 elementow w tabeli (minelo 10sec) usrednij i dodaj wartosc do NapiecieBaterii
 								ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]=CountAvgFrom60sec(); // TO DO srednia z 10 pomiarow
 								sec0to59=0;
+
+								ladowarka.narysujPunktNaWykresieMin=1;//zezwol na narysowanie na wykresie minut.
 							}
 
 						}

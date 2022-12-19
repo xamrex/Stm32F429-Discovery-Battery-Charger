@@ -35,6 +35,12 @@ void ScreenGraphView::DrawPoint2(){
 
 #endif
 }
+void ScreenGraphView::DrawPoint2Min(){
+#ifndef SIMULATOR
+	dynamicGraph2.addDataPoint(ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]);
+
+#endif
+}
 void ScreenGraphView::DisplayLastAndMaxVlt2(){
 #ifndef SIMULATOR
 	Unicode::snprintfFloat(txtLastValueBuffer,TXTLASTVALUE_SIZE,"%.3f",ladowarka.BatteryVoltage);

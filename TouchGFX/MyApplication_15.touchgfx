@@ -308,7 +308,6 @@
             "Precision": "0.001",
             "LastIndex": 599,
             "XAxisScale": 1.0,
-            "InsertRandomValues": true,
             "LabelSizeTop": 6,
             "LabelSizeBottom": 15,
             "LabelSizeLeft": 20,

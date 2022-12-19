@@ -20,6 +20,10 @@ void ScreenGraphPresenter::DrawPoint()
 {
 	view.DrawPoint2();
 }
+void ScreenGraphPresenter::DrawPointMin()
+{
+	view.DrawPoint2Min();
+}
 void ScreenGraphPresenter::DisplayLastAndMaxVlt()
 {
 	view.DisplayLastAndMaxVlt2();
