@@ -9,53 +9,53 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .rodata       00002c4c  080214e0  080214e0  000314e0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 FontFlashSection 0000155e  0802412c  0802412c  0003412c  2**2
+  3 FontFlashSection 0000153a  0802412c  0802412c  0003412c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 FontSearchFlashSection 0000008c  0802568c  0802568c  0003568c  2**2
+  4 FontSearchFlashSection 00000090  08025668  08025668  00035668  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 TextFlashSection 000001dc  08025718  08025718  00035718  2**2
+  5 TextFlashSection 000001bc  080256f8  080256f8  000356f8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  6 ExtFlashSection 000833f8  080258f4  080258f4  000358f4  2**2
+  6 ExtFlashSection 000833f8  080258b4  080258b4  000358b4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .ARM.extab    00000000  080a8cec  080a8cec  000c016c  2**0
+  7 .ARM.extab    00000000  080a8cac  080a8cac  000c016c  2**0
                   CONTENTS
-  8 .ARM          00000008  080a8cec  080a8cec  000b8cec  2**2
+  8 .ARM          00000008  080a8cac  080a8cac  000b8cac  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  9 .preinit_array 00000000  080a8cf4  080a8cf4  000c016c  2**0
+  9 .preinit_array 00000000  080a8cb4  080a8cb4  000c016c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 10 .init_array   00000014  080a8cf4  080a8cf4  000b8cf4  2**2
+ 10 .init_array   00000014  080a8cb4  080a8cb4  000b8cb4  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 11 .fini_array   00000008  080a8d08  080a8d08  000b8d08  2**2
+ 11 .fini_array   00000008  080a8cc8  080a8cc8  000b8cc8  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 12 .data         0000016c  20000000  080a8d10  000c0000  2**2
+ 12 .data         0000016c  20000000  080a8cd0  000c0000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 13 .bss          00015524  2000016c  080a8e7c  000c016c  2**2
+ 13 .bss          00015524  2000016c  080a8e3c  000c016c  2**2
                   ALLOC
- 14 ._user_heap_stack 00001400  20015690  080a8e7c  000c5690  2**0
+ 14 ._user_heap_stack 00001400  20015690  080a8e3c  000c5690  2**0
                   ALLOC
  15 .ARM.attributes 00000030  00000000  00000000  000c016c  2**0
                   CONTENTS, READONLY
  16 TouchGFX_Framebuffer 0004b000  d0000000  d0000000  000d0000  2**2
                   ALLOC
- 17 .debug_line   0005025a  00000000  00000000  000c019c  2**0
+ 17 .debug_line   00050237  00000000  00000000  000c019c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_info   000eb278  00000000  00000000  001103f6  2**0
+ 18 .debug_info   000eb259  00000000  00000000  001103d3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_abbrev 00014ec6  00000000  00000000  001fb66e  2**0
+ 19 .debug_abbrev 00014ec6  00000000  00000000  001fb62c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_aranges 00003010  00000000  00000000  00210538  2**3
+ 20 .debug_aranges 00003010  00000000  00000000  002104f8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_str    001185ca  00000000  00000000  00213548  2**0
+ 21 .debug_str    001185ca  00000000  00000000  00213508  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_ranges 00006f68  00000000  00000000  0032bb18  2**3
+ 22 .debug_ranges 00006f58  00000000  00000000  0032bad8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_loc    00034d0e  00000000  00000000  00332a80  2**0
+ 23 .debug_loc    00034cfe  00000000  00000000  00332a30  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 24 .debug_macro  000304f9  00000000  00000000  0036778e  2**0
+ 24 .debug_macro  000304f9  00000000  00000000  0036772e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 25 .comment      000000cf  00000000  00000000  00397c87  2**0
+ 25 .comment      000000cf  00000000  00000000  00397c27  2**0
                   CONTENTS, READONLY
- 26 .debug_frame  00008d34  00000000  00000000  00397d58  2**2
+ 26 .debug_frame  00008d34  00000000  00000000  00397cf8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -499,7 +499,7 @@ LoopFillZerobss:
   ldr   sp, =_estack       /* set stack pointer */
  80005cc:	20030000 	.word	0x20030000
   ldr  r3, =_sidata
- 80005d0:	080a8d10 	.word	0x080a8d10
+ 80005d0:	080a8cd0 	.word	0x080a8cd0
   ldr  r0, =_sdata
  80005d4:	20000000 	.word	0x20000000
   ldr  r3, =_edata
@@ -10839,7 +10839,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
  80040a6:	ee0a 2a90 	vmov	s21, r2
  80040aa:	f7fe fe2b 	bl	8002d04 <_ZN8touchgfx3BoxC1Ev>
  80040ae:	f104 036c 	add.w	r3, r4, #108	; 0x6c
- 80040b2:	ee09 3a90 	vmov	s19, r3
+ 80040b2:	ee08 3a90 	vmov	s17, r3
  80040b6:	f64f 78ff 	movw	r8, #65535	; 0xffff
         : Widget(), bitmap(bmp), alpha(255)
  80040ba:	2226      	movs	r2, #38	; 0x26
@@ -10847,7 +10847,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
  80040be:	4618      	mov	r0, r3
  80040c0:	f8ad 8040 	strh.w	r8, [sp, #64]	; 0x40
  80040c4:	f01c fa6a 	bl	802059c <memset>
- 80040c8:	ee19 0a90 	vmov	r0, s19
+ 80040c8:	ee18 0a90 	vmov	r0, s17
  80040cc:	f7fe fe08 	bl	8002ce0 <_ZN8touchgfx6WidgetC1Ev>
  80040d0:	4bdf      	ldr	r3, [pc, #892]	; (8004450 <_ZN19ScreenGraphViewBaseC1Ev+0x3c8>)
  80040d2:	66e3      	str	r3, [r4, #108]	; 0x6c
@@ -10855,7 +10855,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
  80040d8:	f8a4 3092 	strh.w	r3, [r4, #146]	; 0x92
         Image::setBitmap(bmp);
  80040dc:	a910      	add	r1, sp, #64	; 0x40
- 80040de:	ee19 0a90 	vmov	r0, s19
+ 80040de:	ee18 0a90 	vmov	r0, s17
         : Widget(), bitmap(bmp), alpha(255)
  80040e2:	f884 8094 	strb.w	r8, [r4, #148]	; 0x94
         Image::setBitmap(bmp);
@@ -11080,7 +11080,7 @@ class GraphElementGridY : public GraphElementGridBase
  80042dc:	f8c5 1110 	str.w	r1, [r5, #272]	; 0x110
  80042e0:	331c      	adds	r3, #28
  80042e2:	4618      	mov	r0, r3
- 80042e4:	ee0a 3a10 	vmov	s20, r3
+ 80042e4:	ee09 3a10 	vmov	s18, r3
  80042e8:	f7ff fe0e 	bl	8003f08 <_ZN8touchgfx14AbstractButtonC1Ev>
  * A ToggleButton is a Button specialization that swaps the two bitmaps when clicked, such that
  * the previous "pressed" bitmap, now becomes the one displayed when button is not
@@ -11113,7 +11113,7 @@ class ToggleButton : public Button
  800432e:	4618      	mov	r0, r3
         : TextAreaWithWildcardBase(), wc1(0)
  8004330:	f8c5 6224 	str.w	r6, [r5, #548]	; 0x224
- 8004334:	ee08 3a90 	vmov	s17, r3
+ 8004334:	ee09 3a90 	vmov	s19, r3
         : TextArea()
  8004338:	f7fe fd12 	bl	8002d60 <_ZN8touchgfx8TextAreaC1Ev>
  800433c:	f504 5393 	add.w	r3, r4, #4704	; 0x1260
@@ -11124,7 +11124,7 @@ class ToggleButton : public Button
  8004346:	4618      	mov	r0, r3
         : TextAreaWithWildcardBase(), wc1(0)
  8004348:	f8c5 6270 	str.w	r6, [r5, #624]	; 0x270
- 800434c:	ee09 3a10 	vmov	s18, r3
+ 800434c:	ee0a 3a10 	vmov	s20, r3
         : TextArea()
  8004350:	f7fe fd06 	bl	8002d60 <_ZN8touchgfx8TextAreaC1Ev>
         : pobject(pObject), pmemfun(pmemfun_1)
@@ -11151,13 +11151,13 @@ class ToggleButton : public Button
  800438a:	f04f 437f 	mov.w	r3, #4278190080	; 0xff000000
     Background.setXY(-109, -23);
  800438e:	f06f 0216 	mvn.w	r2, #22
- 8004392:	ee19 0a90 	vmov	r0, s19
+ 8004392:	ee18 0a90 	vmov	r0, s17
  8004396:	66a3      	str	r3, [r4, #104]	; 0x68
  8004398:	f06f 016c 	mvn.w	r1, #108	; 0x6c
  800439c:	f7fe fc4e 	bl	8002c3c <_ZN8touchgfx8Drawable5setXYEss>
  80043a0:	f04f 0304 	mov.w	r3, #4
     Background.setBitmap(touchgfx::Bitmap(BITMAP_DARK_BACKGROUNDS_MAIN_BG_TEXTURE_480X272PX_ID));
- 80043a4:	ee19 0a90 	vmov	r0, s19
+ 80043a4:	ee18 0a90 	vmov	r0, s17
  80043a8:	a910      	add	r1, sp, #64	; 0x40
  80043aa:	f8ad 3040 	strh.w	r3, [sp, #64]	; 0x40
  80043ae:	f009 ff77 	bl	800e2a0 <_ZN8touchgfx5Image9setBitmapERKNS_6BitmapE>
@@ -11261,194 +11261,193 @@ class ToggleButton : public Button
  80044a8:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
  80044ac:	f8d4 1c24 	ldr.w	r1, [r4, #3108]	; 0xc24
  80044b0:	f8d4 0c28 	ldr.w	r0, [r4, #3112]	; 0xc28
-        color = newColor;
- 80044b4:	f8df 94fc 	ldr.w	r9, [pc, #1276]	; 80049b4 <_ZN19ScreenGraphViewBaseC1Ev+0x92c>
-        gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
+        visible = vis;
+ 80044b4:	f884 6125 	strb.w	r6, [r4, #293]	; 0x125
  80044b8:	f007 fef2 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         majorGrid = &major;
  80044bc:	ee1c 3a10 	vmov	r3, s24
         dataScale = scale;
  80044c0:	f44f 787a 	mov.w	r8, #1000	; 0x3e8
-        lineWidth = width;
- 80044c4:	f04f 0101 	mov.w	r1, #1
+        color = newColor;
+ 80044c4:	f8df 94ec 	ldr.w	r9, [pc, #1260]	; 80049b4 <_ZN19ScreenGraphViewBaseC1Ev+0x92c>
         majorGrid = &major;
  80044c8:	f8c4 3c30 	str.w	r3, [r4, #3120]	; 0xc30
-        dataScale = scale;
- 80044cc:	f8c4 8c24 	str.w	r8, [r4, #3108]	; 0xc24
-        color = newColor;
- 80044d0:	f8c4 9c20 	str.w	r9, [r4, #3104]	; 0xc20
-        gridInterval = abs(interval);
- 80044d4:	f8c4 8c28 	str.w	r8, [r4, #3112]	; 0xc28
         lineWidth = width;
- 80044d8:	f884 1c2c 	strb.w	r1, [r4, #3116]	; 0xc2c
+ 80044cc:	f04f 0101 	mov.w	r1, #1
+        dataScale = scale;
+ 80044d0:	f8c4 8c24 	str.w	r8, [r4, #3108]	; 0xc24
+        color = newColor;
+ 80044d4:	f8c4 9c20 	str.w	r9, [r4, #3104]	; 0xc20
+        gridInterval = abs(interval);
+ 80044d8:	f8c4 8c28 	str.w	r8, [r4, #3112]	; 0xc28
+        lineWidth = width;
+ 80044dc:	f884 1c2c 	strb.w	r1, [r4, #3116]	; 0xc2c
     dynamicGraph2.addGraphElement(dynamicGraph2MinorXAxisGrid);
- 80044dc:	4638      	mov	r0, r7
- 80044de:	ee1d 1a90 	vmov	r1, s27
- 80044e2:	f007 fd39 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
+ 80044e0:	4638      	mov	r0, r7
+ 80044e2:	ee1d 1a90 	vmov	r1, s27
+ 80044e6:	f007 fd37 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
         gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
- 80044e6:	4642      	mov	r2, r8
- 80044e8:	f8d4 1c64 	ldr.w	r1, [r4, #3172]	; 0xc64
- 80044ec:	f8d4 0c68 	ldr.w	r0, [r4, #3176]	; 0xc68
- 80044f0:	f007 fed6 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
+ 80044ea:	4642      	mov	r2, r8
+ 80044ec:	f8d4 1c64 	ldr.w	r1, [r4, #3172]	; 0xc64
+ 80044f0:	f8d4 0c68 	ldr.w	r0, [r4, #3176]	; 0xc68
+ 80044f4:	f007 fed4 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         gridInterval = abs(interval);
- 80044f4:	234b      	movs	r3, #75	; 0x4b
- 80044f6:	f8c4 3c68 	str.w	r3, [r4, #3176]	; 0xc68
+ 80044f8:	234b      	movs	r3, #75	; 0x4b
+ 80044fa:	f8c4 3c68 	str.w	r3, [r4, #3176]	; 0xc68
         majorGrid = &major;
- 80044fa:	ee1c 3a90 	vmov	r3, s25
+ 80044fe:	ee1c 3a90 	vmov	r3, s25
         lineWidth = width;
- 80044fe:	f04f 0101 	mov.w	r1, #1
+ 8004502:	f04f 0101 	mov.w	r1, #1
         majorGrid = &major;
- 8004502:	f8c4 3c70 	str.w	r3, [r4, #3184]	; 0xc70
+ 8004506:	f8c4 3c70 	str.w	r3, [r4, #3184]	; 0xc70
         dataScale = scale;
- 8004506:	f8c4 8c64 	str.w	r8, [r4, #3172]	; 0xc64
+ 800450a:	f8c4 8c64 	str.w	r8, [r4, #3172]	; 0xc64
         color = newColor;
- 800450a:	f8c4 9c60 	str.w	r9, [r4, #3168]	; 0xc60
+ 800450e:	f8c4 9c60 	str.w	r9, [r4, #3168]	; 0xc60
         lineWidth = width;
- 800450e:	f884 1c6c 	strb.w	r1, [r4, #3180]	; 0xc6c
+ 8004512:	f884 1c6c 	strb.w	r1, [r4, #3180]	; 0xc6c
     dynamicGraph2.addGraphElement(dynamicGraph2MinorYAxisGrid);
- 8004512:	4638      	mov	r0, r7
- 8004514:	ee1e 1a10 	vmov	r1, s28
- 8004518:	f007 fd1e 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
+ 8004516:	4638      	mov	r0, r7
+ 8004518:	ee1e 1a10 	vmov	r1, s28
+ 800451c:	f007 fd1c 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
         gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
- 800451c:	4642      	mov	r2, r8
- 800451e:	f8d4 1ca4 	ldr.w	r1, [r4, #3236]	; 0xca4
- 8004522:	f8d4 0ca8 	ldr.w	r0, [r4, #3240]	; 0xca8
- 8004526:	f007 febb 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
+ 8004520:	4642      	mov	r2, r8
+ 8004522:	f8d4 1ca4 	ldr.w	r1, [r4, #3236]	; 0xca4
+ 8004526:	f8d4 0ca8 	ldr.w	r0, [r4, #3240]	; 0xca8
+ 800452a:	f007 feb9 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         lineWidth = width;
- 800452a:	f04f 0302 	mov.w	r3, #2
- 800452e:	f884 3cac 	strb.w	r3, [r4, #3244]	; 0xcac
+ 800452e:	f04f 0302 	mov.w	r3, #2
+ 8004532:	f884 3cac 	strb.w	r3, [r4, #3244]	; 0xcac
     dynamicGraph2.addGraphElement(dynamicGraph2MajorXAxisGrid);
- 8004532:	ee1c 1a10 	vmov	r1, s24
+ 8004536:	ee1c 1a10 	vmov	r1, s24
         dataScale = scale;
- 8004536:	f8c4 8ca4 	str.w	r8, [r4, #3236]	; 0xca4
+ 800453a:	f8c4 8ca4 	str.w	r8, [r4, #3236]	; 0xca4
         color = newColor;
- 800453a:	f8c4 9ca0 	str.w	r9, [r4, #3232]	; 0xca0
+ 800453e:	f8c4 9ca0 	str.w	r9, [r4, #3232]	; 0xca0
         gridInterval = abs(interval);
- 800453e:	f8c4 8ca8 	str.w	r8, [r4, #3240]	; 0xca8
- 8004542:	4638      	mov	r0, r7
- 8004544:	f007 fd08 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
+ 8004542:	f8c4 8ca8 	str.w	r8, [r4, #3240]	; 0xca8
+ 8004546:	4638      	mov	r0, r7
+ 8004548:	f007 fd06 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
         gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
- 8004548:	4642      	mov	r2, r8
- 800454a:	f8d4 1ce4 	ldr.w	r1, [r4, #3300]	; 0xce4
- 800454e:	f8d4 0ce8 	ldr.w	r0, [r4, #3304]	; 0xce8
- 8004552:	f007 fea5 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
+ 800454c:	4642      	mov	r2, r8
+ 800454e:	f8d4 1ce4 	ldr.w	r1, [r4, #3300]	; 0xce4
+ 8004552:	f8d4 0ce8 	ldr.w	r0, [r4, #3304]	; 0xce8
+ 8004556:	f007 fea3 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         lineWidth = width;
- 8004556:	f04f 0302 	mov.w	r3, #2
+ 800455a:	f04f 0302 	mov.w	r3, #2
         gridInterval = abs(interval);
- 800455a:	2196      	movs	r1, #150	; 0x96
+ 800455e:	2196      	movs	r1, #150	; 0x96
         lineWidth = width;
- 800455c:	f884 3cec 	strb.w	r3, [r4, #3308]	; 0xcec
+ 8004560:	f884 3cec 	strb.w	r3, [r4, #3308]	; 0xcec
         dataScale = scale;
- 8004560:	f8c4 8ce4 	str.w	r8, [r4, #3300]	; 0xce4
+ 8004564:	f8c4 8ce4 	str.w	r8, [r4, #3300]	; 0xce4
         color = newColor;
- 8004564:	f8c4 9ce0 	str.w	r9, [r4, #3296]	; 0xce0
+ 8004568:	f8c4 9ce0 	str.w	r9, [r4, #3296]	; 0xce0
         gridInterval = abs(interval);
- 8004568:	f8c4 1ce8 	str.w	r1, [r4, #3304]	; 0xce8
+ 800456c:	f8c4 1ce8 	str.w	r1, [r4, #3304]	; 0xce8
     dynamicGraph2.addGraphElement(dynamicGraph2MajorYAxisGrid);
- 800456c:	4638      	mov	r0, r7
- 800456e:	ee1c 1a90 	vmov	r1, s25
- 8004572:	f007 fcf1 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
+ 8004570:	4638      	mov	r0, r7
+ 8004572:	ee1c 1a90 	vmov	r1, s25
+ 8004576:	f007 fcef 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
         labelInterval = AbstractDataGraph::convertToNewScale(labelInterval, dataScale, scale);
- 8004576:	4642      	mov	r2, r8
- 8004578:	f8d4 1d24 	ldr.w	r1, [r4, #3364]	; 0xd24
- 800457c:	f8d4 0d28 	ldr.w	r0, [r4, #3368]	; 0xd28
- 8004580:	f007 fe8e 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
+ 800457a:	4642      	mov	r2, r8
+ 800457c:	f8d4 1d24 	ldr.w	r1, [r4, #3364]	; 0xd24
+ 8004580:	f8d4 0d28 	ldr.w	r0, [r4, #3368]	; 0xd28
+ 8004584:	f007 fe8c 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
 class TypedText
- 8004584:	f04f 0204 	mov.w	r2, #4
+ 8004588:	f04f 0204 	mov.w	r2, #4
     dynamicGraph2.addBottomElement(dynamicGraph2MajorXAxisLabel);
- 8004588:	ee1e 1a90 	vmov	r1, s29
+ 800458c:	ee1e 1a90 	vmov	r1, s29
         dataScale = scale;
- 800458c:	f8c4 8d24 	str.w	r8, [r4, #3364]	; 0xd24
+ 8004590:	f8c4 8d24 	str.w	r8, [r4, #3364]	; 0xd24
         labelInterval = abs(interval);
- 8004590:	f8c4 8d28 	str.w	r8, [r4, #3368]	; 0xd28
- 8004594:	f8a4 2d30 	strh.w	r2, [r4, #3376]	; 0xd30
+ 8004594:	f8c4 8d28 	str.w	r8, [r4, #3368]	; 0xd28
+ 8004598:	f8a4 2d30 	strh.w	r2, [r4, #3376]	; 0xd30
         color = newColor;
- 8004598:	f8c4 9d20 	str.w	r9, [r4, #3360]	; 0xd20
- 800459c:	4638      	mov	r0, r7
- 800459e:	f007 fcff 	bl	800bfa0 <_ZN8touchgfx17AbstractDataGraph16addBottomElementERNS_23AbstractGraphDecorationE>
+ 800459c:	f8c4 9d20 	str.w	r9, [r4, #3360]	; 0xd20
+ 80045a0:	4638      	mov	r0, r7
+ 80045a2:	f007 fcfd 	bl	800bfa0 <_ZN8touchgfx17AbstractDataGraph16addBottomElementERNS_23AbstractGraphDecorationE>
         labelInterval = AbstractDataGraph::convertToNewScale(labelInterval, dataScale, scale);
- 80045a2:	4642      	mov	r2, r8
- 80045a4:	f8d4 1d70 	ldr.w	r1, [r4, #3440]	; 0xd70
- 80045a8:	f8d4 0d74 	ldr.w	r0, [r4, #3444]	; 0xd74
- 80045ac:	f007 fe78 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
+ 80045a6:	4642      	mov	r2, r8
+ 80045a8:	f8d4 1d70 	ldr.w	r1, [r4, #3440]	; 0xd70
+ 80045ac:	f8d4 0d74 	ldr.w	r0, [r4, #3444]	; 0xd74
+ 80045b0:	f007 fe76 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         labelInterval = abs(interval);
- 80045b0:	2296      	movs	r2, #150	; 0x96
- 80045b2:	2303      	movs	r3, #3
- 80045b4:	f8c4 2d74 	str.w	r2, [r4, #3444]	; 0xd74
+ 80045b4:	2296      	movs	r2, #150	; 0x96
+ 80045b6:	2303      	movs	r3, #3
+ 80045b8:	f8c4 2d74 	str.w	r2, [r4, #3444]	; 0xd74
         labelDecimals = decimals;
- 80045b8:	f04f 0201 	mov.w	r2, #1
+ 80045bc:	f04f 0201 	mov.w	r2, #1
     dynamicGraph2.addLeftElement(dynamicGraph2MajorYAxisLabel);
- 80045bc:	ee1f 1a10 	vmov	r1, s30
+ 80045c0:	ee1f 1a10 	vmov	r1, s30
         dataScale = scale;
- 80045c0:	f8c4 8d70 	str.w	r8, [r4, #3440]	; 0xd70
- 80045c4:	f8a4 3d7c 	strh.w	r3, [r4, #3452]	; 0xd7c
+ 80045c4:	f8c4 8d70 	str.w	r8, [r4, #3440]	; 0xd70
+ 80045c8:	f8a4 3d7c 	strh.w	r3, [r4, #3452]	; 0xd7c
         labelDecimals = decimals;
- 80045c8:	f8a4 2d82 	strh.w	r2, [r4, #3458]	; 0xd82
- 80045cc:	f8c4 9d6c 	str.w	r9, [r4, #3436]	; 0xd6c
- 80045d0:	4638      	mov	r0, r7
- 80045d2:	f007 fcd3 	bl	800bf7c <_ZN8touchgfx17AbstractDataGraph14addLeftElementERNS_23AbstractGraphDecorationE>
+ 80045cc:	f8a4 2d82 	strh.w	r2, [r4, #3458]	; 0xd82
+ 80045d0:	f8c4 9d6c 	str.w	r9, [r4, #3436]	; 0xd6c
+ 80045d4:	4638      	mov	r0, r7
+ 80045d6:	f007 fcd1 	bl	800bf7c <_ZN8touchgfx17AbstractDataGraph14addLeftElementERNS_23AbstractGraphDecorationE>
         canvasPainter = &painter;
- 80045d6:	9b08      	ldr	r3, [sp, #32]
- 80045d8:	f8c4 3bd8 	str.w	r3, [r4, #3032]	; 0xbd8
- 80045dc:	f04f 427f 	mov.w	r2, #4278190080	; 0xff000000
+ 80045da:	9b08      	ldr	r3, [sp, #32]
+ 80045dc:	f8c4 3bd8 	str.w	r3, [r4, #3032]	; 0xbd8
+ 80045e0:	f04f 427f 	mov.w	r2, #4278190080	; 0xff000000
      *
      * @see getLineWidth
      */
     FORCE_INLINE_FUNCTION void setLineWidth(uint8_t width)
     {
         lineWidth = width;
- 80045e0:	f04f 0302 	mov.w	r3, #2
- 80045e4:	f884 3bdc 	strb.w	r3, [r4, #3036]	; 0xbdc
+ 80045e4:	f04f 0302 	mov.w	r3, #2
+ 80045e8:	f884 3bdc 	strb.w	r3, [r4, #3036]	; 0xbdc
     dynamicGraph2.addGraphElement(dynamicGraph2Line1);
- 80045e8:	ee1d 1a10 	vmov	r1, s26
- 80045ec:	f8c4 2bec 	str.w	r2, [r4, #3052]	; 0xbec
- 80045f0:	4638      	mov	r0, r7
+ 80045ec:	ee1d 1a10 	vmov	r1, s26
+ 80045f0:	f8c4 2bec 	str.w	r2, [r4, #3052]	; 0xbec
+ 80045f4:	4638      	mov	r0, r7
     }
 
     virtual void setColor(colortype color)
     {
         AbstractPainterColor::setColor(color);
         color565 = LCD16bpp::getNativeColor(painterColor);
- 80045f2:	f8a4 6bf0 	strh.w	r6, [r4, #3056]	; 0xbf0
- 80045f6:	f007 fcaf 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
+ 80045f6:	f8a4 6bf0 	strh.w	r6, [r4, #3056]	; 0xbf0
+ 80045fa:	f007 fcad 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
     dynamicGraph1.setScale(1000);
- 80045fa:	4641      	mov	r1, r8
- 80045fc:	4632      	mov	r2, r6
- 80045fe:	4658      	mov	r0, fp
- 8004600:	f7ff f984 	bl	800390c <_ZN8touchgfx16DynamicDataGraph8setScaleEib>
+ 80045fe:	4641      	mov	r1, r8
+ 8004600:	4632      	mov	r2, r6
+ 8004602:	4658      	mov	r0, fp
+ 8004604:	f7ff f982 	bl	800390c <_ZN8touchgfx16DynamicDataGraph8setScaleEib>
     dynamicGraph1.setPosition(0, 0, 320, 166);
- 8004604:	22a6      	movs	r2, #166	; 0xa6
- 8004606:	9200      	str	r2, [sp, #0]
- 8004608:	f44f 73a0 	mov.w	r3, #320	; 0x140
- 800460c:	4632      	mov	r2, r6
- 800460e:	4631      	mov	r1, r6
- 8004610:	4658      	mov	r0, fp
- 8004612:	f7fe fb52 	bl	8002cba <_ZN8touchgfx8Drawable11setPositionEssss>
+ 8004608:	22a6      	movs	r2, #166	; 0xa6
+ 800460a:	9200      	str	r2, [sp, #0]
+ 800460c:	f44f 73a0 	mov.w	r3, #320	; 0x140
+ 8004610:	4632      	mov	r2, r6
+ 8004612:	4631      	mov	r1, r6
+ 8004614:	4658      	mov	r0, fp
+ 8004616:	f7fe fb50 	bl	8002cba <_ZN8touchgfx8Drawable11setPositionEssss>
     dynamicGraph1.setGraphAreaMargin(6, 20, 0, 15);
- 8004616:	220f      	movs	r2, #15
- 8004618:	9200      	str	r2, [sp, #0]
- 800461a:	4633      	mov	r3, r6
- 800461c:	2214      	movs	r2, #20
- 800461e:	2106      	movs	r1, #6
- 8004620:	4658      	mov	r0, fp
- 8004622:	f007 fd8b 	bl	800c13c <_ZN8touchgfx17AbstractDataGraph18setGraphAreaMarginEssss>
+ 800461a:	220f      	movs	r2, #15
+ 800461c:	9200      	str	r2, [sp, #0]
+ 800461e:	4633      	mov	r3, r6
+ 8004620:	2214      	movs	r2, #20
+ 8004622:	2106      	movs	r1, #6
+ 8004624:	4658      	mov	r0, fp
+ 8004626:	f007 fd89 	bl	800c13c <_ZN8touchgfx17AbstractDataGraph18setGraphAreaMarginEssss>
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
- 8004626:	4633      	mov	r3, r6
- 8004628:	4632      	mov	r2, r6
- 800462a:	4631      	mov	r1, r6
- 800462c:	4658      	mov	r0, fp
- 800462e:	9600      	str	r6, [sp, #0]
- 8004630:	f007 fc87 	bl	800bf42 <_ZN8touchgfx17AbstractDataGraph19setGraphAreaPaddingEssss>
+ 800462a:	4633      	mov	r3, r6
+ 800462c:	4632      	mov	r2, r6
+ 800462e:	4631      	mov	r1, r6
+ 8004630:	4658      	mov	r0, fp
+ 8004632:	9600      	str	r6, [sp, #0]
+ 8004634:	f007 fc85 	bl	800bf42 <_ZN8touchgfx17AbstractDataGraph19setGraphAreaPaddingEssss>
     dynamicGraph1.setGraphRangeY(1.0f, 1.5f);
- 8004634:	eef7 0a08 	vmov.f32	s1, #120	; 0x3fc00000  1.5
- 8004638:	eeb7 0a00 	vmov.f32	s0, #112	; 0x3f800000  1.0
- 800463c:	4658      	mov	r0, fp
- 800463e:	f7ff f847 	bl	80036d0 <_ZN8touchgfx17AbstractDataGraph14setGraphRangeYEff>
+ 8004638:	eef7 0a08 	vmov.f32	s1, #120	; 0x3fc00000  1.5
+ 800463c:	eeb7 0a00 	vmov.f32	s0, #112	; 0x3f800000  1.0
+ 8004640:	4658      	mov	r0, fp
+ 8004642:	f7ff f845 	bl	80036d0 <_ZN8touchgfx17AbstractDataGraph14setGraphRangeYEff>
         gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
- 8004642:	4642      	mov	r2, r8
- 8004644:	e9d5 1010 	ldrd	r1, r0, [r5, #64]	; 0x40
-        visible = vis;
- 8004648:	f884 6db1 	strb.w	r6, [r4, #3505]	; 0xdb1
+ 8004646:	4642      	mov	r2, r8
+ 8004648:	e9d5 1010 	ldrd	r1, r0, [r5, #64]	; 0x40
  800464c:	f007 fe28 	bl	800c2a0 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         gridInterval = abs(interval);
  8004650:	f241 3388 	movw	r3, #5000	; 0x1388
@@ -11555,10 +11554,10 @@ class TypedText
  800472a:	4658      	mov	r0, fp
  800472c:	f007 fc14 	bl	800bf58 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
  8004730:	f04f 0808 	mov.w	r8, #8
-    toggleButton1.setXY(85, 211);
- 8004734:	ee1a 0a10 	vmov	r0, s20
+    toggleButton1.setXY(65, 211);
+ 8004734:	ee19 0a10 	vmov	r0, s18
  8004738:	22d3      	movs	r2, #211	; 0xd3
- 800473a:	2155      	movs	r1, #85	; 0x55
+ 800473a:	2141      	movs	r1, #65	; 0x41
  800473c:	f7fe fa7e 	bl	8002c3c <_ZN8touchgfx8Drawable5setXYEss>
  8004740:	f04f 0307 	mov.w	r3, #7
 {
@@ -11567,7 +11566,7 @@ public:
     {
         originalPressed = bitmapPressed;
         Button::setBitmaps(bitmapReleased, bitmapPressed);
- 8004744:	ee1a 0a10 	vmov	r0, s20
+ 8004744:	ee19 0a10 	vmov	r0, s18
  8004748:	aa10      	add	r2, sp, #64	; 0x40
  800474a:	a90f      	add	r1, sp, #60	; 0x3c
         originalPressed = bitmapPressed;
@@ -11578,10 +11577,10 @@ public:
  8004758:	f009 fb7f 	bl	800de5a <_ZN8touchgfx6Button10setBitmapsERKNS_6BitmapES3_>
  800475c:	9b07      	ldr	r3, [sp, #28]
  800475e:	f8c5 3184 	str.w	r3, [r5, #388]	; 0x184
-    txtShowWholeGraph.setXY(2, 218);
- 8004762:	22da      	movs	r2, #218	; 0xda
+    txtShowWholeGraph.setXY(1, 219);
+ 8004762:	22db      	movs	r2, #219	; 0xdb
  8004764:	ee18 0a10 	vmov	r0, s16
- 8004768:	2102      	movs	r1, #2
+ 8004768:	2101      	movs	r1, #1
  800476a:	f7fe fa67 	bl	8002c3c <_ZN8touchgfx8Drawable5setXYEss>
  800476e:	f10d 0928 	add.w	r9, sp, #40	; 0x28
         color = newColor;
@@ -11608,176 +11607,176 @@ public:
  80047a0:	a910      	add	r1, sp, #64	; 0x40
  80047a2:	f8ad 3044 	strh.w	r3, [sp, #68]	; 0x44
  80047a6:	f009 fafd 	bl	800dda4 <_ZN8touchgfx8TextArea12setTypedTextERKNS_9TypedTextE>
-    txtLastValue.setXY(2, 168);
- 80047aa:	22a8      	movs	r2, #168	; 0xa8
- 80047ac:	2102      	movs	r1, #2
- 80047ae:	4650      	mov	r0, sl
- 80047b0:	f7fe fa44 	bl	8002c3c <_ZN8touchgfx8Drawable5setXYEss>
+    txtLastValue.setPosition(2, 168, 132, 15);
+ 80047aa:	230f      	movs	r3, #15
+ 80047ac:	22a8      	movs	r2, #168	; 0xa8
+ 80047ae:	9300      	str	r3, [sp, #0]
+ 80047b0:	2102      	movs	r1, #2
+ 80047b2:	2384      	movs	r3, #132	; 0x84
+ 80047b4:	4650      	mov	r0, sl
+ 80047b6:	f7fe fa80 	bl	8002cba <_ZN8touchgfx8Drawable11setPositionEssss>
         color = newColor;
- 80047b4:	f04f 437f 	mov.w	r3, #4278190080	; 0xff000000
- 80047b8:	f8c5 320c 	str.w	r3, [r5, #524]	; 0x20c
+ 80047ba:	f04f 437f 	mov.w	r3, #4278190080	; 0xff000000
+ 80047be:	f8c5 320c 	str.w	r3, [r5, #524]	; 0x20c
         boundingArea = calculateBoundingArea();
- 80047bc:	f8d5 31dc 	ldr.w	r3, [r5, #476]	; 0x1dc
+ 80047c2:	f8d5 31dc 	ldr.w	r3, [r5, #476]	; 0x1dc
         linespace = space;
- 80047c0:	f8a5 6210 	strh.w	r6, [r5, #528]	; 0x210
+ 80047c6:	f8a5 6210 	strh.w	r6, [r5, #528]	; 0x210
         boundingArea = calculateBoundingArea();
- 80047c4:	4648      	mov	r0, r9
- 80047c6:	f8d3 3084 	ldr.w	r3, [r3, #132]	; 0x84
- 80047ca:	4651      	mov	r1, sl
- 80047cc:	4798      	blx	r3
- 80047ce:	e899 0007 	ldmia.w	r9, {r0, r1, r2}
- 80047d2:	f10a 033c 	add.w	r3, sl, #60	; 0x3c
- 80047d6:	e883 0007 	stmia.w	r3, {r0, r1, r2}
+ 80047ca:	4648      	mov	r0, r9
+ 80047cc:	f8d3 3084 	ldr.w	r3, [r3, #132]	; 0x84
+ 80047d0:	4651      	mov	r1, sl
+ 80047d2:	4798      	blx	r3
+ 80047d4:	e899 0007 	ldmia.w	r9, {r0, r1, r2}
+ 80047d8:	f10a 033c 	add.w	r3, sl, #60	; 0x3c
+ 80047dc:	e883 0007 	stmia.w	r3, {r0, r1, r2}
         assert(typedTexts != 0 && "TypedText database has not been initialized.");
- 80047da:	4b6e      	ldr	r3, [pc, #440]	; (8004994 <_ZN19ScreenGraphViewBaseC1Ev+0x90c>)
- 80047dc:	681b      	ldr	r3, [r3, #0]
+ 80047e0:	4b6c      	ldr	r3, [pc, #432]	; (8004994 <_ZN19ScreenGraphViewBaseC1Ev+0x90c>)
+ 80047e2:	681b      	ldr	r3, [r3, #0]
     Unicode::snprintf(txtLastValueBuffer, TXTLASTVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SQ4H).getText());
- 80047de:	f504 5996 	add.w	r9, r4, #4800	; 0x12c0
- 80047e2:	b92b      	cbnz	r3, 80047f0 <_ZN19ScreenGraphViewBaseC1Ev+0x768>
- 80047e4:	4b6c      	ldr	r3, [pc, #432]	; (8004998 <_ZN19ScreenGraphViewBaseC1Ev+0x910>)
- 80047e6:	4a6d      	ldr	r2, [pc, #436]	; (800499c <_ZN19ScreenGraphViewBaseC1Ev+0x914>)
- 80047e8:	2160      	movs	r1, #96	; 0x60
+ 80047e4:	f504 5996 	add.w	r9, r4, #4800	; 0x12c0
+ 80047e8:	b92b      	cbnz	r3, 80047f6 <_ZN19ScreenGraphViewBaseC1Ev+0x76e>
+ 80047ea:	4b6b      	ldr	r3, [pc, #428]	; (8004998 <_ZN19ScreenGraphViewBaseC1Ev+0x910>)
+ 80047ec:	4a6b      	ldr	r2, [pc, #428]	; (800499c <_ZN19ScreenGraphViewBaseC1Ev+0x914>)
+ 80047ee:	2160      	movs	r1, #96	; 0x60
         assert(hasValidId() && "typedTextId larger than numberOfTypedTexts.");
- 80047ea:	486d      	ldr	r0, [pc, #436]	; (80049a0 <_ZN19ScreenGraphViewBaseC1Ev+0x918>)
- 80047ec:	f01b fd50 	bl	8020290 <__assert_func>
- 80047f0:	4b6c      	ldr	r3, [pc, #432]	; (80049a4 <_ZN19ScreenGraphViewBaseC1Ev+0x91c>)
- 80047f2:	881b      	ldrh	r3, [r3, #0]
- 80047f4:	2b08      	cmp	r3, #8
- 80047f6:	d803      	bhi.n	8004800 <_ZN19ScreenGraphViewBaseC1Ev+0x778>
- 80047f8:	4b6b      	ldr	r3, [pc, #428]	; (80049a8 <_ZN19ScreenGraphViewBaseC1Ev+0x920>)
- 80047fa:	4a68      	ldr	r2, [pc, #416]	; (800499c <_ZN19ScreenGraphViewBaseC1Ev+0x914>)
- 80047fc:	2161      	movs	r1, #97	; 0x61
- 80047fe:	e7f4      	b.n	80047ea <_ZN19ScreenGraphViewBaseC1Ev+0x762>
+ 80047f0:	486b      	ldr	r0, [pc, #428]	; (80049a0 <_ZN19ScreenGraphViewBaseC1Ev+0x918>)
+ 80047f2:	f01b fd4d 	bl	8020290 <__assert_func>
+ 80047f6:	4b6b      	ldr	r3, [pc, #428]	; (80049a4 <_ZN19ScreenGraphViewBaseC1Ev+0x91c>)
+ 80047f8:	881b      	ldrh	r3, [r3, #0]
+ 80047fa:	2b08      	cmp	r3, #8
+ 80047fc:	d803      	bhi.n	8004806 <_ZN19ScreenGraphViewBaseC1Ev+0x77e>
+ 80047fe:	4b6a      	ldr	r3, [pc, #424]	; (80049a8 <_ZN19ScreenGraphViewBaseC1Ev+0x920>)
+ 8004800:	4a66      	ldr	r2, [pc, #408]	; (800499c <_ZN19ScreenGraphViewBaseC1Ev+0x914>)
+ 8004802:	2161      	movs	r1, #97	; 0x61
+ 8004804:	e7f4      	b.n	80047f0 <_ZN19ScreenGraphViewBaseC1Ev+0x768>
         return texts->getText(typedTextId);
- 8004800:	4b6a      	ldr	r3, [pc, #424]	; (80049ac <_ZN19ScreenGraphViewBaseC1Ev+0x924>)
- 8004802:	4641      	mov	r1, r8
- 8004804:	6818      	ldr	r0, [r3, #0]
- 8004806:	f000 fa3b 	bl	8004c80 <_ZNK8touchgfx5Texts7getTextEt>
- 800480a:	4a69      	ldr	r2, [pc, #420]	; (80049b0 <_ZN19ScreenGraphViewBaseC1Ev+0x928>)
- 800480c:	4603      	mov	r3, r0
- 800480e:	4641      	mov	r1, r8
- 8004810:	4648      	mov	r0, r9
- 8004812:	f00f f9b1 	bl	8013b78 <_ZN8touchgfx7Unicode8snprintfEPttPKcz>
-        wc1 = value;
- 8004816:	f8c5 9224 	str.w	r9, [r5, #548]	; 0x224
-    txtLastValue.resizeToCurrentText();
- 800481a:	4650      	mov	r0, sl
- 800481c:	f009 faa2 	bl	800dd64 <_ZN8touchgfx8TextArea19resizeToCurrentTextEv>
+ 8004806:	4b69      	ldr	r3, [pc, #420]	; (80049ac <_ZN19ScreenGraphViewBaseC1Ev+0x924>)
+ 8004808:	4641      	mov	r1, r8
+ 800480a:	6818      	ldr	r0, [r3, #0]
+ 800480c:	f000 fa38 	bl	8004c80 <_ZNK8touchgfx5Texts7getTextEt>
+ 8004810:	4a67      	ldr	r2, [pc, #412]	; (80049b0 <_ZN19ScreenGraphViewBaseC1Ev+0x928>)
+ 8004812:	4603      	mov	r3, r0
+ 8004814:	4641      	mov	r1, r8
+ 8004816:	4648      	mov	r0, r9
+ 8004818:	f00f f9ae 	bl	8013b78 <_ZN8touchgfx7Unicode8snprintfEPttPKcz>
         : typedTextId(id)
- 8004820:	f04f 010a 	mov.w	r1, #10
- 8004824:	4a5a      	ldr	r2, [pc, #360]	; (8004990 <_ZN19ScreenGraphViewBaseC1Ev+0x908>)
+ 800481c:	f04f 010a 	mov.w	r1, #10
+ 8004820:	4a5b      	ldr	r2, [pc, #364]	; (8004990 <_ZN19ScreenGraphViewBaseC1Ev+0x908>)
+        wc1 = value;
+ 8004822:	f8c5 9224 	str.w	r9, [r5, #548]	; 0x224
  8004826:	f8ad 1044 	strh.w	r1, [sp, #68]	; 0x44
     txtLastValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_POMN));
  800482a:	4650      	mov	r0, sl
  800482c:	a910      	add	r1, sp, #64	; 0x40
  800482e:	9210      	str	r2, [sp, #64]	; 0x40
  8004830:	f009 fab8 	bl	800dda4 <_ZN8touchgfx8TextArea12setTypedTextERKNS_9TypedTextE>
-    txtMaxValue.setXY(2, 183);
- 8004834:	2102      	movs	r1, #2
- 8004836:	ee18 0a90 	vmov	r0, s17
- 800483a:	22b7      	movs	r2, #183	; 0xb7
- 800483c:	f7fe f9fe 	bl	8002c3c <_ZN8touchgfx8Drawable5setXYEss>
+    txtMaxValue.setPosition(2, 183, 132, 15);
+ 8004834:	210f      	movs	r1, #15
+ 8004836:	9100      	str	r1, [sp, #0]
+ 8004838:	2384      	movs	r3, #132	; 0x84
+ 800483a:	2102      	movs	r1, #2
+ 800483c:	ee19 0a90 	vmov	r0, s19
+ 8004840:	22b7      	movs	r2, #183	; 0xb7
+ 8004842:	f7fe fa3a 	bl	8002cba <_ZN8touchgfx8Drawable11setPositionEssss>
         color = newColor;
- 8004840:	f04f 417f 	mov.w	r1, #4278190080	; 0xff000000
- 8004844:	f8c5 1258 	str.w	r1, [r5, #600]	; 0x258
+ 8004846:	f04f 417f 	mov.w	r1, #4278190080	; 0xff000000
+ 800484a:	f8c5 1258 	str.w	r1, [r5, #600]	; 0x258
         boundingArea = calculateBoundingArea();
- 8004848:	f04f 31ff 	mov.w	r1, #4294967295
- 800484c:	e9c5 169a 	strd	r1, r6, [r5, #616]	; 0x268
+ 800484e:	f04f 31ff 	mov.w	r1, #4294967295
+ 8004852:	e9c5 169a 	strd	r1, r6, [r5, #616]	; 0x268
         assert(typedTexts != 0 && "TypedText database has not been initialized.");
- 8004850:	4950      	ldr	r1, [pc, #320]	; (8004994 <_ZN19ScreenGraphViewBaseC1Ev+0x90c>)
+ 8004856:	494f      	ldr	r1, [pc, #316]	; (8004994 <_ZN19ScreenGraphViewBaseC1Ev+0x90c>)
         linespace = space;
- 8004852:	f8a5 625c 	strh.w	r6, [r5, #604]	; 0x25c
- 8004856:	680b      	ldr	r3, [r1, #0]
+ 8004858:	f8a5 625c 	strh.w	r6, [r5, #604]	; 0x25c
+ 800485c:	680b      	ldr	r3, [r1, #0]
         boundingArea = calculateBoundingArea();
- 8004858:	f8c5 6264 	str.w	r6, [r5, #612]	; 0x264
+ 800485e:	f8c5 6264 	str.w	r6, [r5, #612]	; 0x264
     Unicode::snprintf(txtMaxValueBuffer, TXTMAXVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JAK9).getText());
- 800485c:	f504 5996 	add.w	r9, r4, #4800	; 0x12c0
- 8004860:	f109 0910 	add.w	r9, r9, #16
- 8004864:	2b00      	cmp	r3, #0
- 8004866:	d0bd      	beq.n	80047e4 <_ZN19ScreenGraphViewBaseC1Ev+0x75c>
+ 8004862:	f504 5996 	add.w	r9, r4, #4800	; 0x12c0
+ 8004866:	f109 0910 	add.w	r9, r9, #16
+ 800486a:	2b00      	cmp	r3, #0
+ 800486c:	d0bd      	beq.n	80047ea <_ZN19ScreenGraphViewBaseC1Ev+0x762>
         assert(hasValidId() && "typedTextId larger than numberOfTypedTexts.");
- 8004868:	484e      	ldr	r0, [pc, #312]	; (80049a4 <_ZN19ScreenGraphViewBaseC1Ev+0x91c>)
- 800486a:	8803      	ldrh	r3, [r0, #0]
- 800486c:	2b07      	cmp	r3, #7
- 800486e:	d9c3      	bls.n	80047f8 <_ZN19ScreenGraphViewBaseC1Ev+0x770>
+ 800486e:	484d      	ldr	r0, [pc, #308]	; (80049a4 <_ZN19ScreenGraphViewBaseC1Ev+0x91c>)
+ 8004870:	8803      	ldrh	r3, [r0, #0]
+ 8004872:	2b07      	cmp	r3, #7
+ 8004874:	d9c3      	bls.n	80047fe <_ZN19ScreenGraphViewBaseC1Ev+0x776>
         return texts->getText(typedTextId);
- 8004870:	4b4e      	ldr	r3, [pc, #312]	; (80049ac <_ZN19ScreenGraphViewBaseC1Ev+0x924>)
- 8004872:	2107      	movs	r1, #7
- 8004874:	6818      	ldr	r0, [r3, #0]
- 8004876:	f000 fa03 	bl	8004c80 <_ZNK8touchgfx5Texts7getTextEt>
- 800487a:	4a4d      	ldr	r2, [pc, #308]	; (80049b0 <_ZN19ScreenGraphViewBaseC1Ev+0x928>)
- 800487c:	4603      	mov	r3, r0
- 800487e:	4641      	mov	r1, r8
- 8004880:	4648      	mov	r0, r9
- 8004882:	f00f f979 	bl	8013b78 <_ZN8touchgfx7Unicode8snprintfEPttPKcz>
-    txtMaxValue.resizeToCurrentText();
- 8004886:	ee18 0a90 	vmov	r0, s17
- 800488a:	f8c5 9270 	str.w	r9, [r5, #624]	; 0x270
- 800488e:	f009 fa69 	bl	800dd64 <_ZN8touchgfx8TextArea19resizeToCurrentTextEv>
+ 8004876:	4b4d      	ldr	r3, [pc, #308]	; (80049ac <_ZN19ScreenGraphViewBaseC1Ev+0x924>)
+ 8004878:	2107      	movs	r1, #7
+ 800487a:	6818      	ldr	r0, [r3, #0]
+ 800487c:	f000 fa00 	bl	8004c80 <_ZNK8touchgfx5Texts7getTextEt>
+ 8004880:	4a4b      	ldr	r2, [pc, #300]	; (80049b0 <_ZN19ScreenGraphViewBaseC1Ev+0x928>)
+ 8004882:	4603      	mov	r3, r0
+ 8004884:	4641      	mov	r1, r8
+ 8004886:	4648      	mov	r0, r9
+ 8004888:	f00f f976 	bl	8013b78 <_ZN8touchgfx7Unicode8snprintfEPttPKcz>
     txtMaxValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5RGF));
- 8004892:	f10d 0c40 	add.w	ip, sp, #64	; 0x40
+ 800488c:	f10d 0c40 	add.w	ip, sp, #64	; 0x40
         : typedTextId(id)
+ 8004890:	4a3f      	ldr	r2, [pc, #252]	; (8004990 <_ZN19ScreenGraphViewBaseC1Ev+0x908>)
+ 8004892:	f8c5 9270 	str.w	r9, [r5, #624]	; 0x270
  8004896:	2309      	movs	r3, #9
  8004898:	4661      	mov	r1, ip
- 800489a:	4a3d      	ldr	r2, [pc, #244]	; (8004990 <_ZN19ScreenGraphViewBaseC1Ev+0x908>)
- 800489c:	f8ad 3044 	strh.w	r3, [sp, #68]	; 0x44
- 80048a0:	ee18 0a90 	vmov	r0, s17
- 80048a4:	9210      	str	r2, [sp, #64]	; 0x40
- 80048a6:	f009 fa7d 	bl	800dda4 <_ZN8touchgfx8TextArea12setTypedTextERKNS_9TypedTextE>
-    textChargingTme.setXY(2, 198);
- 80048aa:	2102      	movs	r1, #2
- 80048ac:	ee19 0a10 	vmov	r0, s18
- 80048b0:	22c6      	movs	r2, #198	; 0xc6
- 80048b2:	f7fe f9c3 	bl	8002c3c <_ZN8touchgfx8Drawable5setXYEss>
+ 800489a:	ee19 0a90 	vmov	r0, s19
+ 800489e:	9210      	str	r2, [sp, #64]	; 0x40
+ 80048a0:	f8ad 3044 	strh.w	r3, [sp, #68]	; 0x44
+ 80048a4:	f009 fa7e 	bl	800dda4 <_ZN8touchgfx8TextArea12setTypedTextERKNS_9TypedTextE>
+    textChargingTme.setPosition(2, 198, 132, 15);
+ 80048a8:	f04f 0c0f 	mov.w	ip, #15
+ 80048ac:	f8cd c000 	str.w	ip, [sp]
+ 80048b0:	2384      	movs	r3, #132	; 0x84
+ 80048b2:	2102      	movs	r1, #2
+ 80048b4:	ee1a 0a10 	vmov	r0, s20
+ 80048b8:	22c6      	movs	r2, #198	; 0xc6
+ 80048ba:	f7fe f9fe 	bl	8002cba <_ZN8touchgfx8Drawable11setPositionEssss>
         assert(typedTexts != 0 && "TypedText database has not been initialized.");
- 80048b6:	4937      	ldr	r1, [pc, #220]	; (8004994 <_ZN19ScreenGraphViewBaseC1Ev+0x90c>)
+ 80048be:	4935      	ldr	r1, [pc, #212]	; (8004994 <_ZN19ScreenGraphViewBaseC1Ev+0x90c>)
         linespace = space;
- 80048b8:	f8a5 62a8 	strh.w	r6, [r5, #680]	; 0x2a8
+ 80048c0:	f8a5 62a8 	strh.w	r6, [r5, #680]	; 0x2a8
         color = newColor;
- 80048bc:	f04f 4c7f 	mov.w	ip, #4278190080	; 0xff000000
- 80048c0:	680b      	ldr	r3, [r1, #0]
- 80048c2:	f8c5 c2a4 	str.w	ip, [r5, #676]	; 0x2a4
+ 80048c4:	f04f 4c7f 	mov.w	ip, #4278190080	; 0xff000000
+ 80048c8:	680b      	ldr	r3, [r1, #0]
+ 80048ca:	f8c5 c2a4 	str.w	ip, [r5, #676]	; 0x2a4
         boundingArea = calculateBoundingArea();
- 80048c6:	f04f 3cff 	mov.w	ip, #4294967295
- 80048ca:	e9c5 c6ad 	strd	ip, r6, [r5, #692]	; 0x2b4
- 80048ce:	f8c5 62b0 	str.w	r6, [r5, #688]	; 0x2b0
+ 80048ce:	f04f 3cff 	mov.w	ip, #4294967295
+ 80048d2:	e9c5 c6ad 	strd	ip, r6, [r5, #692]	; 0x2b4
+ 80048d6:	f8c5 62b0 	str.w	r6, [r5, #688]	; 0x2b0
     Unicode::snprintf(textChargingTmeBuffer, TEXTCHARGINGTME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_E1C6).getText());
- 80048d2:	f504 5697 	add.w	r6, r4, #4832	; 0x12e0
- 80048d6:	2b00      	cmp	r3, #0
- 80048d8:	d084      	beq.n	80047e4 <_ZN19ScreenGraphViewBaseC1Ev+0x75c>
+ 80048da:	f504 5697 	add.w	r6, r4, #4832	; 0x12e0
+ 80048de:	2b00      	cmp	r3, #0
+ 80048e0:	d083      	beq.n	80047ea <_ZN19ScreenGraphViewBaseC1Ev+0x762>
         assert(hasValidId() && "typedTextId larger than numberOfTypedTexts.");
- 80048da:	4832      	ldr	r0, [pc, #200]	; (80049a4 <_ZN19ScreenGraphViewBaseC1Ev+0x91c>)
- 80048dc:	8803      	ldrh	r3, [r0, #0]
- 80048de:	2b05      	cmp	r3, #5
- 80048e0:	d98a      	bls.n	80047f8 <_ZN19ScreenGraphViewBaseC1Ev+0x770>
+ 80048e2:	4830      	ldr	r0, [pc, #192]	; (80049a4 <_ZN19ScreenGraphViewBaseC1Ev+0x91c>)
+ 80048e4:	8803      	ldrh	r3, [r0, #0]
+ 80048e6:	2b05      	cmp	r3, #5
+ 80048e8:	d989      	bls.n	80047fe <_ZN19ScreenGraphViewBaseC1Ev+0x776>
         return texts->getText(typedTextId);
- 80048e2:	4b32      	ldr	r3, [pc, #200]	; (80049ac <_ZN19ScreenGraphViewBaseC1Ev+0x924>)
- 80048e4:	2105      	movs	r1, #5
- 80048e6:	6818      	ldr	r0, [r3, #0]
- 80048e8:	f000 f9ca 	bl	8004c80 <_ZNK8touchgfx5Texts7getTextEt>
- 80048ec:	4a30      	ldr	r2, [pc, #192]	; (80049b0 <_ZN19ScreenGraphViewBaseC1Ev+0x928>)
- 80048ee:	4603      	mov	r3, r0
- 80048f0:	210a      	movs	r1, #10
- 80048f2:	4630      	mov	r0, r6
- 80048f4:	f00f f940 	bl	8013b78 <_ZN8touchgfx7Unicode8snprintfEPttPKcz>
-    textChargingTme.resizeToCurrentText();
- 80048f8:	ee19 0a10 	vmov	r0, s18
- 80048fc:	f8c5 62bc 	str.w	r6, [r5, #700]	; 0x2bc
- 8004900:	f009 fa30 	bl	800dd64 <_ZN8touchgfx8TextArea19resizeToCurrentTextEv>
- 8004904:	1d25      	adds	r5, r4, #4
+ 80048ea:	4b30      	ldr	r3, [pc, #192]	; (80049ac <_ZN19ScreenGraphViewBaseC1Ev+0x924>)
+ 80048ec:	2105      	movs	r1, #5
+ 80048ee:	6818      	ldr	r0, [r3, #0]
+ 80048f0:	f000 f9c6 	bl	8004c80 <_ZNK8touchgfx5Texts7getTextEt>
+ 80048f4:	4a2e      	ldr	r2, [pc, #184]	; (80049b0 <_ZN19ScreenGraphViewBaseC1Ev+0x928>)
+ 80048f6:	4603      	mov	r3, r0
+ 80048f8:	210a      	movs	r1, #10
+ 80048fa:	4630      	mov	r0, r6
+ 80048fc:	f00f f93c 	bl	8013b78 <_ZN8touchgfx7Unicode8snprintfEPttPKcz>
         : typedTextId(id)
- 8004906:	4a22      	ldr	r2, [pc, #136]	; (8004990 <_ZN19ScreenGraphViewBaseC1Ev+0x908>)
- 8004908:	9210      	str	r2, [sp, #64]	; 0x40
- 800490a:	2306      	movs	r3, #6
+ 8004900:	4a23      	ldr	r2, [pc, #140]	; (8004990 <_ZN19ScreenGraphViewBaseC1Ev+0x908>)
+ 8004902:	f8c5 62bc 	str.w	r6, [r5, #700]	; 0x2bc
+ 8004906:	2306      	movs	r3, #6
+ 8004908:	1d25      	adds	r5, r4, #4
     textChargingTme.setTypedText(touchgfx::TypedText(T___SINGLEUSE_U9Q3));
- 800490c:	ee19 0a10 	vmov	r0, s18
- 8004910:	a910      	add	r1, sp, #64	; 0x40
+ 800490a:	ee1a 0a10 	vmov	r0, s20
+ 800490e:	a910      	add	r1, sp, #64	; 0x40
+ 8004910:	9210      	str	r2, [sp, #64]	; 0x40
  8004912:	f8ad 3044 	strh.w	r3, [sp, #68]	; 0x44
  8004916:	f009 fa45 	bl	800dda4 <_ZN8touchgfx8TextArea12setTypedTextERKNS_9TypedTextE>
  800491a:	ee1a 1a90 	vmov	r1, s21
  800491e:	4628      	mov	r0, r5
  8004920:	f005 fe3c 	bl	800a59c <_ZN8touchgfx9Container3addERNS_8DrawableE>
- 8004924:	ee19 1a90 	vmov	r1, s19
+ 8004924:	ee18 1a90 	vmov	r1, s17
  8004928:	4628      	mov	r0, r5
  800492a:	f005 fe37 	bl	800a59c <_ZN8touchgfx9Container3addERNS_8DrawableE>
  800492e:	ee1b 1a90 	vmov	r1, s23
@@ -11792,7 +11791,7 @@ public:
  800494a:	4659      	mov	r1, fp
  800494c:	4628      	mov	r0, r5
  800494e:	f005 fe25 	bl	800a59c <_ZN8touchgfx9Container3addERNS_8DrawableE>
- 8004952:	ee1a 1a10 	vmov	r1, s20
+ 8004952:	ee19 1a10 	vmov	r1, s18
  8004956:	4628      	mov	r0, r5
  8004958:	f005 fe20 	bl	800a59c <_ZN8touchgfx9Container3addERNS_8DrawableE>
  800495c:	ee18 1a10 	vmov	r1, s16
@@ -11801,11 +11800,11 @@ public:
  8004966:	4651      	mov	r1, sl
  8004968:	4628      	mov	r0, r5
  800496a:	f005 fe17 	bl	800a59c <_ZN8touchgfx9Container3addERNS_8DrawableE>
- 800496e:	ee18 1a90 	vmov	r1, s17
+ 800496e:	ee19 1a90 	vmov	r1, s19
  8004972:	4628      	mov	r0, r5
  8004974:	f005 fe12 	bl	800a59c <_ZN8touchgfx9Container3addERNS_8DrawableE>
  8004978:	4628      	mov	r0, r5
- 800497a:	ee19 1a10 	vmov	r1, s18
+ 800497a:	ee1a 1a10 	vmov	r1, s20
  800497e:	f005 fe0d 	bl	800a59c <_ZN8touchgfx9Container3addERNS_8DrawableE>
 }
  8004982:	4620      	mov	r0, r4
@@ -11830,21 +11829,21 @@ touchgfx::GeneratedFont& getFont_verdana_10_4bpp();
 
 touchgfx::GeneratedFont& getFont_verdana_10_4bpp()
 {
-    static touchgfx::GeneratedFont verdana_10_4bpp(glyphs_verdana_10_4bpp, 40, 10, 2, 4, 1, 1, 1, unicodes_verdana_10_4bpp, kerning_verdana_10_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont verdana_10_4bpp(glyphs_verdana_10_4bpp, 39, 10, 2, 4, 1, 0, 1, unicodes_verdana_10_4bpp, kerning_verdana_10_4bpp, 63, 0, 0, 0);
  80049b8:	4770      	bx	lr
 	...
 
 080049bc <_Z23getFont_verdana_10_4bppv>:
 {
  80049bc:	b530      	push	{r4, r5, lr}
-    static touchgfx::GeneratedFont verdana_10_4bpp(glyphs_verdana_10_4bpp, 40, 10, 2, 4, 1, 1, 1, unicodes_verdana_10_4bpp, kerning_verdana_10_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont verdana_10_4bpp(glyphs_verdana_10_4bpp, 39, 10, 2, 4, 1, 0, 1, unicodes_verdana_10_4bpp, kerning_verdana_10_4bpp, 63, 0, 0, 0);
  80049be:	4d16      	ldr	r5, [pc, #88]	; (8004a18 <_Z23getFont_verdana_10_4bppv+0x5c>)
  80049c0:	782c      	ldrb	r4, [r5, #0]
  80049c2:	f3bf 8f5b 	dmb	ish
  80049c6:	f014 0401 	ands.w	r4, r4, #1
 {
  80049ca:	b08d      	sub	sp, #52	; 0x34
-    static touchgfx::GeneratedFont verdana_10_4bpp(glyphs_verdana_10_4bpp, 40, 10, 2, 4, 1, 1, 1, unicodes_verdana_10_4bpp, kerning_verdana_10_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont verdana_10_4bpp(glyphs_verdana_10_4bpp, 39, 10, 2, 4, 1, 0, 1, unicodes_verdana_10_4bpp, kerning_verdana_10_4bpp, 63, 0, 0, 0);
  80049cc:	d120      	bne.n	8004a10 <_Z23getFont_verdana_10_4bppv+0x54>
  80049ce:	4628      	mov	r0, r5
  80049d0:	f01b fc32 	bl	8020238 <__cxa_guard_acquire>
@@ -11856,7 +11855,7 @@ touchgfx::GeneratedFont& getFont_verdana_10_4bpp()
  80049de:	4b10      	ldr	r3, [pc, #64]	; (8004a20 <_Z23getFont_verdana_10_4bppv+0x64>)
  80049e0:	9305      	str	r3, [sp, #20]
  80049e2:	2301      	movs	r3, #1
- 80049e4:	e9cd 3303 	strd	r3, r3, [sp, #12]
+ 80049e4:	e9cd 4303 	strd	r4, r3, [sp, #12]
  80049e8:	9302      	str	r3, [sp, #8]
  80049ea:	2204      	movs	r2, #4
  80049ec:	2302      	movs	r3, #2
@@ -11865,7 +11864,7 @@ touchgfx::GeneratedFont& getFont_verdana_10_4bpp()
  80049f4:	480c      	ldr	r0, [pc, #48]	; (8004a28 <_Z23getFont_verdana_10_4bppv+0x6c>)
  80049f6:	9408      	str	r4, [sp, #32]
  80049f8:	230a      	movs	r3, #10
- 80049fa:	2228      	movs	r2, #40	; 0x28
+ 80049fa:	2227      	movs	r2, #39	; 0x27
  80049fc:	e9cd 4409 	strd	r4, r4, [sp, #36]	; 0x24
  8004a00:	f7fd ff70 	bl	80028e4 <_ZN8touchgfx13GeneratedFontC1EPKNS_9GlyphNodeEtthhhhhPKPKhPKNS_11KerningNodeEttPKtPKNS_24FontContextualFormsTableE>
  8004a04:	4809      	ldr	r0, [pc, #36]	; (8004a2c <_Z23getFont_verdana_10_4bppv+0x70>)
@@ -11879,9 +11878,9 @@ touchgfx::GeneratedFont& getFont_verdana_10_4bpp()
  8004a14:	bd30      	pop	{r4, r5, pc}
  8004a16:	bf00      	nop
  8004a18:	20004524 	.word	0x20004524
- 8004a1c:	0802568c 	.word	0x0802568c
- 8004a20:	0802570c 	.word	0x0802570c
- 8004a24:	08025200 	.word	0x08025200
+ 8004a1c:	08025668 	.word	0x08025668
+ 8004a20:	080256ec 	.word	0x080256ec
+ 8004a24:	080251e8 	.word	0x080251e8
  8004a28:	20004528 	.word	0x20004528
  8004a2c:	080049b9 	.word	0x080049b9
 
@@ -11940,9 +11939,9 @@ touchgfx::GeneratedFont& getFont_verdana_15_4bpp()
  8004a8c:	bd30      	pop	{r4, r5, pc}
  8004a8e:	bf00      	nop
  8004a90:	20004550 	.word	0x20004550
- 8004a94:	080256a4 	.word	0x080256a4
- 8004a98:	08025710 	.word	0x08025710
- 8004a9c:	08025430 	.word	0x08025430
+ 8004a94:	08025684 	.word	0x08025684
+ 8004a98:	080256f0 	.word	0x080256f0
+ 8004a9c:	0802540c 	.word	0x0802540c
  8004aa0:	20004554 	.word	0x20004554
  8004aa4:	08004a31 	.word	0x08004a31
 
@@ -11999,9 +11998,9 @@ touchgfx::GeneratedFont& getFont_verdana_40_4bpp()
  8004b00:	b00d      	add	sp, #52	; 0x34
  8004b02:	bd30      	pop	{r4, r5, pc}
  8004b04:	2000457c 	.word	0x2000457c
- 8004b08:	080256f8 	.word	0x080256f8
- 8004b0c:	08025714 	.word	0x08025714
- 8004b10:	08025644 	.word	0x08025644
+ 8004b08:	080256d8 	.word	0x080256d8
+ 8004b0c:	080256f4 	.word	0x080256f4
+ 8004b10:	08025620 	.word	0x08025620
  8004b14:	20004580 	.word	0x20004580
  8004b18:	08004aa9 	.word	0x08004aa9
 
@@ -12288,9 +12287,9 @@ void touchgfx::Texts::setLanguage(touchgfx::LanguageId id)
  8004c68:	2001543c 	.word	0x2001543c
  8004c6c:	20015444 	.word	0x20015444
  8004c70:	20015440 	.word	0x20015440
- 8004c74:	08025760 	.word	0x08025760
- 8004c78:	08025718 	.word	0x08025718
- 8004c7c:	080258f0 	.word	0x080258f0
+ 8004c74:	08025740 	.word	0x08025740
+ 8004c78:	080256f8 	.word	0x080256f8
+ 8004c7c:	080258b0 	.word	0x080258b0
 
 08004c80 <_ZNK8touchgfx5Texts7getTextEt>:
     languagesArray[id] = (const TranslationHeader*)translation;
@@ -60223,10 +60222,10 @@ Timer_t * const pxTimer = ( Timer_t * ) listGET_OWNER_OF_HEAD_ENTRY( pxCurrentTi
  8020542:	4798      	blx	r3
  8020544:	3601      	adds	r6, #1
  8020546:	e7f2      	b.n	802052e <__libc_init_array+0x1e>
- 8020548:	080a8cf4 	.word	0x080a8cf4
- 802054c:	080a8cf4 	.word	0x080a8cf4
- 8020550:	080a8cf4 	.word	0x080a8cf4
- 8020554:	080a8d08 	.word	0x080a8d08
+ 8020548:	080a8cb4 	.word	0x080a8cb4
+ 802054c:	080a8cb4 	.word	0x080a8cb4
+ 8020550:	080a8cb4 	.word	0x080a8cb4
+ 8020554:	080a8cc8 	.word	0x080a8cc8
 
 08020558 <__retarget_lock_init_recursive>:
  8020558:	4770      	bx	lr

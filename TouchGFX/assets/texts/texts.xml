@@ -24,8 +24,8 @@
       <Text Id="__SingleUse_E1C6" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">01:01:23</Translation>
       </Text>
-      <Text Id="__SingleUse_U9Q3" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Czas ładowania:   &lt;value&gt;</Translation>
+      <Text Id="__SingleUse_U9Q3" Alignment="Right" TypographyId="Small">
+        <Translation Language="GB">Charging Time: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_JAK9" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">1.234</Translation>
@@ -33,14 +33,14 @@
       <Text Id="__SingleUse_SQ4H" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">1.234</Translation>
       </Text>
-      <Text Id="__SingleUse_5RGF" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Najwyższa wartość:&lt;value&gt;[V]</Translation>
+      <Text Id="__SingleUse_5RGF" Alignment="Right" TypographyId="Small">
+        <Translation Language="GB">Highest value: &lt;value&gt;[V]</Translation>
       </Text>
-      <Text Id="__SingleUse_POMN" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Ostatnia wartość:  &lt;value&gt;[V]</Translation>
+      <Text Id="__SingleUse_POMN" Alignment="Right" TypographyId="Small">
+        <Translation Language="GB">Last value: &lt;value&gt;[V]</Translation>
       </Text>
       <Text Id="__SingleUse_DO01" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Pokaż wszystko:</Translation>
+        <Translation Language="GB">Whole plot:</Translation>
       </Text>
       <Text Id="__SingleUse_CBWT" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>

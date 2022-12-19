@@ -35,6 +35,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph2.setGraphAreaMargin(6, 20, 5, 15);
     dynamicGraph2.setGraphAreaPadding(0, 0, 0, 0);
     dynamicGraph2.setGraphRangeY(1.0f, 1.5f);
+    dynamicGraph2.setVisible(false);
 
     dynamicGraph2MinorXAxisGrid.setScale(1000);
     dynamicGraph2MinorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
@@ -85,7 +86,6 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1.setGraphAreaMargin(6, 20, 0, 15);
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
     dynamicGraph1.setGraphRangeY(1.0f, 1.5f);
-    dynamicGraph1.setVisible(false);
 
     dynamicGraph1MinorXAxisGrid.setScale(1000);
     dynamicGraph1MinorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
@@ -125,37 +125,34 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1Line1.setLineWidth(2);
     dynamicGraph1.addGraphElement(dynamicGraph1Line1);
 
-    toggleButton1.setXY(85, 211);
+    toggleButton1.setXY(65, 211);
     toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_RSZ_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_RSZ_TOGGLE_RE_SMALL_BUTTON_ON_ID));
     toggleButton1.setAction(buttonCallback);
 
-    txtShowWholeGraph.setXY(2, 218);
+    txtShowWholeGraph.setXY(1, 219);
     txtShowWholeGraph.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     txtShowWholeGraph.setLinespacing(0);
     txtShowWholeGraph.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DO01));
 
-    txtLastValue.setXY(2, 168);
+    txtLastValue.setPosition(2, 168, 132, 15);
     txtLastValue.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     txtLastValue.setLinespacing(0);
     Unicode::snprintf(txtLastValueBuffer, TXTLASTVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SQ4H).getText());
     txtLastValue.setWildcard(txtLastValueBuffer);
-    txtLastValue.resizeToCurrentText();
     txtLastValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_POMN));
 
-    txtMaxValue.setXY(2, 183);
+    txtMaxValue.setPosition(2, 183, 132, 15);
     txtMaxValue.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     txtMaxValue.setLinespacing(0);
     Unicode::snprintf(txtMaxValueBuffer, TXTMAXVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JAK9).getText());
     txtMaxValue.setWildcard(txtMaxValueBuffer);
-    txtMaxValue.resizeToCurrentText();
     txtMaxValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5RGF));
 
-    textChargingTme.setXY(2, 198);
+    textChargingTme.setPosition(2, 198, 132, 15);
     textChargingTme.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textChargingTme.setLinespacing(0);
     Unicode::snprintf(textChargingTmeBuffer, TEXTCHARGINGTME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_E1C6).getText());
     textChargingTme.setWildcard(textChargingTmeBuffer);
-    textChargingTme.resizeToCurrentText();
     textChargingTme.setTypedText(touchgfx::TypedText(T___SINGLEUSE_U9Q3));
 
     add(__background);
