@@ -30,27 +30,27 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     button1.setAction(buttonCallback);
 
     dynamicGraph2.setScale(1000);
+    dynamicGraph2.setGraphRangeX(0, 10);
     dynamicGraph2.setPosition(0, 0, 320, 166);
-    dynamicGraph2.setGraphAreaMargin(6, 20, 0, 15);
+    dynamicGraph2.setGraphAreaMargin(6, 20, 5, 15);
     dynamicGraph2.setGraphAreaPadding(0, 0, 0, 0);
     dynamicGraph2.setGraphRangeY(1.0f, 1.5f);
-    dynamicGraph2.setVisible(false);
 
     dynamicGraph2MinorXAxisGrid.setScale(1000);
     dynamicGraph2MinorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
-    dynamicGraph2MinorXAxisGrid.setInterval(30);
+    dynamicGraph2MinorXAxisGrid.setInterval(1);
     dynamicGraph2MinorXAxisGrid.setLineWidth(1);
     dynamicGraph2MinorXAxisGrid.setMajorGrid(dynamicGraph2MajorXAxisGrid);
     dynamicGraph2.addGraphElement(dynamicGraph2MinorXAxisGrid);
 
     dynamicGraph2MajorXAxisGrid.setScale(1000);
     dynamicGraph2MajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
-    dynamicGraph2MajorXAxisGrid.setInterval(60);
+    dynamicGraph2MajorXAxisGrid.setInterval(1);
     dynamicGraph2MajorXAxisGrid.setLineWidth(2);
     dynamicGraph2.addGraphElement(dynamicGraph2MajorXAxisGrid);
 
     dynamicGraph2MajorXAxisLabel.setScale(1000);
-    dynamicGraph2MajorXAxisLabel.setInterval(60);
+    dynamicGraph2MajorXAxisLabel.setInterval(1);
     dynamicGraph2MajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_IL1B));
     dynamicGraph2MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     dynamicGraph2.addBottomElement(dynamicGraph2MajorXAxisLabel);
@@ -72,6 +72,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1.setGraphAreaMargin(6, 20, 0, 15);
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
     dynamicGraph1.setGraphRangeY(1.0f, 1.5f);
+    dynamicGraph1.setVisible(false);
 
     dynamicGraph1MinorXAxisGrid.setScale(1000);
     dynamicGraph1MinorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));

@@ -17538,7 +17538,7 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_line     0x0000000000000000    0x4f2d3
+.debug_line     0x0000000000000000    0x4f2ce
  .debug_line    0x0000000000000000       0x8d ./Application/Startup/startup_stm32f429zitx.o
  .debug_line    0x000000000000008d       0xc4 ./Application/User/TouchGFX/App/app_touchgfx.o
  .debug_line    0x0000000000000151      0x829 ./Application/User/TouchGFX/target/STM32TouchController.o
@@ -17568,56 +17568,56 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x00000000000141f3      0x575 ./Application/User/generated/Kerning_verdana_40_4bpp.o
  .debug_line    0x0000000000014768      0x54e ./Application/User/generated/LanguageGb.o
  .debug_line    0x0000000000014cb6     0x328e ./Application/User/generated/Screen1ViewBase.o
- .debug_line    0x0000000000017f44     0x569d ./Application/User/generated/ScreenGraphViewBase.o
- .debug_line    0x000000000001d5e1      0x62d ./Application/User/generated/Table_verdana_10_4bpp.o
- .debug_line    0x000000000001dc0e      0x62d ./Application/User/generated/Table_verdana_15_4bpp.o
- .debug_line    0x000000000001e23b      0x62d ./Application/User/generated/Table_verdana_40_4bpp.o
- .debug_line    0x000000000001e868      0xee9 ./Application/User/generated/Texts.o
- .debug_line    0x000000000001f751      0x725 ./Application/User/generated/TypedTextDatabase.o
- .debug_line    0x000000000001fe76       0xe1 ./Application/User/generated/image_Blue_Buttons_Round_Edge_small.o
- .debug_line    0x000000000001ff57       0xe9 ./Application/User/generated/image_Blue_Buttons_Round_Edge_small_pressed.o
- .debug_line    0x0000000000020040       0xee ./Application/User/generated/image_Dark_Backgrounds_Main_bg_texture_480x272px.o
- .debug_line    0x000000000002012e       0xdc ./Application/User/generated/image_Dark_Icons_Down_arrow_32.o
- .debug_line    0x000000000002020a       0xda ./Application/User/generated/image_Dark_Icons_Up_arrow_32.o
- .debug_line    0x00000000000202e4       0xbb ./Application/User/generated/image_bg.o
- .debug_line    0x000000000002039f       0xc4 ./Application/User/generated/image_counter_box.o
- .debug_line    0x0000000000020463       0xd7 ./Application/User/generated/image_rsz_toggle_re_small_button_off.o
- .debug_line    0x000000000002053a       0xd6 ./Application/User/generated/image_rsz_toggle_re_small_button_on.o
- .debug_line    0x0000000000020610     0x113f ./Application/User/gui/FrontendApplication.o
- .debug_line    0x000000000002174f      0x17d ./Application/User/gui/Model.o
- .debug_line    0x00000000000218cc     0x14d0 ./Application/User/gui/Screen1Presenter.o
- .debug_line    0x0000000000022d9c     0x197d ./Application/User/gui/Screen1View.o
- .debug_line    0x0000000000024719     0x1663 ./Application/User/gui/ScreenGraphPresenter.o
- .debug_line    0x0000000000025d7c     0x21ee ./Application/User/gui/ScreenGraphView.o
- .debug_line    0x0000000000027f6a      0xb8e ./Drivers/BSP/Components/ili9341.o
- .debug_line    0x0000000000028af8      0xb1c ./Drivers/BSP/Components/stmpe811.o
- .debug_line    0x0000000000029614      0x8b9 ./Drivers/CMSIS/system_stm32f4xx.o
- .debug_line    0x0000000000029ecd      0xbbc ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o
- .debug_line    0x000000000002aa89     0x153a ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o
- .debug_line    0x000000000002bfc3      0xdf1 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o
- .debug_line    0x000000000002cdb4      0x9ce ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o
- .debug_line    0x000000000002d782      0xe1e ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o
- .debug_line    0x000000000002e5a0     0x1816 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o
- .debug_line    0x000000000002fdb6      0xd9f ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o
- .debug_line    0x0000000000030b55     0x57c2 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c.o
- .debug_line    0x0000000000036317      0x8d2 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c_ex.o
- .debug_line    0x0000000000036be9     0x1f33 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_ltdc.o
- .debug_line    0x0000000000038b1c     0x1105 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o
- .debug_line    0x0000000000039c21      0xf2a ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o
- .debug_line    0x000000000003ab4b     0x1028 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_sdram.o
- .debug_line    0x000000000003bb73     0x2879 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_spi.o
- .debug_line    0x000000000003e3ec     0x3904 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o
- .debug_line    0x0000000000041cf0     0x13a2 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o
- .debug_line    0x0000000000043092     0x11fc ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_fmc.o
- .debug_line    0x000000000004428e     0x2e32 ./Middlewares/FreeRTOS/cmsis_os2.o
- .debug_line    0x00000000000470c0      0xa32 ./Middlewares/FreeRTOS/heap_4.o
- .debug_line    0x0000000000047af2      0x7ca ./Middlewares/FreeRTOS/list.o
- .debug_line    0x00000000000482bc      0xb98 ./Middlewares/FreeRTOS/port.o
- .debug_line    0x0000000000048e54     0x2309 ./Middlewares/FreeRTOS/queue.o
- .debug_line    0x000000000004b15d     0x2f9a ./Middlewares/FreeRTOS/tasks.o
- .debug_line    0x000000000004e0f7     0x11dc ./Middlewares/FreeRTOS/timers.o
+ .debug_line    0x0000000000017f44     0x5698 ./Application/User/generated/ScreenGraphViewBase.o
+ .debug_line    0x000000000001d5dc      0x62d ./Application/User/generated/Table_verdana_10_4bpp.o
+ .debug_line    0x000000000001dc09      0x62d ./Application/User/generated/Table_verdana_15_4bpp.o
+ .debug_line    0x000000000001e236      0x62d ./Application/User/generated/Table_verdana_40_4bpp.o
+ .debug_line    0x000000000001e863      0xee9 ./Application/User/generated/Texts.o
+ .debug_line    0x000000000001f74c      0x725 ./Application/User/generated/TypedTextDatabase.o
+ .debug_line    0x000000000001fe71       0xe1 ./Application/User/generated/image_Blue_Buttons_Round_Edge_small.o
+ .debug_line    0x000000000001ff52       0xe9 ./Application/User/generated/image_Blue_Buttons_Round_Edge_small_pressed.o
+ .debug_line    0x000000000002003b       0xee ./Application/User/generated/image_Dark_Backgrounds_Main_bg_texture_480x272px.o
+ .debug_line    0x0000000000020129       0xdc ./Application/User/generated/image_Dark_Icons_Down_arrow_32.o
+ .debug_line    0x0000000000020205       0xda ./Application/User/generated/image_Dark_Icons_Up_arrow_32.o
+ .debug_line    0x00000000000202df       0xbb ./Application/User/generated/image_bg.o
+ .debug_line    0x000000000002039a       0xc4 ./Application/User/generated/image_counter_box.o
+ .debug_line    0x000000000002045e       0xd7 ./Application/User/generated/image_rsz_toggle_re_small_button_off.o
+ .debug_line    0x0000000000020535       0xd6 ./Application/User/generated/image_rsz_toggle_re_small_button_on.o
+ .debug_line    0x000000000002060b     0x113f ./Application/User/gui/FrontendApplication.o
+ .debug_line    0x000000000002174a      0x17d ./Application/User/gui/Model.o
+ .debug_line    0x00000000000218c7     0x14d0 ./Application/User/gui/Screen1Presenter.o
+ .debug_line    0x0000000000022d97     0x197d ./Application/User/gui/Screen1View.o
+ .debug_line    0x0000000000024714     0x1663 ./Application/User/gui/ScreenGraphPresenter.o
+ .debug_line    0x0000000000025d77     0x21ee ./Application/User/gui/ScreenGraphView.o
+ .debug_line    0x0000000000027f65      0xb8e ./Drivers/BSP/Components/ili9341.o
+ .debug_line    0x0000000000028af3      0xb1c ./Drivers/BSP/Components/stmpe811.o
+ .debug_line    0x000000000002960f      0x8b9 ./Drivers/CMSIS/system_stm32f4xx.o
+ .debug_line    0x0000000000029ec8      0xbbc ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o
+ .debug_line    0x000000000002aa84     0x153a ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o
+ .debug_line    0x000000000002bfbe      0xdf1 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o
+ .debug_line    0x000000000002cdaf      0x9ce ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o
+ .debug_line    0x000000000002d77d      0xe1e ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o
+ .debug_line    0x000000000002e59b     0x1816 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o
+ .debug_line    0x000000000002fdb1      0xd9f ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o
+ .debug_line    0x0000000000030b50     0x57c2 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c.o
+ .debug_line    0x0000000000036312      0x8d2 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c_ex.o
+ .debug_line    0x0000000000036be4     0x1f33 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_ltdc.o
+ .debug_line    0x0000000000038b17     0x1105 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o
+ .debug_line    0x0000000000039c1c      0xf2a ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o
+ .debug_line    0x000000000003ab46     0x1028 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_sdram.o
+ .debug_line    0x000000000003bb6e     0x2879 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_spi.o
+ .debug_line    0x000000000003e3e7     0x3904 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o
+ .debug_line    0x0000000000041ceb     0x13a2 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o
+ .debug_line    0x000000000004308d     0x11fc ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_fmc.o
+ .debug_line    0x0000000000044289     0x2e32 ./Middlewares/FreeRTOS/cmsis_os2.o
+ .debug_line    0x00000000000470bb      0xa32 ./Middlewares/FreeRTOS/heap_4.o
+ .debug_line    0x0000000000047aed      0x7ca ./Middlewares/FreeRTOS/list.o
+ .debug_line    0x00000000000482b7      0xb98 ./Middlewares/FreeRTOS/port.o
+ .debug_line    0x0000000000048e4f     0x2309 ./Middlewares/FreeRTOS/queue.o
+ .debug_line    0x000000000004b158     0x2f9a ./Middlewares/FreeRTOS/tasks.o
+ .debug_line    0x000000000004e0f2     0x11dc ./Middlewares/FreeRTOS/timers.o
 
-.debug_info     0x0000000000000000    0xe74c8
+.debug_info     0x0000000000000000    0xe74f2
  .debug_info    0x0000000000000000       0x22 ./Application/Startup/startup_stm32f429zitx.o
  .debug_info    0x0000000000000022       0xc2 ./Application/User/TouchGFX/App/app_touchgfx.o
  .debug_info    0x00000000000000e4      0x95b ./Application/User/TouchGFX/target/STM32TouchController.o
@@ -17647,54 +17647,54 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_info    0x0000000000051655      0x71e ./Application/User/generated/Kerning_verdana_40_4bpp.o
  .debug_info    0x0000000000051d73      0x215 ./Application/User/generated/LanguageGb.o
  .debug_info    0x0000000000051f88     0xdb9b ./Application/User/generated/Screen1ViewBase.o
- .debug_info    0x000000000005fb23    0x1cfe0 ./Application/User/generated/ScreenGraphViewBase.o
- .debug_info    0x000000000007cb03     0x1714 ./Application/User/generated/Table_verdana_10_4bpp.o
- .debug_info    0x000000000007e217     0x1715 ./Application/User/generated/Table_verdana_15_4bpp.o
- .debug_info    0x000000000007f92c     0x1716 ./Application/User/generated/Table_verdana_40_4bpp.o
- .debug_info    0x0000000000081042     0x4013 ./Application/User/generated/Texts.o
- .debug_info    0x0000000000085055     0x173f ./Application/User/generated/TypedTextDatabase.o
- .debug_info    0x0000000000086794       0x5e ./Application/User/generated/image_Blue_Buttons_Round_Edge_small.o
- .debug_info    0x00000000000867f2       0x5e ./Application/User/generated/image_Blue_Buttons_Round_Edge_small_pressed.o
- .debug_info    0x0000000000086850       0x60 ./Application/User/generated/image_Dark_Backgrounds_Main_bg_texture_480x272px.o
- .debug_info    0x00000000000868b0       0x5e ./Application/User/generated/image_Dark_Icons_Down_arrow_32.o
- .debug_info    0x000000000008690e       0x5e ./Application/User/generated/image_Dark_Icons_Up_arrow_32.o
- .debug_info    0x000000000008696c       0x60 ./Application/User/generated/image_bg.o
- .debug_info    0x00000000000869cc       0x5e ./Application/User/generated/image_counter_box.o
- .debug_info    0x0000000000086a2a       0x5e ./Application/User/generated/image_rsz_toggle_re_small_button_off.o
- .debug_info    0x0000000000086a88       0x5e ./Application/User/generated/image_rsz_toggle_re_small_button_on.o
- .debug_info    0x0000000000086ae6     0x447f ./Application/User/gui/FrontendApplication.o
- .debug_info    0x000000000008af65      0x424 ./Application/User/gui/Model.o
- .debug_info    0x000000000008b389     0x71a3 ./Application/User/gui/Screen1Presenter.o
- .debug_info    0x000000000009252c     0x98af ./Application/User/gui/Screen1View.o
- .debug_info    0x000000000009bddb     0xec23 ./Application/User/gui/ScreenGraphPresenter.o
- .debug_info    0x00000000000aa9fe    0x1547a ./Application/User/gui/ScreenGraphView.o
- .debug_info    0x00000000000bfe78     0x1c06 ./Drivers/BSP/Components/ili9341.o
- .debug_info    0x00000000000c1a7e     0x18ef ./Drivers/BSP/Components/stmpe811.o
- .debug_info    0x00000000000c336d      0x558 ./Drivers/CMSIS/system_stm32f4xx.o
- .debug_info    0x00000000000c38c5      0xac8 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o
- .debug_info    0x00000000000c438d      0xed6 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o
- .debug_info    0x00000000000c5263     0x10c2 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o
- .debug_info    0x00000000000c6325      0x409 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o
- .debug_info    0x00000000000c672e      0xb68 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o
- .debug_info    0x00000000000c7296     0x12e3 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o
- .debug_info    0x00000000000c8579      0x7b7 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o
- .debug_info    0x00000000000c8d30     0x3883 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c.o
- .debug_info    0x00000000000cc5b3      0x6cd ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c_ex.o
- .debug_info    0x00000000000ccc80     0x151e ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_ltdc.o
- .debug_info    0x00000000000ce19e      0xbaf ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o
- .debug_info    0x00000000000ced4d      0x825 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o
- .debug_info    0x00000000000cf572      0xf81 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_sdram.o
- .debug_info    0x00000000000d04f3     0x1f1f ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_spi.o
- .debug_info    0x00000000000d2412     0x3baa ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o
- .debug_info    0x00000000000d5fbc     0x152c ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o
- .debug_info    0x00000000000d74e8     0x1053 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_fmc.o
- .debug_info    0x00000000000d853b     0x54aa ./Middlewares/FreeRTOS/cmsis_os2.o
- .debug_info    0x00000000000dd9e5      0x4d3 ./Middlewares/FreeRTOS/heap_4.o
- .debug_info    0x00000000000ddeb8      0x2e4 ./Middlewares/FreeRTOS/list.o
- .debug_info    0x00000000000de19c      0x5ad ./Middlewares/FreeRTOS/port.o
- .debug_info    0x00000000000de749     0x2c0a ./Middlewares/FreeRTOS/queue.o
- .debug_info    0x00000000000e1353     0x3ddc ./Middlewares/FreeRTOS/tasks.o
- .debug_info    0x00000000000e512f     0x2399 ./Middlewares/FreeRTOS/timers.o
+ .debug_info    0x000000000005fb23    0x1d00a ./Application/User/generated/ScreenGraphViewBase.o
+ .debug_info    0x000000000007cb2d     0x1714 ./Application/User/generated/Table_verdana_10_4bpp.o
+ .debug_info    0x000000000007e241     0x1715 ./Application/User/generated/Table_verdana_15_4bpp.o
+ .debug_info    0x000000000007f956     0x1716 ./Application/User/generated/Table_verdana_40_4bpp.o
+ .debug_info    0x000000000008106c     0x4013 ./Application/User/generated/Texts.o
+ .debug_info    0x000000000008507f     0x173f ./Application/User/generated/TypedTextDatabase.o
+ .debug_info    0x00000000000867be       0x5e ./Application/User/generated/image_Blue_Buttons_Round_Edge_small.o
+ .debug_info    0x000000000008681c       0x5e ./Application/User/generated/image_Blue_Buttons_Round_Edge_small_pressed.o
+ .debug_info    0x000000000008687a       0x60 ./Application/User/generated/image_Dark_Backgrounds_Main_bg_texture_480x272px.o
+ .debug_info    0x00000000000868da       0x5e ./Application/User/generated/image_Dark_Icons_Down_arrow_32.o
+ .debug_info    0x0000000000086938       0x5e ./Application/User/generated/image_Dark_Icons_Up_arrow_32.o
+ .debug_info    0x0000000000086996       0x60 ./Application/User/generated/image_bg.o
+ .debug_info    0x00000000000869f6       0x5e ./Application/User/generated/image_counter_box.o
+ .debug_info    0x0000000000086a54       0x5e ./Application/User/generated/image_rsz_toggle_re_small_button_off.o
+ .debug_info    0x0000000000086ab2       0x5e ./Application/User/generated/image_rsz_toggle_re_small_button_on.o
+ .debug_info    0x0000000000086b10     0x447f ./Application/User/gui/FrontendApplication.o
+ .debug_info    0x000000000008af8f      0x424 ./Application/User/gui/Model.o
+ .debug_info    0x000000000008b3b3     0x71a3 ./Application/User/gui/Screen1Presenter.o
+ .debug_info    0x0000000000092556     0x98af ./Application/User/gui/Screen1View.o
+ .debug_info    0x000000000009be05     0xec23 ./Application/User/gui/ScreenGraphPresenter.o
+ .debug_info    0x00000000000aaa28    0x1547a ./Application/User/gui/ScreenGraphView.o
+ .debug_info    0x00000000000bfea2     0x1c06 ./Drivers/BSP/Components/ili9341.o
+ .debug_info    0x00000000000c1aa8     0x18ef ./Drivers/BSP/Components/stmpe811.o
+ .debug_info    0x00000000000c3397      0x558 ./Drivers/CMSIS/system_stm32f4xx.o
+ .debug_info    0x00000000000c38ef      0xac8 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o
+ .debug_info    0x00000000000c43b7      0xed6 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o
+ .debug_info    0x00000000000c528d     0x10c2 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o
+ .debug_info    0x00000000000c634f      0x409 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o
+ .debug_info    0x00000000000c6758      0xb68 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o
+ .debug_info    0x00000000000c72c0     0x12e3 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o
+ .debug_info    0x00000000000c85a3      0x7b7 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o
+ .debug_info    0x00000000000c8d5a     0x3883 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c.o
+ .debug_info    0x00000000000cc5dd      0x6cd ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c_ex.o
+ .debug_info    0x00000000000cccaa     0x151e ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_ltdc.o
+ .debug_info    0x00000000000ce1c8      0xbaf ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o
+ .debug_info    0x00000000000ced77      0x825 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o
+ .debug_info    0x00000000000cf59c      0xf81 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_sdram.o
+ .debug_info    0x00000000000d051d     0x1f1f ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_spi.o
+ .debug_info    0x00000000000d243c     0x3baa ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o
+ .debug_info    0x00000000000d5fe6     0x152c ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o
+ .debug_info    0x00000000000d7512     0x1053 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_fmc.o
+ .debug_info    0x00000000000d8565     0x54aa ./Middlewares/FreeRTOS/cmsis_os2.o
+ .debug_info    0x00000000000dda0f      0x4d3 ./Middlewares/FreeRTOS/heap_4.o
+ .debug_info    0x00000000000ddee2      0x2e4 ./Middlewares/FreeRTOS/list.o
+ .debug_info    0x00000000000de1c6      0x5ad ./Middlewares/FreeRTOS/port.o
+ .debug_info    0x00000000000de773     0x2c0a ./Middlewares/FreeRTOS/queue.o
+ .debug_info    0x00000000000e137d     0x3ddc ./Middlewares/FreeRTOS/tasks.o
+ .debug_info    0x00000000000e5159     0x2399 ./Middlewares/FreeRTOS/timers.o
 
 .debug_abbrev   0x0000000000000000    0x14e90
  .debug_abbrev  0x0000000000000000       0x12 ./Application/Startup/startup_stm32f429zitx.o
@@ -18086,7 +18086,7 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_str     0x0000000000117e97      0x5b3 ./Middlewares/FreeRTOS/timers.o
                                        0xc900 (size before relaxing)
 
-.debug_ranges   0x0000000000000000     0x6960
+.debug_ranges   0x0000000000000000     0x68f8
  .debug_ranges  0x0000000000000000       0x20 ./Application/Startup/startup_stm32f429zitx.o
  .debug_ranges  0x0000000000000020       0x28 ./Application/User/TouchGFX/App/app_touchgfx.o
  .debug_ranges  0x0000000000000048       0x50 ./Application/User/TouchGFX/target/STM32TouchController.o
@@ -18109,47 +18109,47 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_ranges  0x0000000000001048      0x608 ./Application/User/generated/FrontendApplicationBase.o
  .debug_ranges  0x0000000000001650       0x98 ./Application/User/generated/GeneratedFont.o
  .debug_ranges  0x00000000000016e8      0xb68 ./Application/User/generated/Screen1ViewBase.o
- .debug_ranges  0x0000000000002250     0x1ce0 ./Application/User/generated/ScreenGraphViewBase.o
- .debug_ranges  0x0000000000003f30       0x18 ./Application/User/generated/Table_verdana_10_4bpp.o
- .debug_ranges  0x0000000000003f48       0x18 ./Application/User/generated/Table_verdana_15_4bpp.o
- .debug_ranges  0x0000000000003f60       0x18 ./Application/User/generated/Table_verdana_40_4bpp.o
- .debug_ranges  0x0000000000003f78       0xf8 ./Application/User/generated/Texts.o
- .debug_ranges  0x0000000000004070       0x50 ./Application/User/generated/TypedTextDatabase.o
- .debug_ranges  0x00000000000040c0       0x60 ./Application/User/gui/FrontendApplication.o
- .debug_ranges  0x0000000000004120       0x18 ./Application/User/gui/Model.o
- .debug_ranges  0x0000000000004138       0x78 ./Application/User/gui/Screen1Presenter.o
- .debug_ranges  0x00000000000041b0       0x88 ./Application/User/gui/Screen1View.o
- .debug_ranges  0x0000000000004238       0x90 ./Application/User/gui/ScreenGraphPresenter.o
- .debug_ranges  0x00000000000042c8      0x3b8 ./Application/User/gui/ScreenGraphView.o
- .debug_ranges  0x0000000000004680       0x68 ./Drivers/BSP/Components/ili9341.o
- .debug_ranges  0x00000000000046e8      0x148 ./Drivers/BSP/Components/stmpe811.o
- .debug_ranges  0x0000000000004830       0x18 ./Drivers/CMSIS/system_stm32f4xx.o
- .debug_ranges  0x0000000000004848       0xe8 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o
- .debug_ranges  0x0000000000004930       0xc8 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o
- .debug_ranges  0x00000000000049f8      0x150 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o
- .debug_ranges  0x0000000000004b48       0x38 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o
- .debug_ranges  0x0000000000004b80       0x88 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o
- .debug_ranges  0x0000000000004c08       0xf0 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o
- .debug_ranges  0x0000000000004cf8       0x68 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o
- .debug_ranges  0x0000000000004d60      0x498 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c.o
- .debug_ranges  0x00000000000051f8       0x18 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c_ex.o
- .debug_ranges  0x0000000000005210      0x128 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_ltdc.o
- .debug_ranges  0x0000000000005338       0xb0 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o
- .debug_ranges  0x00000000000053e8       0x60 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o
- .debug_ranges  0x0000000000005448       0xa0 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_sdram.o
- .debug_ranges  0x00000000000054e8      0x220 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_spi.o
- .debug_ranges  0x0000000000005708      0x328 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o
- .debug_ranges  0x0000000000005a30       0xe8 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o
- .debug_ranges  0x0000000000005b18       0xe0 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_fmc.o
- .debug_ranges  0x0000000000005bf8      0x458 ./Middlewares/FreeRTOS/cmsis_os2.o
- .debug_ranges  0x0000000000006050       0x38 ./Middlewares/FreeRTOS/heap_4.o
- .debug_ranges  0x0000000000006088       0x30 ./Middlewares/FreeRTOS/list.o
- .debug_ranges  0x00000000000060b8       0xa0 ./Middlewares/FreeRTOS/port.o
- .debug_ranges  0x0000000000006158      0x2f8 ./Middlewares/FreeRTOS/queue.o
- .debug_ranges  0x0000000000006450      0x378 ./Middlewares/FreeRTOS/tasks.o
- .debug_ranges  0x00000000000067c8      0x198 ./Middlewares/FreeRTOS/timers.o
+ .debug_ranges  0x0000000000002250     0x1c78 ./Application/User/generated/ScreenGraphViewBase.o
+ .debug_ranges  0x0000000000003ec8       0x18 ./Application/User/generated/Table_verdana_10_4bpp.o
+ .debug_ranges  0x0000000000003ee0       0x18 ./Application/User/generated/Table_verdana_15_4bpp.o
+ .debug_ranges  0x0000000000003ef8       0x18 ./Application/User/generated/Table_verdana_40_4bpp.o
+ .debug_ranges  0x0000000000003f10       0xf8 ./Application/User/generated/Texts.o
+ .debug_ranges  0x0000000000004008       0x50 ./Application/User/generated/TypedTextDatabase.o
+ .debug_ranges  0x0000000000004058       0x60 ./Application/User/gui/FrontendApplication.o
+ .debug_ranges  0x00000000000040b8       0x18 ./Application/User/gui/Model.o
+ .debug_ranges  0x00000000000040d0       0x78 ./Application/User/gui/Screen1Presenter.o
+ .debug_ranges  0x0000000000004148       0x88 ./Application/User/gui/Screen1View.o
+ .debug_ranges  0x00000000000041d0       0x90 ./Application/User/gui/ScreenGraphPresenter.o
+ .debug_ranges  0x0000000000004260      0x3b8 ./Application/User/gui/ScreenGraphView.o
+ .debug_ranges  0x0000000000004618       0x68 ./Drivers/BSP/Components/ili9341.o
+ .debug_ranges  0x0000000000004680      0x148 ./Drivers/BSP/Components/stmpe811.o
+ .debug_ranges  0x00000000000047c8       0x18 ./Drivers/CMSIS/system_stm32f4xx.o
+ .debug_ranges  0x00000000000047e0       0xe8 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o
+ .debug_ranges  0x00000000000048c8       0xc8 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o
+ .debug_ranges  0x0000000000004990      0x150 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o
+ .debug_ranges  0x0000000000004ae0       0x38 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o
+ .debug_ranges  0x0000000000004b18       0x88 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o
+ .debug_ranges  0x0000000000004ba0       0xf0 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o
+ .debug_ranges  0x0000000000004c90       0x68 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o
+ .debug_ranges  0x0000000000004cf8      0x498 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c.o
+ .debug_ranges  0x0000000000005190       0x18 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c_ex.o
+ .debug_ranges  0x00000000000051a8      0x128 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_ltdc.o
+ .debug_ranges  0x00000000000052d0       0xb0 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o
+ .debug_ranges  0x0000000000005380       0x60 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o
+ .debug_ranges  0x00000000000053e0       0xa0 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_sdram.o
+ .debug_ranges  0x0000000000005480      0x220 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_spi.o
+ .debug_ranges  0x00000000000056a0      0x328 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o
+ .debug_ranges  0x00000000000059c8       0xe8 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o
+ .debug_ranges  0x0000000000005ab0       0xe0 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_fmc.o
+ .debug_ranges  0x0000000000005b90      0x458 ./Middlewares/FreeRTOS/cmsis_os2.o
+ .debug_ranges  0x0000000000005fe8       0x38 ./Middlewares/FreeRTOS/heap_4.o
+ .debug_ranges  0x0000000000006020       0x30 ./Middlewares/FreeRTOS/list.o
+ .debug_ranges  0x0000000000006050       0xa0 ./Middlewares/FreeRTOS/port.o
+ .debug_ranges  0x00000000000060f0      0x2f8 ./Middlewares/FreeRTOS/queue.o
+ .debug_ranges  0x00000000000063e8      0x378 ./Middlewares/FreeRTOS/tasks.o
+ .debug_ranges  0x0000000000006760      0x198 ./Middlewares/FreeRTOS/timers.o
 
-.debug_loc      0x0000000000000000    0x323c2
+.debug_loc      0x0000000000000000    0x323c0
  .debug_loc     0x0000000000000000       0x25 ./Application/User/TouchGFX/App/app_touchgfx.o
  .debug_loc     0x0000000000000025      0x3b4 ./Application/User/TouchGFX/target/STM32TouchController.o
  .debug_loc     0x00000000000003d9       0x25 ./Application/User/TouchGFX/target/TouchGFXGPIO.o
@@ -18169,45 +18169,45 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_loc     0x00000000000050f6     0x144e ./Application/User/generated/FrontendApplicationBase.o
  .debug_loc     0x0000000000006544      0x56f ./Application/User/generated/GeneratedFont.o
  .debug_loc     0x0000000000006ab3     0x3adc ./Application/User/generated/Screen1ViewBase.o
- .debug_loc     0x000000000000a58f     0x894b ./Application/User/generated/ScreenGraphViewBase.o
- .debug_loc     0x0000000000012eda       0x4e ./Application/User/generated/Table_verdana_10_4bpp.o
- .debug_loc     0x0000000000012f28       0x4e ./Application/User/generated/Table_verdana_15_4bpp.o
- .debug_loc     0x0000000000012f76       0x4e ./Application/User/generated/Table_verdana_40_4bpp.o
- .debug_loc     0x0000000000012fc4      0x516 ./Application/User/generated/Texts.o
- .debug_loc     0x00000000000134da       0xec ./Application/User/generated/TypedTextDatabase.o
- .debug_loc     0x00000000000135c6      0x2cf ./Application/User/gui/FrontendApplication.o
- .debug_loc     0x0000000000013895       0x32 ./Application/User/gui/Model.o
- .debug_loc     0x00000000000138c7       0xe0 ./Application/User/gui/Screen1Presenter.o
- .debug_loc     0x00000000000139a7      0xf73 ./Application/User/gui/Screen1View.o
- .debug_loc     0x000000000001491a      0x14f ./Application/User/gui/ScreenGraphPresenter.o
- .debug_loc     0x0000000000014a69     0x292e ./Application/User/gui/ScreenGraphView.o
- .debug_loc     0x0000000000017397      0x9ff ./Drivers/BSP/Components/ili9341.o
- .debug_loc     0x0000000000017d96      0xf7d ./Drivers/BSP/Components/stmpe811.o
- .debug_loc     0x0000000000018d13      0x118 ./Drivers/CMSIS/system_stm32f4xx.o
- .debug_loc     0x0000000000018e2b      0x139 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o
- .debug_loc     0x0000000000018f64      0x914 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o
- .debug_loc     0x0000000000019878      0x5d3 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o
- .debug_loc     0x0000000000019e4b      0x1f6 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o
- .debug_loc     0x000000000001a041      0x795 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o
- .debug_loc     0x000000000001a7d6     0x18b5 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o
- .debug_loc     0x000000000001c08b      0x3e6 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o
- .debug_loc     0x000000000001c471     0x360a ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c.o
- .debug_loc     0x000000000001fa7b      0x11c ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c_ex.o
- .debug_loc     0x000000000001fb97     0x13f7 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_ltdc.o
- .debug_loc     0x0000000000020f8e      0x4af ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o
- .debug_loc     0x000000000002143d      0x53a ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o
- .debug_loc     0x0000000000021977      0xcbe ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_sdram.o
- .debug_loc     0x0000000000022635     0x1ae9 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_spi.o
- .debug_loc     0x000000000002411e     0x393d ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o
- .debug_loc     0x0000000000027a5b      0xbb4 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o
- .debug_loc     0x000000000002860f      0xafa ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_fmc.o
- .debug_loc     0x0000000000029109     0x3f91 ./Middlewares/FreeRTOS/cmsis_os2.o
- .debug_loc     0x000000000002d09a      0x416 ./Middlewares/FreeRTOS/heap_4.o
- .debug_loc     0x000000000002d4b0       0xaf ./Middlewares/FreeRTOS/list.o
- .debug_loc     0x000000000002d55f       0xf8 ./Middlewares/FreeRTOS/port.o
- .debug_loc     0x000000000002d657     0x1ce3 ./Middlewares/FreeRTOS/queue.o
- .debug_loc     0x000000000002f33a     0x220e ./Middlewares/FreeRTOS/tasks.o
- .debug_loc     0x0000000000031548      0xe7a ./Middlewares/FreeRTOS/timers.o
+ .debug_loc     0x000000000000a58f     0x8949 ./Application/User/generated/ScreenGraphViewBase.o
+ .debug_loc     0x0000000000012ed8       0x4e ./Application/User/generated/Table_verdana_10_4bpp.o
+ .debug_loc     0x0000000000012f26       0x4e ./Application/User/generated/Table_verdana_15_4bpp.o
+ .debug_loc     0x0000000000012f74       0x4e ./Application/User/generated/Table_verdana_40_4bpp.o
+ .debug_loc     0x0000000000012fc2      0x516 ./Application/User/generated/Texts.o
+ .debug_loc     0x00000000000134d8       0xec ./Application/User/generated/TypedTextDatabase.o
+ .debug_loc     0x00000000000135c4      0x2cf ./Application/User/gui/FrontendApplication.o
+ .debug_loc     0x0000000000013893       0x32 ./Application/User/gui/Model.o
+ .debug_loc     0x00000000000138c5       0xe0 ./Application/User/gui/Screen1Presenter.o
+ .debug_loc     0x00000000000139a5      0xf73 ./Application/User/gui/Screen1View.o
+ .debug_loc     0x0000000000014918      0x14f ./Application/User/gui/ScreenGraphPresenter.o
+ .debug_loc     0x0000000000014a67     0x292e ./Application/User/gui/ScreenGraphView.o
+ .debug_loc     0x0000000000017395      0x9ff ./Drivers/BSP/Components/ili9341.o
+ .debug_loc     0x0000000000017d94      0xf7d ./Drivers/BSP/Components/stmpe811.o
+ .debug_loc     0x0000000000018d11      0x118 ./Drivers/CMSIS/system_stm32f4xx.o
+ .debug_loc     0x0000000000018e29      0x139 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal.o
+ .debug_loc     0x0000000000018f62      0x914 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_adc.o
+ .debug_loc     0x0000000000019876      0x5d3 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_cortex.o
+ .debug_loc     0x0000000000019e49      0x1f6 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_crc.o
+ .debug_loc     0x000000000001a03f      0x795 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dac.o
+ .debug_loc     0x000000000001a7d4     0x18b5 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_dma2d.o
+ .debug_loc     0x000000000001c089      0x3e6 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.o
+ .debug_loc     0x000000000001c46f     0x360a ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c.o
+ .debug_loc     0x000000000001fa79      0x11c ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_i2c_ex.o
+ .debug_loc     0x000000000001fb95     0x13f7 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_ltdc.o
+ .debug_loc     0x0000000000020f8c      0x4af ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc.o
+ .debug_loc     0x000000000002143b      0x53a ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_rcc_ex.o
+ .debug_loc     0x0000000000021975      0xcbe ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_sdram.o
+ .debug_loc     0x0000000000022633     0x1ae9 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_spi.o
+ .debug_loc     0x000000000002411c     0x393d ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim.o
+ .debug_loc     0x0000000000027a59      0xbb4 ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_hal_tim_ex.o
+ .debug_loc     0x000000000002860d      0xafa ./Drivers/STM32F4xx_HAL_Driver/stm32f4xx_ll_fmc.o
+ .debug_loc     0x0000000000029107     0x3f91 ./Middlewares/FreeRTOS/cmsis_os2.o
+ .debug_loc     0x000000000002d098      0x416 ./Middlewares/FreeRTOS/heap_4.o
+ .debug_loc     0x000000000002d4ae       0xaf ./Middlewares/FreeRTOS/list.o
+ .debug_loc     0x000000000002d55d       0xf8 ./Middlewares/FreeRTOS/port.o
+ .debug_loc     0x000000000002d655     0x1ce3 ./Middlewares/FreeRTOS/queue.o
+ .debug_loc     0x000000000002f338     0x220e ./Middlewares/FreeRTOS/tasks.o
+ .debug_loc     0x0000000000031546      0xe7a ./Middlewares/FreeRTOS/timers.o
 
 .debug_macro    0x0000000000000000    0x304f9
  .debug_macro   0x0000000000000000       0x1b ./Application/User/TouchGFX/App/app_touchgfx.o

@@ -300,17 +300,18 @@
             "Name": "dynamicGraph2",
             "Width": 320,
             "Height": 166,
-            "Visible": false,
             "DataSeed": -632790136,
             "NumberOfValues": 600,
             "MaxY": 1.5,
             "MinY": 1.0,
             "Precision": "0.001",
-            "LastIndex": 599,
+            "UseCustomVisibleDataPointRange": true,
+            "LastIndex": 10,
             "XAxisScale": 1.0,
             "LabelSizeTop": 6,
             "LabelSizeBottom": 15,
             "LabelSizeLeft": 20,
+            "LabelSizeRight": 5,
             "GraphType": "GraphScroll",
             "GraphDrawers": [
               {
@@ -325,7 +326,7 @@
                 "Green": 151,
                 "Blue": 197
               },
-              "Interval": 60.0,
+              "Interval": 1.0,
               "LineWidth": 2
             },
             "MinorXAxisGrid": {
@@ -335,12 +336,12 @@
                 "Green": 151,
                 "Blue": 197
               },
-              "Interval": 30.0,
+              "Interval": 1.0,
               "LineWidth": 1
             },
             "XAxisLabel": {
               "Type": "GraphLabel",
-              "Interval": 60.0,
+              "Interval": 1.0,
               "DecimalSeparator": "Point",
               "TextColor": {
                 "Red": 20,
@@ -371,6 +372,7 @@
             "Name": "dynamicGraph1",
             "Width": 320,
             "Height": 166,
+            "Visible": false,
             "DataSeed": 1361910227,
             "NumberOfValues": 60,
             "MaxY": 1.5,

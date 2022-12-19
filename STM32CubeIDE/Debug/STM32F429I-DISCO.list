@@ -37,25 +37,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  16 TouchGFX_Framebuffer 0004b000  d0000000  d0000000  000d0000  2**2
                   ALLOC
- 17 .debug_line   0004f2d3  00000000  00000000  000c0198  2**0
+ 17 .debug_line   0004f2ce  00000000  00000000  000c0198  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_info   000e74c8  00000000  00000000  0010f46b  2**0
+ 18 .debug_info   000e74f2  00000000  00000000  0010f466  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_abbrev 00014e90  00000000  00000000  001f6933  2**0
+ 19 .debug_abbrev 00014e90  00000000  00000000  001f6958  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_aranges 00002fe0  00000000  00000000  0020b7c8  2**3
+ 20 .debug_aranges 00002fe0  00000000  00000000  0020b7e8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_str    0011844a  00000000  00000000  0020e7a8  2**0
+ 21 .debug_str    0011844a  00000000  00000000  0020e7c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_ranges 00006960  00000000  00000000  00326bf8  2**3
+ 22 .debug_ranges 000068f8  00000000  00000000  00326c18  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_loc    000323c2  00000000  00000000  0032d558  2**0
+ 23 .debug_loc    000323c0  00000000  00000000  0032d510  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 24 .debug_macro  000304f9  00000000  00000000  0035f91a  2**0
+ 24 .debug_macro  000304f9  00000000  00000000  0035f8d0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 25 .comment      000000cf  00000000  00000000  0038fe13  2**0
+ 25 .comment      000000cf  00000000  00000000  0038fdc9  2**0
                   CONTENTS, READONLY
- 26 .debug_frame  00008c90  00000000  00000000  0038fee4  2**2
+ 26 .debug_frame  00008c90  00000000  00000000  0038fe98  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -10904,44 +10904,45 @@ class ToggleButton : public Button
  800412a:	9305      	str	r3, [sp, #20]
     dynamicGraph2.setScale(1000);
  800412c:	f7ff fa8a 	bl	8003644 <_ZN8touchgfx16DynamicDataGraph8setScaleEib>
+    dynamicGraph2.setGraphRangeX(0, 10);
+ 8004130:	220a      	movs	r2, #10
+ 8004132:	4629      	mov	r1, r5
+ 8004134:	4658      	mov	r0, fp
+ 8004136:	f7ff f8d1 	bl	80032dc <_ZN8touchgfx17AbstractDataGraph14setGraphRangeXEii>
     dynamicGraph2.setPosition(0, 0, 320, 166);
- 8004130:	23a6      	movs	r3, #166	; 0xa6
- 8004132:	9300      	str	r3, [sp, #0]
- 8004134:	462a      	mov	r2, r5
- 8004136:	f44f 73a0 	mov.w	r3, #320	; 0x140
- 800413a:	4629      	mov	r1, r5
- 800413c:	4658      	mov	r0, fp
- 800413e:	f7fe fdac 	bl	8002c9a <_ZN8touchgfx8Drawable11setPositionEssss>
-    dynamicGraph2.setGraphAreaMargin(6, 20, 0, 15);
- 8004142:	230f      	movs	r3, #15
- 8004144:	9300      	str	r3, [sp, #0]
- 8004146:	2214      	movs	r2, #20
- 8004148:	462b      	mov	r3, r5
- 800414a:	2106      	movs	r1, #6
- 800414c:	4658      	mov	r0, fp
- 800414e:	f007 fd3d 	bl	800bbcc <_ZN8touchgfx17AbstractDataGraph18setGraphAreaMarginEssss>
+ 800413a:	23a6      	movs	r3, #166	; 0xa6
+ 800413c:	9300      	str	r3, [sp, #0]
+ 800413e:	462a      	mov	r2, r5
+ 8004140:	f44f 73a0 	mov.w	r3, #320	; 0x140
+ 8004144:	4629      	mov	r1, r5
+ 8004146:	4658      	mov	r0, fp
+ 8004148:	f7fe fda7 	bl	8002c9a <_ZN8touchgfx8Drawable11setPositionEssss>
+    dynamicGraph2.setGraphAreaMargin(6, 20, 5, 15);
+ 800414c:	230f      	movs	r3, #15
+ 800414e:	9300      	str	r3, [sp, #0]
+ 8004150:	2214      	movs	r2, #20
+ 8004152:	2305      	movs	r3, #5
+ 8004154:	2106      	movs	r1, #6
+ 8004156:	4658      	mov	r0, fp
+ 8004158:	f007 fd38 	bl	800bbcc <_ZN8touchgfx17AbstractDataGraph18setGraphAreaMarginEssss>
     dynamicGraph2.setGraphAreaPadding(0, 0, 0, 0);
- 8004152:	462b      	mov	r3, r5
- 8004154:	462a      	mov	r2, r5
- 8004156:	4629      	mov	r1, r5
- 8004158:	4658      	mov	r0, fp
- 800415a:	9500      	str	r5, [sp, #0]
- 800415c:	f007 fc39 	bl	800b9d2 <_ZN8touchgfx17AbstractDataGraph19setGraphAreaPaddingEssss>
+ 800415c:	462b      	mov	r3, r5
+ 800415e:	462a      	mov	r2, r5
+ 8004160:	4629      	mov	r1, r5
+ 8004162:	4658      	mov	r0, fp
+ 8004164:	9500      	str	r5, [sp, #0]
+ 8004166:	f007 fc34 	bl	800b9d2 <_ZN8touchgfx17AbstractDataGraph19setGraphAreaPaddingEssss>
     dynamicGraph2.setGraphRangeY(1.0f, 1.5f);
- 8004160:	eef7 0a08 	vmov.f32	s1, #120	; 0x3fc00000  1.5
- 8004164:	eeb7 0a00 	vmov.f32	s0, #112	; 0x3f800000  1.0
- 8004168:	4658      	mov	r0, fp
- 800416a:	f7ff f94d 	bl	8003408 <_ZN8touchgfx17AbstractDataGraph14setGraphRangeYEff>
+ 800416a:	eef7 0a08 	vmov.f32	s1, #120	; 0x3fc00000  1.5
+ 800416e:	eeb7 0a00 	vmov.f32	s0, #112	; 0x3f800000  1.0
+ 8004172:	4658      	mov	r0, fp
+ 8004174:	f7ff f948 	bl	8003408 <_ZN8touchgfx17AbstractDataGraph14setGraphRangeYEff>
         gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
- 800416e:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
- 8004172:	f8d4 1c24 	ldr.w	r1, [r4, #3108]	; 0xc24
- 8004176:	f8d4 0c28 	ldr.w	r0, [r4, #3112]	; 0xc28
-        visible = vis;
- 800417a:	f884 5125 	strb.w	r5, [r4, #293]	; 0x125
- 800417e:	f007 fdd7 	bl	800bd30 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
-        gridInterval = abs(interval);
- 8004182:	f247 5330 	movw	r3, #30000	; 0x7530
- 8004186:	e021      	b.n	80041cc <_ZN19ScreenGraphViewBaseC1Ev+0x40c>
+ 8004178:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
+ 800417c:	f8d4 1c24 	ldr.w	r1, [r4, #3108]	; 0xc24
+ 8004180:	f8d4 0c28 	ldr.w	r0, [r4, #3112]	; 0xc28
+ 8004184:	e022      	b.n	80041cc <_ZN19ScreenGraphViewBaseC1Ev+0x40c>
+ 8004186:	bf00      	nop
  8004188:	08022848 	.word	0x08022848
  800418c:	08023650 	.word	0x08023650
  8004190:	080235e8 	.word	0x080235e8
@@ -10959,16 +10960,17 @@ class ToggleButton : public Button
  80041c0:	08022cfc 	.word	0x08022cfc
  80041c4:	08022368 	.word	0x08022368
  80041c8:	08022420 	.word	0x08022420
- 80041cc:	f8c4 3c28 	str.w	r3, [r4, #3112]	; 0xc28
-        lineWidth = width;
- 80041d0:	f04f 0301 	mov.w	r3, #1
- 80041d4:	f884 3c2c 	strb.w	r3, [r4, #3116]	; 0xc2c
-        majorGrid = &major;
- 80041d8:	ee1c 3a10 	vmov	r3, s24
-        dataScale = scale;
- 80041dc:	f44f 777a 	mov.w	r7, #1000	; 0x3e8
         color = newColor;
- 80041e0:	f8df 8490 	ldr.w	r8, [pc, #1168]	; 8004674 <_ZN19ScreenGraphViewBaseC1Ev+0x8b4>
+ 80041cc:	f8df 84a4 	ldr.w	r8, [pc, #1188]	; 8004674 <_ZN19ScreenGraphViewBaseC1Ev+0x8b4>
+        gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
+ 80041d0:	f007 fdae 	bl	800bd30 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
+        lineWidth = width;
+ 80041d4:	f04f 0301 	mov.w	r3, #1
+ 80041d8:	f884 3c2c 	strb.w	r3, [r4, #3116]	; 0xc2c
+        majorGrid = &major;
+ 80041dc:	ee1c 3a10 	vmov	r3, s24
+        dataScale = scale;
+ 80041e0:	f44f 777a 	mov.w	r7, #1000	; 0x3e8
         majorGrid = &major;
  80041e4:	f8c4 3c30 	str.w	r3, [r4, #3120]	; 0xc30
     dynamicGraph2.addGraphElement(dynamicGraph2MinorXAxisGrid);
@@ -10977,25 +10979,26 @@ class ToggleButton : public Button
  80041ec:	f8c4 7c24 	str.w	r7, [r4, #3108]	; 0xc24
         color = newColor;
  80041f0:	f8c4 8c20 	str.w	r8, [r4, #3104]	; 0xc20
- 80041f4:	4658      	mov	r0, fp
- 80041f6:	f007 fbf7 	bl	800b9e8 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
-        gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
- 80041fa:	463a      	mov	r2, r7
- 80041fc:	f8d4 1c64 	ldr.w	r1, [r4, #3172]	; 0xc64
- 8004200:	f8d4 0c68 	ldr.w	r0, [r4, #3176]	; 0xc68
- 8004204:	f007 fd94 	bl	800bd30 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         gridInterval = abs(interval);
- 8004208:	f64e 2360 	movw	r3, #60000	; 0xea60
- 800420c:	f8c4 3c68 	str.w	r3, [r4, #3176]	; 0xc68
+ 80041f4:	f8c4 7c28 	str.w	r7, [r4, #3112]	; 0xc28
+ 80041f8:	4658      	mov	r0, fp
+ 80041fa:	f007 fbf5 	bl	800b9e8 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
+        gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
+ 80041fe:	463a      	mov	r2, r7
+ 8004200:	f8d4 1c64 	ldr.w	r1, [r4, #3172]	; 0xc64
+ 8004204:	f8d4 0c68 	ldr.w	r0, [r4, #3176]	; 0xc68
+ 8004208:	f007 fd92 	bl	800bd30 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         lineWidth = width;
- 8004210:	f04f 0302 	mov.w	r3, #2
- 8004214:	f884 3c6c 	strb.w	r3, [r4, #3180]	; 0xc6c
+ 800420c:	f04f 0302 	mov.w	r3, #2
+ 8004210:	f884 3c6c 	strb.w	r3, [r4, #3180]	; 0xc6c
     dynamicGraph2.addGraphElement(dynamicGraph2MajorXAxisGrid);
- 8004218:	ee1c 1a10 	vmov	r1, s24
+ 8004214:	ee1c 1a10 	vmov	r1, s24
         dataScale = scale;
- 800421c:	f8c4 7c64 	str.w	r7, [r4, #3172]	; 0xc64
+ 8004218:	f8c4 7c64 	str.w	r7, [r4, #3172]	; 0xc64
         color = newColor;
- 8004220:	f8c4 8c60 	str.w	r8, [r4, #3168]	; 0xc60
+ 800421c:	f8c4 8c60 	str.w	r8, [r4, #3168]	; 0xc60
+        gridInterval = abs(interval);
+ 8004220:	f8c4 7c68 	str.w	r7, [r4, #3176]	; 0xc68
  8004224:	4658      	mov	r0, fp
  8004226:	f007 fbdf 	bl	800b9e8 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
         labelInterval = AbstractDataGraph::convertToNewScale(labelInterval, dataScale, scale);
@@ -11003,101 +11006,103 @@ class ToggleButton : public Button
  800422c:	f8d4 1ca4 	ldr.w	r1, [r4, #3236]	; 0xca4
  8004230:	f8d4 0ca8 	ldr.w	r0, [r4, #3240]	; 0xca8
  8004234:	f007 fd7c 	bl	800bd30 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
-        labelInterval = abs(interval);
- 8004238:	f64e 2360 	movw	r3, #60000	; 0xea60
 class TypedText
- 800423c:	f04f 0201 	mov.w	r2, #1
- 8004240:	f8c4 3ca8 	str.w	r3, [r4, #3240]	; 0xca8
+ 8004238:	f04f 0201 	mov.w	r2, #1
     dynamicGraph2.addBottomElement(dynamicGraph2MajorXAxisLabel);
- 8004244:	ee1d 1a90 	vmov	r1, s27
+ 800423c:	ee1d 1a90 	vmov	r1, s27
         dataScale = scale;
- 8004248:	f8c4 7ca4 	str.w	r7, [r4, #3236]	; 0xca4
- 800424c:	f8a4 2cb0 	strh.w	r2, [r4, #3248]	; 0xcb0
- 8004250:	f8c4 8ca0 	str.w	r8, [r4, #3232]	; 0xca0
- 8004254:	4658      	mov	r0, fp
- 8004256:	f007 fbeb 	bl	800ba30 <_ZN8touchgfx17AbstractDataGraph16addBottomElementERNS_23AbstractGraphDecorationE>
+ 8004240:	f8c4 7ca4 	str.w	r7, [r4, #3236]	; 0xca4
+        labelInterval = abs(interval);
+ 8004244:	f8c4 7ca8 	str.w	r7, [r4, #3240]	; 0xca8
+ 8004248:	f8a4 2cb0 	strh.w	r2, [r4, #3248]	; 0xcb0
+        color = newColor;
+ 800424c:	f8c4 8ca0 	str.w	r8, [r4, #3232]	; 0xca0
+ 8004250:	4658      	mov	r0, fp
+ 8004252:	f007 fbed 	bl	800ba30 <_ZN8touchgfx17AbstractDataGraph16addBottomElementERNS_23AbstractGraphDecorationE>
         labelInterval = AbstractDataGraph::convertToNewScale(labelInterval, dataScale, scale);
- 800425a:	463a      	mov	r2, r7
- 800425c:	f8d4 1cf0 	ldr.w	r1, [r4, #3312]	; 0xcf0
- 8004260:	f8d4 0cf4 	ldr.w	r0, [r4, #3316]	; 0xcf4
- 8004264:	f007 fd64 	bl	800bd30 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
+ 8004256:	463a      	mov	r2, r7
+ 8004258:	f8d4 1cf0 	ldr.w	r1, [r4, #3312]	; 0xcf0
+ 800425c:	f8d4 0cf4 	ldr.w	r0, [r4, #3316]	; 0xcf4
+ 8004260:	f007 fd66 	bl	800bd30 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         labelDecimals = decimals;
- 8004268:	f04f 0201 	mov.w	r2, #1
+ 8004264:	f04f 0201 	mov.w	r2, #1
         labelInterval = abs(interval);
- 800426c:	2196      	movs	r1, #150	; 0x96
+ 8004268:	2196      	movs	r1, #150	; 0x96
         dataScale = scale;
- 800426e:	f8c4 7cf0 	str.w	r7, [r4, #3312]	; 0xcf0
+ 800426a:	f8c4 7cf0 	str.w	r7, [r4, #3312]	; 0xcf0
         labelInterval = abs(interval);
- 8004272:	f8c4 1cf4 	str.w	r1, [r4, #3316]	; 0xcf4
+ 800426e:	f8c4 1cf4 	str.w	r1, [r4, #3316]	; 0xcf4
         labelDecimals = decimals;
- 8004276:	f8a4 2d02 	strh.w	r2, [r4, #3330]	; 0xd02
+ 8004272:	f8a4 2d02 	strh.w	r2, [r4, #3330]	; 0xd02
     dynamicGraph2.addLeftElement(dynamicGraph2MajorYAxisLabel);
- 800427a:	ee1e 1a10 	vmov	r1, s28
- 800427e:	f8c4 8cec 	str.w	r8, [r4, #3308]	; 0xcec
- 8004282:	4658      	mov	r0, fp
- 8004284:	f8a4 5cfc 	strh.w	r5, [r4, #3324]	; 0xcfc
- 8004288:	f007 fbc0 	bl	800ba0c <_ZN8touchgfx17AbstractDataGraph14addLeftElementERNS_23AbstractGraphDecorationE>
+ 8004276:	ee1e 1a10 	vmov	r1, s28
+ 800427a:	f8c4 8cec 	str.w	r8, [r4, #3308]	; 0xcec
+ 800427e:	4658      	mov	r0, fp
+ 8004280:	f8a4 5cfc 	strh.w	r5, [r4, #3324]	; 0xcfc
+ 8004284:	f007 fbc2 	bl	800ba0c <_ZN8touchgfx17AbstractDataGraph14addLeftElementERNS_23AbstractGraphDecorationE>
         canvasPainter = &painter;
- 800428c:	9b06      	ldr	r3, [sp, #24]
- 800428e:	f8c4 3bd8 	str.w	r3, [r4, #3032]	; 0xbd8
- 8004292:	f04f 427f 	mov.w	r2, #4278190080	; 0xff000000
+ 8004288:	9b06      	ldr	r3, [sp, #24]
+ 800428a:	f8c4 3bd8 	str.w	r3, [r4, #3032]	; 0xbd8
+ 800428e:	f04f 427f 	mov.w	r2, #4278190080	; 0xff000000
      *
      * @see getLineWidth
      */
     FORCE_INLINE_FUNCTION void setLineWidth(uint8_t width)
     {
         lineWidth = width;
- 8004296:	f04f 0302 	mov.w	r3, #2
- 800429a:	f884 3bdc 	strb.w	r3, [r4, #3036]	; 0xbdc
+ 8004292:	f04f 0302 	mov.w	r3, #2
+ 8004296:	f884 3bdc 	strb.w	r3, [r4, #3036]	; 0xbdc
     dynamicGraph2.addGraphElement(dynamicGraph2Line1);
- 800429e:	ee1c 1a90 	vmov	r1, s25
- 80042a2:	f8c4 2bec 	str.w	r2, [r4, #3052]	; 0xbec
- 80042a6:	4658      	mov	r0, fp
+ 800429a:	ee1c 1a90 	vmov	r1, s25
+ 800429e:	f8c4 2bec 	str.w	r2, [r4, #3052]	; 0xbec
+ 80042a2:	4658      	mov	r0, fp
     }
 
     virtual void setColor(colortype color)
     {
         AbstractPainterColor::setColor(color);
         color565 = LCD16bpp::getNativeColor(painterColor);
- 80042a8:	f8a4 5bf0 	strh.w	r5, [r4, #3056]	; 0xbf0
- 80042ac:	f007 fb9c 	bl	800b9e8 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
+ 80042a4:	f8a4 5bf0 	strh.w	r5, [r4, #3056]	; 0xbf0
+ 80042a8:	f007 fb9e 	bl	800b9e8 <_ZN8touchgfx17AbstractDataGraph15addGraphElementERNS_20AbstractGraphElementE>
     dynamicGraph1.setScale(1000);
- 80042b0:	4639      	mov	r1, r7
- 80042b2:	462a      	mov	r2, r5
- 80042b4:	4630      	mov	r0, r6
- 80042b6:	f7ff f9c5 	bl	8003644 <_ZN8touchgfx16DynamicDataGraph8setScaleEib>
+ 80042ac:	4639      	mov	r1, r7
+ 80042ae:	462a      	mov	r2, r5
+ 80042b0:	4630      	mov	r0, r6
+ 80042b2:	f7ff f9c7 	bl	8003644 <_ZN8touchgfx16DynamicDataGraph8setScaleEib>
     dynamicGraph1.setPosition(0, 0, 320, 166);
- 80042ba:	22a6      	movs	r2, #166	; 0xa6
- 80042bc:	9200      	str	r2, [sp, #0]
- 80042be:	f44f 73a0 	mov.w	r3, #320	; 0x140
- 80042c2:	462a      	mov	r2, r5
- 80042c4:	4629      	mov	r1, r5
- 80042c6:	4630      	mov	r0, r6
- 80042c8:	f7fe fce7 	bl	8002c9a <_ZN8touchgfx8Drawable11setPositionEssss>
+ 80042b6:	22a6      	movs	r2, #166	; 0xa6
+ 80042b8:	9200      	str	r2, [sp, #0]
+ 80042ba:	f44f 73a0 	mov.w	r3, #320	; 0x140
+ 80042be:	462a      	mov	r2, r5
+ 80042c0:	4629      	mov	r1, r5
+ 80042c2:	4630      	mov	r0, r6
+ 80042c4:	f7fe fce9 	bl	8002c9a <_ZN8touchgfx8Drawable11setPositionEssss>
     dynamicGraph1.setGraphAreaMargin(6, 20, 0, 15);
- 80042cc:	220f      	movs	r2, #15
- 80042ce:	9200      	str	r2, [sp, #0]
- 80042d0:	462b      	mov	r3, r5
- 80042d2:	2214      	movs	r2, #20
- 80042d4:	2106      	movs	r1, #6
- 80042d6:	4630      	mov	r0, r6
- 80042d8:	f007 fc78 	bl	800bbcc <_ZN8touchgfx17AbstractDataGraph18setGraphAreaMarginEssss>
+ 80042c8:	220f      	movs	r2, #15
+ 80042ca:	9200      	str	r2, [sp, #0]
+ 80042cc:	462b      	mov	r3, r5
+ 80042ce:	2214      	movs	r2, #20
+ 80042d0:	2106      	movs	r1, #6
+ 80042d2:	4630      	mov	r0, r6
+ 80042d4:	f007 fc7a 	bl	800bbcc <_ZN8touchgfx17AbstractDataGraph18setGraphAreaMarginEssss>
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
- 80042dc:	462b      	mov	r3, r5
- 80042de:	462a      	mov	r2, r5
- 80042e0:	4629      	mov	r1, r5
- 80042e2:	4630      	mov	r0, r6
- 80042e4:	9500      	str	r5, [sp, #0]
- 80042e6:	f007 fb74 	bl	800b9d2 <_ZN8touchgfx17AbstractDataGraph19setGraphAreaPaddingEssss>
+ 80042d8:	462b      	mov	r3, r5
+ 80042da:	462a      	mov	r2, r5
+ 80042dc:	4629      	mov	r1, r5
+ 80042de:	4630      	mov	r0, r6
+ 80042e0:	9500      	str	r5, [sp, #0]
+ 80042e2:	f007 fb76 	bl	800b9d2 <_ZN8touchgfx17AbstractDataGraph19setGraphAreaPaddingEssss>
     dynamicGraph1.setGraphRangeY(1.0f, 1.5f);
- 80042ea:	eef7 0a08 	vmov.f32	s1, #120	; 0x3fc00000  1.5
- 80042ee:	eeb7 0a00 	vmov.f32	s0, #112	; 0x3f800000  1.0
- 80042f2:	4630      	mov	r0, r6
- 80042f4:	f7ff f888 	bl	8003408 <_ZN8touchgfx17AbstractDataGraph14setGraphRangeYEff>
+ 80042e6:	eef7 0a08 	vmov.f32	s1, #120	; 0x3fc00000  1.5
+ 80042ea:	eeb7 0a00 	vmov.f32	s0, #112	; 0x3f800000  1.0
+ 80042ee:	4630      	mov	r0, r6
+ 80042f0:	f7ff f88a 	bl	8003408 <_ZN8touchgfx17AbstractDataGraph14setGraphRangeYEff>
         gridInterval = AbstractDataGraph::convertToNewScale(gridInterval, dataScale, scale);
- 80042f8:	463a      	mov	r2, r7
- 80042fa:	f8d4 1fc0 	ldr.w	r1, [r4, #4032]	; 0xfc0
- 80042fe:	f8d4 0fc4 	ldr.w	r0, [r4, #4036]	; 0xfc4
+ 80042f4:	463a      	mov	r2, r7
+ 80042f6:	f8d4 1fc0 	ldr.w	r1, [r4, #4032]	; 0xfc0
+ 80042fa:	f8d4 0fc4 	ldr.w	r0, [r4, #4036]	; 0xfc4
+        visible = vis;
+ 80042fe:	f884 5d31 	strb.w	r5, [r4, #3377]	; 0xd31
  8004302:	f007 fd15 	bl	800bd30 <_ZN8touchgfx17AbstractDataGraph17convertToNewScaleEiii>
         gridInterval = abs(interval);
  8004306:	f241 3388 	movw	r3, #5000	; 0x1388
@@ -12581,7 +12586,6 @@ void ScreenGraphView::DrawPoint2(){
  8004c5c:	200039d0 	.word	0x200039d0
 
 08004c60 <_ZN15ScreenGraphView13DrawPoint2MinEv>:
-
 #endif
 }
 void ScreenGraphView::DrawPoint2Min(){
@@ -12614,6 +12618,9 @@ void ScreenGraphView::DrawPoint2Min(){
  8004c98:	ee77 7a87 	vadd.f32	s15, s15, s14
  8004c9c:	eefd 7ae7 	vcvt.s32.f32	s15, s15
  8004ca0:	ee17 1a90 	vmov	r1, s15
+	//		dynamicGraph2MajorYAxisLabel.setInterval(1); //labelki co 0.1
+	//}
+
 
 #endif
 }

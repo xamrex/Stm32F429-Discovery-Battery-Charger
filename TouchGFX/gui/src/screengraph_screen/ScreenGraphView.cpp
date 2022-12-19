@@ -32,12 +32,18 @@ void ScreenGraphView::tearDownScreen()
 void ScreenGraphView::DrawPoint2(){
 #ifndef SIMULATOR
 	dynamicGraph1.addDataPoint(ladowarka.BatteryVoltage);
-
 #endif
 }
 void ScreenGraphView::DrawPoint2Min(){
 #ifndef SIMULATOR
 	dynamicGraph2.addDataPoint(ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]);
+	//1 -> czas ladowania od 0 do 9min
+	//if (ladowarka.CzsasLadowaniaWSec<9*60){
+	//	dynamicGraph2.setGraphRangeX(0,1+ladowarka.CzsasLadowaniaWSec/60);
+	//		dynamicGraph2MinorXAxisGrid.setInterval(1); //minor horizontal grid lines
+	//		dynamicGraph2MajorYAxisLabel.setInterval(1); //labelki co 0.1
+	//}
+
 
 #endif
 }
