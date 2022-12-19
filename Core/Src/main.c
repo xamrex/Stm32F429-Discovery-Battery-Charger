@@ -40,7 +40,6 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
-
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -220,7 +219,7 @@ int main(void)
 
 HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
 HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
-HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 1365); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
+HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 3400); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
 
 
   /* USER CODE END 2 */
@@ -1171,8 +1170,9 @@ __weak void ZadanieDwa(void *argument)
 
 					/*************** generowanie napiecia ***************************/
 					if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 1365);  //ustaw poprawne napiece tutaj (3V)
-							ladowarka.UstawioneNapiecieNaopAmpie=1;
+
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 2700);  //ustaw poprawne napiece tutaj (3V)
+							//ladowarka.UstawioneNapiecieNaopAmpie=1;
 					}
 
 
