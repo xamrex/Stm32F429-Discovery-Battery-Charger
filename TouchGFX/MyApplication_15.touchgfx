@@ -211,9 +211,9 @@
           {
             "Type": "TextArea",
             "Name": "LabelChargingTime",
-            "X": 41,
-            "Y": 83,
-            "Width": 68,
+            "X": 6,
+            "Y": 86,
+            "Width": 103,
             "Height": 36,
             "TextId": "__SingleUse_LNZH",
             "TextRotation": "0",

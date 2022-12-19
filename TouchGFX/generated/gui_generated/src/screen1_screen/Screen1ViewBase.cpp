@@ -70,7 +70,7 @@ Screen1ViewBase::Screen1ViewBase() :
     txtNapiecieBaterii.setWildcard(txtNapiecieBateriiBuffer);
     txtNapiecieBaterii.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JY89));
 
-    LabelChargingTime.setXY(41, 83);
+    LabelChargingTime.setXY(6, 86);
     LabelChargingTime.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     LabelChargingTime.setLinespacing(0);
     LabelChargingTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LNZH));

@@ -13,7 +13,7 @@
         <Translation Language="GB">&lt;value&gt; [hrs]</Translation>
       </Text>
       <Text Id="__SingleUse_LNZH" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">Charging&#10;Time:</Translation>
+        <Translation Language="GB">Max Charging&#10;Time:</Translation>
       </Text>
       <Text Id="__SingleUse_CZJE" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>

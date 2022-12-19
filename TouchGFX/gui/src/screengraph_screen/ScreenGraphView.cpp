@@ -47,6 +47,13 @@ void ScreenGraphView::DrawPoint2Min(){
 			dynamicGraph2MajorXAxisLabel.setInterval(10); //labelki co 10
 	}
 
+	if (ladowarka.CzsasLadowaniaWSec >59*60){ //jesli czas jest >59 min
+			dynamicGraph2.setGraphRangeX(0,ladowarka.ChargingTime*60);
+			dynamicGraph2MajorXAxisGrid.setInterval(60); //major horizontal grid lines
+			dynamicGraph2MinorXAxisGrid.setInterval(10); //minor horizontal grid lines
+			dynamicGraph2MajorXAxisLabel.setInterval(60); //labelki co 10
+	}
+
 #endif
 }
 void ScreenGraphView::DisplayLastAndMaxVlt2(){
