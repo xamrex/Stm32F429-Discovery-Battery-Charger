@@ -29,6 +29,119 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     button1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     button1.setAction(buttonCallback);
 
+    dynamicGraph2.setScale(1);
+    dynamicGraph2.setPosition(0, 0, 320, 166);
+    dynamicGraph2.setGraphAreaMargin(6, 20, 0, 15);
+    dynamicGraph2.setGraphAreaPadding(0, 0, 0, 0);
+    dynamicGraph2.setGraphRangeY(0, 100);
+    dynamicGraph2.setVisible(false);
+
+    dynamicGraph2Line1Painter.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph2Line1.setPainter(dynamicGraph2Line1Painter);
+    dynamicGraph2Line1.setLineWidth(2);
+    dynamicGraph2.addGraphElement(dynamicGraph2Line1);
+
+    dynamicGraph2.addDataPoint(60.21267f);
+    dynamicGraph2.addDataPoint(68.56031f);
+    dynamicGraph2.addDataPoint(74.97237f);
+    dynamicGraph2.addDataPoint(76.95074f);
+    dynamicGraph2.addDataPoint(73.01582f);
+    dynamicGraph2.addDataPoint(63.10847f);
+    dynamicGraph2.addDataPoint(48.64528f);
+    dynamicGraph2.addDataPoint(32.21193f);
+    dynamicGraph2.addDataPoint(16.96822f);
+    dynamicGraph2.addDataPoint(5.90891f);
+    dynamicGraph2.addDataPoint(1.15986f);
+    dynamicGraph2.addDataPoint(3.48074f);
+    dynamicGraph2.addDataPoint(12.09514f);
+    dynamicGraph2.addDataPoint(24.88891f);
+    dynamicGraph2.addDataPoint(38.92803f);
+    dynamicGraph2.addDataPoint(51.16903f);
+    dynamicGraph2.addDataPoint(59.18843f);
+    dynamicGraph2.addDataPoint(61.75324f);
+    dynamicGraph2.addDataPoint(59.09371f);
+    dynamicGraph2.addDataPoint(52.81276f);
+    dynamicGraph2.addDataPoint(45.45556f);
+    dynamicGraph2.addDataPoint(39.84624f);
+    dynamicGraph2.addDataPoint(38.35567f);
+    dynamicGraph2.addDataPoint(42.28119f);
+    dynamicGraph2.addDataPoint(51.49187f);
+    dynamicGraph2.addDataPoint(64.42738f);
+    dynamicGraph2.addDataPoint(78.45239f);
+    dynamicGraph2.addDataPoint(90.48057f);
+    dynamicGraph2.addDataPoint(97.71635f);
+    dynamicGraph2.addDataPoint(98.33346f);
+    dynamicGraph2.addDataPoint(91.92422f);
+    dynamicGraph2.addDataPoint(79.6096f);
+    dynamicGraph2.addDataPoint(63.78261f);
+    dynamicGraph2.addDataPoint(47.54724f);
+    dynamicGraph2.addDataPoint(33.98922f);
+    dynamicGraph2.addDataPoint(25.45595f);
+    dynamicGraph2.addDataPoint(23.02059f);
+    dynamicGraph2.addDataPoint(26.25976f);
+    dynamicGraph2.addDataPoint(33.39786f);
+    dynamicGraph2.addDataPoint(41.78102f);
+    dynamicGraph2.addDataPoint(48.56292f);
+    dynamicGraph2.addDataPoint(51.43334f);
+    dynamicGraph2.addDataPoint(49.20973f);
+    dynamicGraph2.addDataPoint(42.14578f);
+    dynamicGraph2.addDataPoint(31.88098f);
+    dynamicGraph2.addDataPoint(21.04276f);
+    dynamicGraph2.addDataPoint(12.59866f);
+    dynamicGraph2.addDataPoint(9.11726f);
+    dynamicGraph2.addDataPoint(12.11931f);
+    dynamicGraph2.addDataPoint(21.67876f);
+    dynamicGraph2.addDataPoint(36.37241f);
+    dynamicGraph2.addDataPoint(53.59178f);
+    dynamicGraph2.addDataPoint(70.14231f);
+    dynamicGraph2.addDataPoint(82.98484f);
+    dynamicGraph2.addDataPoint(89.93924f);
+    dynamicGraph2.addDataPoint(90.17981f);
+    dynamicGraph2.addDataPoint(84.40243f);
+    dynamicGraph2.addDataPoint(74.62413f);
+    dynamicGraph2.addDataPoint(63.66521f);
+    dynamicGraph2.addDataPoint(54.44173f);
+    dynamicGraph2.addDataPoint(49.2423f);
+    dynamicGraph2.addDataPoint(49.16652f);
+    dynamicGraph2.addDataPoint(53.86267f);
+    dynamicGraph2.addDataPoint(61.62858f);
+    dynamicGraph2.addDataPoint(69.85042f);
+    dynamicGraph2.addDataPoint(75.67106f);
+    dynamicGraph2.addDataPoint(76.72323f);
+    dynamicGraph2.addDataPoint(71.74668f);
+    dynamicGraph2.addDataPoint(60.9367f);
+    dynamicGraph2.addDataPoint(45.93713f);
+    dynamicGraph2.addDataPoint(29.47782f);
+    dynamicGraph2.addDataPoint(14.74387f);
+    dynamicGraph2.addDataPoint(4.62948f);
+    dynamicGraph2.addDataPoint(1.05779f);
+    dynamicGraph2.addDataPoint(4.53206f);
+    dynamicGraph2.addDataPoint(14.02729f);
+    dynamicGraph2.addDataPoint(27.24807f);
+    dynamicGraph2.addDataPoint(41.18948f);
+    dynamicGraph2.addDataPoint(52.8635f);
+    dynamicGraph2.addDataPoint(60.01361f);
+    dynamicGraph2.addDataPoint(61.64335f);
+    dynamicGraph2.addDataPoint(58.23014f);
+    dynamicGraph2.addDataPoint(51.57352f);
+    dynamicGraph2.addDataPoint(44.31607f);
+    dynamicGraph2.addDataPoint(39.25609f);
+    dynamicGraph2.addDataPoint(38.62174f);
+    dynamicGraph2.addDataPoint(43.48604f);
+    dynamicGraph2.addDataPoint(53.46762f);
+    dynamicGraph2.addDataPoint(66.79178f);
+    dynamicGraph2.addDataPoint(80.69834f);
+    dynamicGraph2.addDataPoint(92.09741f);
+    dynamicGraph2.addDataPoint(98.31334f);
+    dynamicGraph2.addDataPoint(97.73523f);
+    dynamicGraph2.addDataPoint(90.21488f);
+    dynamicGraph2.addDataPoint(77.11461f);
+    dynamicGraph2.addDataPoint(60.99285f);
+    dynamicGraph2.addDataPoint(45.00357f);
+    dynamicGraph2.addDataPoint(32.15573f);
+    dynamicGraph2.addDataPoint(24.61269f);
+    dynamicGraph2.addDataPoint(23.2017f);
+
     dynamicGraph1.setScale(1000);
     dynamicGraph1.setPosition(0, 0, 320, 166);
     dynamicGraph1.setGraphAreaMargin(6, 20, 0, 15);
@@ -75,6 +188,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
 
     toggleButton1.setXY(85, 211);
     toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_RSZ_TOGGLE_RE_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_RSZ_TOGGLE_RE_SMALL_BUTTON_ON_ID));
+    toggleButton1.setAction(buttonCallback);
 
     txtShowWholeGraph.setXY(2, 218);
     txtShowWholeGraph.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -109,6 +223,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     add(Background);
     add(boxWithBorder1);
     add(button1);
+    add(dynamicGraph2);
     add(dynamicGraph1);
     add(toggleButton1);
     add(txtShowWholeGraph);
@@ -135,5 +250,15 @@ void ScreenGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //When button1 clicked change screen to Screen1
         //Go to Screen1 with screen transition towards East
         application().gotoScreen1ScreenWipeTransitionEast();
+    }
+    else if (&src == &toggleButton1)
+    {
+        //Interaction2
+        //When toggleButton1 clicked execute C++ code
+        //Execute C++ code
+        dynamicGraph1.setVisible(!dynamicGraph1.isVisible());
+        dynamicGraph2.setVisible(!dynamicGraph2.isVisible());
+        dynamicGraph1.invalidate();
+        dynamicGraph2.invalidate();
     }
 }

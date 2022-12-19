@@ -297,6 +297,36 @@
           },
           {
             "Type": "DynamicGraph",
+            "Name": "dynamicGraph2",
+            "Width": 320,
+            "Height": 166,
+            "Visible": false,
+            "DataSeed": -632790136,
+            "NumberOfValues": 100,
+            "MaxY": 100.0,
+            "Precision": "1",
+            "LastIndex": 99,
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "LabelSizeTop": 6,
+            "LabelSizeBottom": 15,
+            "LabelSizeLeft": 20,
+            "GraphType": "GraphWrapClear",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 20,
+                  "Green": 151,
+                  "Blue": 197
+                }
+              }
+            ]
+          },
+          {
+            "Type": "DynamicGraph",
             "Name": "dynamicGraph1",
             "Width": 320,
             "Height": 166,
@@ -454,6 +484,17 @@
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton1"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "dynamicGraph1.setVisible(!dynamicGraph1.isVisible());\r\ndynamicGraph2.setVisible(!dynamicGraph2.isVisible());\r\ndynamicGraph1.invalidate();\r\ndynamicGraph2.invalidate();"
             }
           }
         ],

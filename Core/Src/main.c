@@ -156,13 +156,13 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float CountAvgFrom10sec(){
+float CountAvgFrom60sec(){
 	volatile float result;
-		for (uint8_t i=0;i<10;i++)
+		for (uint8_t i=0;i<60;i++)
 		{
 			result+=ladowarka.PomiaryCoSec[i];
 		}
-	return result/10;
+	return result/60;
 }
 /***** OPIS PROGRAMU********************
 ** Na Pinie PA7 (ADC1_IN7 jest dokonoywany pomiar napiecia co 1000ms
@@ -1125,7 +1125,7 @@ __weak void ZadanieDwa(void *argument)
 	  static int liczbaPomiarow=0; // number of adc measurements. if 10 then clear
 	  static volatile uint32_t value=0; //actual value of adc measurement
 
-	  static int sec0to9=0;
+	  static int sec0to59=0;
 
 		if(ladowarka.Minelo100ms){ //jesli zostalo wykryte przerwanie z liniczka7
 			ladowarka.Minelo100ms=0; //kasuj flage
@@ -1141,16 +1141,16 @@ __weak void ZadanieDwa(void *argument)
 						ladowarka.BatteryVoltage=(value/10) * 3.3f / 4096.0f;
 
 						if (ladowarka.ChargeStarted){ //jesli zaczeto ladwowac
-							if (ladowarka.CzsasLadowaniaWSec<1) ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; //dla 0 pomiaru dodaj od razy do tablicy
+							if (ladowarka.CzsasLadowaniaWSec<2) ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; //dla 0 pomiaru dodaj od razy do tablicy
 							if (ladowarka.BatteryVoltage>ladowarka.MaxBatteryVoltage) ladowarka.MaxBatteryVoltage=ladowarka.BatteryVoltage; //uaktualnij max wartosc.
 							ladowarka.CzsasLadowaniaWSec++; //jesli zaczal sie proces ladowana ziwekszja wartosc czas ladowania w sec
 							ladowarka.narysujPunktNaWykresie=1; //zezwol na narysowanie danej na wykresie
 
 							/********* dodawanie co 1 sek wartosc pomiaru do tabeli********/
-							ladowarka.PomiaryCoSec[sec0to9++]=ladowarka.BatteryVoltage;
-							if (sec0to9>9) {	//jesli mamy 10 elementow w tabeli (minelo 10sec) usrednij i dodaj wartosc do NapiecieBaterii
-								ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/10]=CountAvgFrom10sec(); // TO DO srednia z 10 pomiarow
-								sec0to9=0;
+							ladowarka.PomiaryCoSec[sec0to59++]=ladowarka.BatteryVoltage;
+							if (sec0to59>59) {	//jesli mamy 10 elementow w tabeli (minelo 10sec) usrednij i dodaj wartosc do NapiecieBaterii
+								ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]=CountAvgFrom60sec(); // TO DO srednia z 10 pomiarow
+								sec0to59=0;
 							}
 
 						}
