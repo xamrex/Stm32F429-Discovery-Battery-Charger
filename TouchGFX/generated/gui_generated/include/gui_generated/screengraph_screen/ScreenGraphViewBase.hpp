@@ -11,10 +11,9 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/Button.hpp>
-#include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
+#include <touchgfx/widgets/graph/GraphScroll.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/graph/GraphScroll.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
@@ -44,9 +43,13 @@ protected:
     touchgfx::Image Background;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::Button button1;
-    touchgfx::GraphWrapAndClear<100> dynamicGraph2;
+    touchgfx::GraphScroll<600> dynamicGraph2;
     touchgfx::GraphElementLine dynamicGraph2Line1;
     touchgfx::PainterRGB565 dynamicGraph2Line1Painter;
+    touchgfx::GraphElementGridX dynamicGraph2MinorXAxisGrid;
+    touchgfx::GraphElementGridX dynamicGraph2MajorXAxisGrid;
+    touchgfx::GraphLabelsX dynamicGraph2MajorXAxisLabel;
+    touchgfx::GraphLabelsY dynamicGraph2MajorYAxisLabel;
     touchgfx::GraphScroll<60> dynamicGraph1;
     touchgfx::GraphElementLine dynamicGraph1Line1;
     touchgfx::PainterRGB565 dynamicGraph1Line1Painter;

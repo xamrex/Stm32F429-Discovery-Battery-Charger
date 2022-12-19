@@ -302,28 +302,70 @@
             "Height": 166,
             "Visible": false,
             "DataSeed": -632790136,
-            "NumberOfValues": 100,
-            "MaxY": 100.0,
-            "Precision": "1",
-            "LastIndex": 99,
+            "NumberOfValues": 600,
+            "MaxY": 1.5,
+            "MinY": 1.0,
+            "Precision": "0.001",
+            "LastIndex": 599,
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
             "LabelSizeTop": 6,
             "LabelSizeBottom": 15,
             "LabelSizeLeft": 20,
-            "GraphType": "GraphWrapClear",
+            "GraphType": "GraphScroll",
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
-                "LineWidth": 2,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 20,
-                  "Green": 151,
-                  "Blue": 197
-                }
+                "LineWidth": 2
               }
-            ]
+            ],
+            "XAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 60.0,
+              "LineWidth": 2
+            },
+            "MinorXAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 30.0,
+              "LineWidth": 1
+            },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 60.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "TextId": "__SingleUse_IL1B",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 0.15,
+              "NumberOfDecimals": 1,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "TextId": "__SingleUse_CZJE",
+              "TextRotation": "0",
+              "Position": "Left"
+            }
           },
           {
             "Type": "DynamicGraph",
