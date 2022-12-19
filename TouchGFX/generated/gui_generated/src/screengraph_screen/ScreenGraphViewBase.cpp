@@ -43,11 +43,24 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph2MinorXAxisGrid.setMajorGrid(dynamicGraph2MajorXAxisGrid);
     dynamicGraph2.addGraphElement(dynamicGraph2MinorXAxisGrid);
 
+    dynamicGraph2MinorYAxisGrid.setScale(1000);
+    dynamicGraph2MinorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph2MinorYAxisGrid.setInterval(0.075f);
+    dynamicGraph2MinorYAxisGrid.setLineWidth(1);
+    dynamicGraph2MinorYAxisGrid.setMajorGrid(dynamicGraph2MajorYAxisGrid);
+    dynamicGraph2.addGraphElement(dynamicGraph2MinorYAxisGrid);
+
     dynamicGraph2MajorXAxisGrid.setScale(1000);
     dynamicGraph2MajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     dynamicGraph2MajorXAxisGrid.setInterval(1);
     dynamicGraph2MajorXAxisGrid.setLineWidth(2);
     dynamicGraph2.addGraphElement(dynamicGraph2MajorXAxisGrid);
+
+    dynamicGraph2MajorYAxisGrid.setScale(1000);
+    dynamicGraph2MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph2MajorYAxisGrid.setInterval(0.15f);
+    dynamicGraph2MajorYAxisGrid.setLineWidth(2);
+    dynamicGraph2.addGraphElement(dynamicGraph2MajorYAxisGrid);
 
     dynamicGraph2MajorXAxisLabel.setScale(1000);
     dynamicGraph2MajorXAxisLabel.setInterval(1);

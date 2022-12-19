@@ -15,13 +15,15 @@ void ScreenGraphView::setupScreen()
     ScreenGraphViewBase::setupScreen();
     // touchgfx_printf("klkikneto button\n");
      dynamicGraph1MajorYAxisLabel.setInterval(0.10f); //labelki co 0.1
-     //dynamicGraph1MajorXAxisLabel.setInterval(10); //labelki co 0.1
-
      dynamicGraph1MajorYAxisGrid.setInterval(0.10f); // major horizontal grid lines co 0.1
      dynamicGraph1MinorYAxisGrid.setInterval(0.05f); //minor horizontal grid lines
 
+     dynamicGraph2MajorYAxisLabel.setInterval(0.10f); //labelki co 0.1
+     dynamicGraph2MajorYAxisGrid.setInterval(0.10f); // major horizontal grid lines co 0.1
+     dynamicGraph2MinorYAxisGrid.setInterval(0.05f); //minor horizontal grid lines
 
      dynamicGraph1.invalidate();
+     dynamicGraph2.invalidate();
 }
 
 void ScreenGraphView::tearDownScreen()
@@ -37,13 +39,13 @@ void ScreenGraphView::DrawPoint2(){
 void ScreenGraphView::DrawPoint2Min(){
 #ifndef SIMULATOR
 	dynamicGraph2.addDataPoint(ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]);
-	//1 -> czas ladowania od 0 do 9min
-	//if (ladowarka.CzsasLadowaniaWSec<9*60){
-	//	dynamicGraph2.setGraphRangeX(0,1+ladowarka.CzsasLadowaniaWSec/60);
-	//		dynamicGraph2MinorXAxisGrid.setInterval(1); //minor horizontal grid lines
-	//		dynamicGraph2MajorYAxisLabel.setInterval(1); //labelki co 0.1
-	//}
-
+	//1 -> czas ladowania od 9 do 59min
+	if (ladowarka.CzsasLadowaniaWSec>9*60 && ladowarka.CzsasLadowaniaWSec <59*60){ //jesli czas jest >9min i <59 min
+		dynamicGraph2.setGraphRangeX(0,60);
+			dynamicGraph2MajorXAxisGrid.setInterval(10); //major horizontal grid lines
+			dynamicGraph2MinorXAxisGrid.setInterval(2); //minor horizontal grid lines
+			dynamicGraph2MajorXAxisLabel.setInterval(10); //labelki co 10
+	}
 
 #endif
 }

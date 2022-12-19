@@ -109,9 +109,9 @@
           {
             "Type": "TextArea",
             "Name": "LabelPradLadowania",
-            "X": 25,
+            "X": 41,
             "Y": 28,
-            "Width": 85,
+            "Width": 68,
             "Height": 36,
             "TextId": "__SingleUse_OQ6C",
             "TextRotation": "0",
@@ -168,7 +168,7 @@
             "Type": "Image",
             "Name": "image3_1",
             "X": 118,
-            "Y": 79,
+            "Y": 138,
             "Width": 152,
             "Height": 43,
             "RelativeFilename": "counter_box.png"
@@ -177,8 +177,8 @@
             "Type": "TextArea",
             "Name": "LabelNapiecieBaterii",
             "X": 41,
-            "Y": 82,
-            "Width": 69,
+            "Y": 141,
+            "Width": 63,
             "Height": 36,
             "TextId": "__SingleUse_O6MQ",
             "TextRotation": "0",
@@ -193,7 +193,7 @@
             "Type": "TextArea",
             "Name": "txtNapiecieBaterii",
             "X": 143,
-            "Y": 88,
+            "Y": 147,
             "Width": 124,
             "Height": 24,
             "TextId": "__SingleUse_JY89",
@@ -206,6 +206,137 @@
             "Wildcard1": {
               "UseBuffer": true,
               "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "LabelChargingTime",
+            "X": 41,
+            "Y": 83,
+            "Width": 68,
+            "Height": 36,
+            "TextId": "__SingleUse_LNZH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image3_2",
+            "X": 118,
+            "Y": 83,
+            "Width": 152,
+            "Height": 43,
+            "RelativeFilename": "counter_box.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "ButtonDownTime",
+            "X": 273,
+            "Y": 105,
+            "Width": 43,
+            "Height": 23,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 5,
+                "IconReleased": "__designer\\Dark_Icons_Down_arrow_32.png",
+                "IconPressed": "__designer\\Dark_Icons_Down_arrow_32.png"
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 43,
+                "Height": 23,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "ButtonUpTime",
+            "X": 273,
+            "Y": 81,
+            "Width": 43,
+            "Height": 23,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 6,
+                "IconReleased": "__designer\\Dark_Icons_Up_arrow_32.png",
+                "IconPressed": "__designer\\Dark_Icons_Up_arrow_32.png"
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 43,
+                "Height": 23,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "txtChargingTime",
+            "X": 143,
+            "Y": 93,
+            "Width": 124,
+            "Height": 24,
+            "TextId": "__SingleUse_8IRX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_JGTL",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           }
         ],
@@ -255,6 +386,28 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "ButtonStartClicked"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonUpTimeClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ButtonUpTime"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ButtonUpTimeClicked"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonDownTimeClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ButtonDownTime"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ButtonDownTimeClicked"
             }
           }
         ]
@@ -337,6 +490,26 @@
                 "Blue": 197
               },
               "Interval": 1.0,
+              "LineWidth": 1
+            },
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 0.15,
+              "LineWidth": 2
+            },
+            "MinorYAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 0.075,
               "LineWidth": 1
             },
             "XAxisLabel": {

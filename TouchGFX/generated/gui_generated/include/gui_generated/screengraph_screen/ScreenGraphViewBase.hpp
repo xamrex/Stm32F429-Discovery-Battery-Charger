@@ -47,7 +47,9 @@ protected:
     touchgfx::GraphElementLine dynamicGraph2Line1;
     touchgfx::PainterRGB565 dynamicGraph2Line1Painter;
     touchgfx::GraphElementGridX dynamicGraph2MinorXAxisGrid;
+    touchgfx::GraphElementGridY dynamicGraph2MinorYAxisGrid;
     touchgfx::GraphElementGridX dynamicGraph2MajorXAxisGrid;
+    touchgfx::GraphElementGridY dynamicGraph2MajorYAxisGrid;
     touchgfx::GraphLabelsX dynamicGraph2MajorXAxisLabel;
     touchgfx::GraphLabelsY dynamicGraph2MajorYAxisLabel;
     touchgfx::GraphScroll<60> dynamicGraph1;

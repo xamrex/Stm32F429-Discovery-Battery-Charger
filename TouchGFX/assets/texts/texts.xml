@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_JGTL" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">10</Translation>
+      </Text>
+      <Text Id="__SingleUse_8IRX" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; [hrs]</Translation>
+      </Text>
+      <Text Id="__SingleUse_LNZH" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">Charging&#10;Time:</Translation>
+      </Text>
       <Text Id="__SingleUse_CZJE" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
@@ -39,8 +48,8 @@
       <Text Id="__SingleUse_JY89" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; [V]</Translation>
       </Text>
-      <Text Id="__SingleUse_O6MQ" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Napięcie &#10;Baterii</Translation>
+      <Text Id="__SingleUse_O6MQ" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">Battery&#10;Voltage:</Translation>
       </Text>
       <Text Id="__SingleUse_KG9Q" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">START</Translation>
@@ -48,8 +57,8 @@
       <Text Id="__SingleUse_9VFQ" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; [mA]</Translation>
       </Text>
-      <Text Id="__SingleUse_OQ6C" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Ustaw prąd&#10; ładowania</Translation>
+      <Text Id="__SingleUse_OQ6C" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">Charging&#10;Current:</Translation>
       </Text>
     </TextGroup>
   </Texts>

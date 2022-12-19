@@ -39,6 +39,16 @@ public:
         // Override and implement this function in Screen1
     }
 
+    virtual void ButtonUpTimeClicked()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void ButtonDownTimeClicked()
+    {
+        // Override and implement this function in Screen1
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -58,6 +68,11 @@ protected:
     touchgfx::Image image3_1;
     touchgfx::TextArea LabelNapiecieBaterii;
     touchgfx::TextAreaWithOneWildcard txtNapiecieBaterii;
+    touchgfx::TextArea LabelChargingTime;
+    touchgfx::Image image3_2;
+    touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  ButtonDownTime;
+    touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  ButtonUpTime;
+    touchgfx::TextAreaWithOneWildcard txtChargingTime;
 
     /*
      * Wildcard Buffers
@@ -66,6 +81,8 @@ protected:
     touchgfx::Unicode::UnicodeChar txtPradLadowaniaBuffer[TXTPRADLADOWANIA_SIZE];
     static const uint16_t TXTNAPIECIEBATERII_SIZE = 10;
     touchgfx::Unicode::UnicodeChar txtNapiecieBateriiBuffer[TXTNAPIECIEBATERII_SIZE];
+    static const uint16_t TXTCHARGINGTIME_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar txtChargingTimeBuffer[TXTCHARGINGTIME_SIZE];
 
 private:
 

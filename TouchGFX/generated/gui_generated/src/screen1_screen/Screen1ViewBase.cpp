@@ -36,7 +36,7 @@ Screen1ViewBase::Screen1ViewBase() :
     ButtonUp.setPosition(273, 25, 43, 23);
     ButtonUp.setAction(flexButtonCallback);
 
-    LabelPradLadowania.setXY(25, 28);
+    LabelPradLadowania.setXY(41, 28);
     LabelPradLadowania.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     LabelPradLadowania.setLinespacing(0);
     LabelPradLadowania.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OQ6C));
@@ -55,20 +55,51 @@ Screen1ViewBase::Screen1ViewBase() :
     buttonStart.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonStart.setAction(buttonCallback);
 
-    image3_1.setXY(118, 79);
+    image3_1.setXY(118, 138);
     image3_1.setBitmap(touchgfx::Bitmap(BITMAP_COUNTER_BOX_ID));
 
-    LabelNapiecieBaterii.setXY(41, 82);
+    LabelNapiecieBaterii.setXY(41, 141);
     LabelNapiecieBaterii.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     LabelNapiecieBaterii.setLinespacing(0);
     LabelNapiecieBaterii.setTypedText(touchgfx::TypedText(T___SINGLEUSE_O6MQ));
 
-    txtNapiecieBaterii.setPosition(143, 88, 124, 24);
+    txtNapiecieBaterii.setPosition(143, 147, 124, 24);
     txtNapiecieBaterii.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     txtNapiecieBaterii.setLinespacing(0);
     txtNapiecieBateriiBuffer[0] = 0;
     txtNapiecieBaterii.setWildcard(txtNapiecieBateriiBuffer);
     txtNapiecieBaterii.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JY89));
+
+    LabelChargingTime.setXY(41, 83);
+    LabelChargingTime.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    LabelChargingTime.setLinespacing(0);
+    LabelChargingTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LNZH));
+
+    image3_2.setXY(118, 83);
+    image3_2.setBitmap(touchgfx::Bitmap(BITMAP_COUNTER_BOX_ID));
+
+    ButtonDownTime.setBoxWithBorderPosition(0, 0, 43, 23);
+    ButtonDownTime.setBorderSize(5);
+    ButtonDownTime.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    ButtonDownTime.setIconBitmaps(Bitmap(BITMAP_DARK_ICONS_DOWN_ARROW_32_ID), Bitmap(BITMAP_DARK_ICONS_DOWN_ARROW_32_ID));
+    ButtonDownTime.setIconXY(5, 0);
+    ButtonDownTime.setPosition(273, 105, 43, 23);
+    ButtonDownTime.setAction(flexButtonCallback);
+
+    ButtonUpTime.setBoxWithBorderPosition(0, 0, 43, 23);
+    ButtonUpTime.setBorderSize(5);
+    ButtonUpTime.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    ButtonUpTime.setIconBitmaps(Bitmap(BITMAP_DARK_ICONS_UP_ARROW_32_ID), Bitmap(BITMAP_DARK_ICONS_UP_ARROW_32_ID));
+    ButtonUpTime.setIconXY(6, 0);
+    ButtonUpTime.setPosition(273, 81, 43, 23);
+    ButtonUpTime.setAction(flexButtonCallback);
+
+    txtChargingTime.setPosition(143, 93, 124, 24);
+    txtChargingTime.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    txtChargingTime.setLinespacing(0);
+    Unicode::snprintf(txtChargingTimeBuffer, TXTCHARGINGTIME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_JGTL).getText());
+    txtChargingTime.setWildcard(txtChargingTimeBuffer);
+    txtChargingTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8IRX));
 
     add(__background);
     add(image2);
@@ -81,6 +112,11 @@ Screen1ViewBase::Screen1ViewBase() :
     add(image3_1);
     add(LabelNapiecieBaterii);
     add(txtNapiecieBaterii);
+    add(LabelChargingTime);
+    add(image3_2);
+    add(ButtonDownTime);
+    add(ButtonUpTime);
+    add(txtChargingTime);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -119,5 +155,19 @@ void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCo
         //When ButtonUp clicked call virtual function
         //Call ButtonUpClicked
         ButtonUpClicked();
+    }
+    else if (&src == &ButtonDownTime)
+    {
+        //InteractionButtonDownTimeClicked
+        //When ButtonDownTime clicked call virtual function
+        //Call ButtonDownTimeClicked
+        ButtonDownTimeClicked();
+    }
+    else if (&src == &ButtonUpTime)
+    {
+        //InteractionButtonUpTimeClicked
+        //When ButtonUpTime clicked call virtual function
+        //Call ButtonUpTimeClicked
+        ButtonUpTimeClicked();
     }
 }

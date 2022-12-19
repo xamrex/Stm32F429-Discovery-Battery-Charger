@@ -12,6 +12,8 @@ public:
     virtual void tearDownScreen();
 	virtual void ButtonUpClicked();
 	virtual void ButtonDownClicked();
+	virtual void ButtonUpTimeClicked();
+	virtual void ButtonDownTimeClicked();
 	virtual void DisplayBatteryVoltage();
 	virtual void ButtonStartClicked();
 

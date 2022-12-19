@@ -4,8 +4,9 @@
 #include "Charger.h"
 extern LadowarkaStruct ladowarka;
 #endif
-int PradLadowania=400; //ustawienie na sztywno pradu ladowania
+int PradLadowania=400; //Set default charging curretn to 400mA
 int licznik;
+int ChargingTime=10; //Set default charging time to 10hrs
 Model::Model() : modelListener(0)
 {
 
