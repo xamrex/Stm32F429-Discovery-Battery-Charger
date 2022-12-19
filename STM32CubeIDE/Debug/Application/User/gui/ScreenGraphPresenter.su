@@ -3,6 +3,7 @@
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphPresenter.cpp:10:6:virtual void ScreenGraphPresenter::activate()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphPresenter.cpp:19:6:virtual void ScreenGraphPresenter::DrawPoint()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphPresenter.cpp:23:6:virtual void ScreenGraphPresenter::DisplayLastAndMaxVlt()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphPresenter.cpp:27:6:virtual void ScreenGraphPresenter::DisplayRunningTime()	0	static
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphPresenter.hpp:28:13:virtual ScreenGraphPresenter::~ScreenGraphPresenter()	8	static
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphPresenter.hpp:28:13:virtual void* ScreenGraphPresenter::_ZThn4_N20ScreenGraphPresenterD1Ev()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphPresenter.cpp:4:1:ScreenGraphPresenter::ScreenGraphPresenter(ScreenGraphView&)	8	static

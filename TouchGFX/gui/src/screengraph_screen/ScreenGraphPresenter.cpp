@@ -24,3 +24,7 @@ void ScreenGraphPresenter::DisplayLastAndMaxVlt()
 {
 	view.DisplayLastAndMaxVlt2();
 }
+void ScreenGraphPresenter::DisplayRunningTime()
+{
+	view.DisplayRunningTime2();
+}

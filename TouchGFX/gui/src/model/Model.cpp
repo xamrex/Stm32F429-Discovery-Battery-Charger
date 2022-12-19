@@ -31,4 +31,6 @@ if(ladowarka.narysujPunktNaWykresie){
 
 /*************** Update min/max value **************************/
 modelListener->DisplayLastAndMaxVlt();
+/*************** Update Runningn Time value **************************/
+modelListener->DisplayRunningTime();
 }

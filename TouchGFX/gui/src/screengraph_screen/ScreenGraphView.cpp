@@ -43,3 +43,16 @@ void ScreenGraphView::DisplayLastAndMaxVlt2(){
 	txtLastValue.invalidate();
 #endif
 }
+
+void ScreenGraphView::DisplayRunningTime2(){
+#ifndef SIMULATOR
+	int sec, h, m, s;
+	sec=ladowarka.CzsasLadowaniaWSec;
+	h = (sec/3600);
+	m = (sec -(3600*h))/60;
+	s = (sec -(3600*h)-(m*60));
+
+	Unicode::snprintf(textChargingTmeBuffer,TEXTCHARGINGTME_SIZE,"%02d:%02d:%02d\n",h,m,s);
+	textChargingTme.invalidate();
+#endif
+}

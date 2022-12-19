@@ -13,6 +13,7 @@ public:
     virtual void UpdateBatteryVoltage () {};
     virtual void DrawPoint () {};
     virtual void DisplayLastAndMaxVlt() {} ;
+    virtual void DisplayRunningTime() {} ;
 
     void bind(Model* m)
     {

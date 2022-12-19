@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
     virtual void DrawPoint2();
 	virtual void DisplayLastAndMaxVlt2();
+	virtual void DisplayRunningTime2();
 
 protected:
 };
