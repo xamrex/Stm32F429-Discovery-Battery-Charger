@@ -72,6 +72,13 @@ void ScreenGraphView::DisplayLastAndMaxVlt2(){
 #endif
 }
 
+void ScreenGraphView::DisplayCurrentValue2(){
+#ifndef SIMULATOR
+	Unicode::snprintfFloat(textChargingCurrentBuffer,TEXTCHARGINGCURRENT_SIZE,"%3f",ladowarka.ChargingCurrent);
+	textChargingCurrent.invalidate();
+#endif
+}
+
 void ScreenGraphView::DisplayRunningTime2(){
 #ifndef SIMULATOR
 	int sec, h, m, s;
@@ -84,6 +91,7 @@ void ScreenGraphView::DisplayRunningTime2(){
 	textChargingTme.invalidate();
 #endif
 }
+
 float ScreenGraphView::countMin(){
 #ifndef SIMULATOR
 	float results= ladowarka.PomiaryCoSec[0]; //domyslna wartocs

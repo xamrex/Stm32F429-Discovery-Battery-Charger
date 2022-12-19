@@ -683,6 +683,21 @@
               "UseBuffer": true,
               "BufferSize": 10
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textChargingCurrent",
+            "X": 160,
+            "Y": 168,
+            "Width": 153,
+            "Height": 15,
+            "TextId": "__SingleUse_ZLXT",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_G6V4",
+              "UseBuffer": true,
+              "BufferSize": 4
+            }
           }
         ],
         "Interactions": [

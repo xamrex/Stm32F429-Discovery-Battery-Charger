@@ -6,6 +6,12 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_G6V4" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">123</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZLXT" Alignment="Right" TypographyId="Small">
+        <Translation Language="GB">Charging Current: &lt;value&gt; [mA]</Translation>
+      </Text>
       <Text Id="__SingleUse_JGTL" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">10</Translation>
       </Text>

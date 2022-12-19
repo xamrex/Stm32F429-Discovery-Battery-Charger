@@ -65,6 +65,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard txtLastValue;
     touchgfx::TextAreaWithOneWildcard txtMaxValue;
     touchgfx::TextAreaWithOneWildcard textChargingTme;
+    touchgfx::TextAreaWithOneWildcard textChargingCurrent;
 
     /*
      * Wildcard Buffers
@@ -75,6 +76,8 @@ protected:
     touchgfx::Unicode::UnicodeChar txtMaxValueBuffer[TXTMAXVALUE_SIZE];
     static const uint16_t TEXTCHARGINGTME_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textChargingTmeBuffer[TEXTCHARGINGTME_SIZE];
+    static const uint16_t TEXTCHARGINGCURRENT_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar textChargingCurrentBuffer[TEXTCHARGINGCURRENT_SIZE];
 
 private:
 

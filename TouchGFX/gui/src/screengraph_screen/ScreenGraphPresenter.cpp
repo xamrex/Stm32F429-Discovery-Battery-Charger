@@ -32,3 +32,7 @@ void ScreenGraphPresenter::DisplayRunningTime()
 {
 	view.DisplayRunningTime2();
 }
+void ScreenGraphPresenter::DisplayCurrentValue()
+{
+	view.DisplayCurrentValue2();
+}

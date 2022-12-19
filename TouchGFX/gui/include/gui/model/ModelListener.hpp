@@ -15,6 +15,7 @@ public:
     virtual void DrawPointMin () {};
     virtual void DisplayLastAndMaxVlt() {} ;
     virtual void DisplayRunningTime() {} ;
+    virtual void DisplayCurrentValue() {};
 
     void bind(Model* m)
     {

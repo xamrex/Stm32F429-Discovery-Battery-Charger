@@ -155,6 +155,13 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     textChargingTme.setWildcard(textChargingTmeBuffer);
     textChargingTme.setTypedText(touchgfx::TypedText(T___SINGLEUSE_U9Q3));
 
+    textChargingCurrent.setPosition(160, 168, 153, 15);
+    textChargingCurrent.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textChargingCurrent.setLinespacing(0);
+    Unicode::snprintf(textChargingCurrentBuffer, TEXTCHARGINGCURRENT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_G6V4).getText());
+    textChargingCurrent.setWildcard(textChargingCurrentBuffer);
+    textChargingCurrent.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZLXT));
+
     add(__background);
     add(Background);
     add(boxWithBorder1);
@@ -166,6 +173,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     add(txtLastValue);
     add(txtMaxValue);
     add(textChargingTme);
+    add(textChargingCurrent);
 }
 
 void ScreenGraphViewBase::setupScreen()
