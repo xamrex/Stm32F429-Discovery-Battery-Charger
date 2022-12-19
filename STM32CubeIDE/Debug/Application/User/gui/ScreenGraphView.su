@@ -3,11 +3,14 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphView.hpp:11:13:ScreenGraphView::~ScreenGraphView()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:29:6:virtual void ScreenGraphView::tearDownScreen()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:34:6:virtual void ScreenGraphView::DrawPoint2()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:68:6:virtual void ScreenGraphView::DisplayRunningTime2()	16	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:87:7:virtual float ScreenGraphView::countMin()	16	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:99:7:virtual float ScreenGraphView::countMax()	16	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:75:6:virtual void ScreenGraphView::DisplayRunningTime2()	16	static
 ../../TouchGFX/gui/include/gui/screengraph_screen/ScreenGraphView.hpp:11:13:virtual ScreenGraphView::~ScreenGraphView()	8	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:13:6:virtual void ScreenGraphView::setupScreen()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:59:6:virtual void ScreenGraphView::DisplayLastAndMaxVlt2()	24	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:66:6:virtual void ScreenGraphView::DisplayLastAndMaxVlt2()	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:438:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeX(int, int)	4	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:39:6:virtual void ScreenGraphView::DrawPoint2Min()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:513:18:virtual void touchgfx::AbstractDataGraph::setGraphRangeY(float, float)	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:34:6:virtual void ScreenGraphView::DrawPoint2()	24	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:43:6:virtual void ScreenGraphView::DrawPoint2Min()	24	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screengraph_screen/ScreenGraphView.cpp:8:1:ScreenGraphView::ScreenGraphView()	8	static

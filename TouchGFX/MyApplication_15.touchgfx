@@ -555,7 +555,7 @@
             "XAxisScale": 1.0,
             "LabelSizeTop": 6,
             "LabelSizeBottom": 15,
-            "LabelSizeLeft": 20,
+            "LabelSizeLeft": 24,
             "GraphType": "GraphScroll",
             "GraphDrawers": [
               {
@@ -606,7 +606,7 @@
             "YAxisLabel": {
               "Type": "GraphLabel",
               "Interval": 0.15,
-              "NumberOfDecimals": 1,
+              "NumberOfDecimals": 2,
               "DecimalSeparator": "Point",
               "TextColor": {
                 "Red": 20,

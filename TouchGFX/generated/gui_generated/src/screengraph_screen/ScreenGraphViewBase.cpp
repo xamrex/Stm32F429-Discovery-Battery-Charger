@@ -83,7 +83,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
 
     dynamicGraph1.setScale(1000);
     dynamicGraph1.setPosition(0, 0, 320, 166);
-    dynamicGraph1.setGraphAreaMargin(6, 20, 0, 15);
+    dynamicGraph1.setGraphAreaMargin(6, 24, 0, 15);
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
     dynamicGraph1.setGraphRangeY(1.0f, 1.5f);
 
@@ -116,7 +116,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     dynamicGraph1MajorYAxisLabel.setScale(1000);
     dynamicGraph1MajorYAxisLabel.setInterval(0.15f);
     dynamicGraph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_CBWT));
-    dynamicGraph1MajorYAxisLabel.setLabelDecimals(1);
+    dynamicGraph1MajorYAxisLabel.setLabelDecimals(2);
     dynamicGraph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     dynamicGraph1.addLeftElement(dynamicGraph1MajorYAxisLabel);
 
