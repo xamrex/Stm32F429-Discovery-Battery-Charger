@@ -17,7 +17,7 @@
   ******************************************************************************
   * TODO:
   *
-  *
+  * sprawdzic co sie dzieje jak skonczy sie pomiar.
   *  zatrzyamc test po wybranym czasie ladowarka.ChargingTime
   * zmienic jezyk na angielski
   *
