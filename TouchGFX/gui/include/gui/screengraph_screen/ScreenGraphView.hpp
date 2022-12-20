@@ -16,6 +16,7 @@ public:
 	virtual void DisplayLastAndMaxVlt2();
 	virtual void DisplayRunningTime2();
 	virtual void DisplayCurrentValue2();
+	virtual void DisplayChargingFinished2();
 	virtual float countMin();
 	virtual float countMax();
 

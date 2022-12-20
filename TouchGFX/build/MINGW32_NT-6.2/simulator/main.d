@@ -118,6 +118,8 @@ build/MINGW32_NT-6.2/simulator/main.o: simulator/main.cpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ModalWindow.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
  generated/gui_generated/include/gui_generated/common/SimConstants.hpp \
  ../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/SDL2TouchController.hpp \
  generated/simulator/include/simulator/mainBase.hpp
@@ -359,6 +361,10 @@ gui/include/gui/screengraph_screen/ScreenGraphPresenter.hpp:
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ModalWindow.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
 
 generated/gui_generated/include/gui_generated/common/SimConstants.hpp:
 

@@ -16,6 +16,7 @@ public:
     virtual void DisplayLastAndMaxVlt() {} ;
     virtual void DisplayRunningTime() {} ;
     virtual void DisplayCurrentValue() {};
+    virtual void DisplayChargingFinished() {};
 
     void bind(Model* m)
     {

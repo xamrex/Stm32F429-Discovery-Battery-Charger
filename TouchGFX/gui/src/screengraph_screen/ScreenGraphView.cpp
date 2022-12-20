@@ -79,6 +79,11 @@ void ScreenGraphView::DisplayCurrentValue2(){
 #endif
 }
 
+void ScreenGraphView::DisplayChargingFinished2(){
+	modalWindow1.setVisible(true);
+	modalWindow1.invalidate();
+}
+
 void ScreenGraphView::DisplayRunningTime2(){
 #ifndef SIMULATOR
 	int sec, h, m, s;

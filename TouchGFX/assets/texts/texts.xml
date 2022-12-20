@@ -6,6 +6,9 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_86E1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Charging completed!</Translation>
+      </Text>
       <Text Id="__SingleUse_G6V4" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">123</Translation>
       </Text>

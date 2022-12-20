@@ -25,10 +25,6 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(1);
 
-    button1.setXY(187, 189);
-    button1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    button1.setAction(buttonCallback);
-
     dynamicGraph2.setScale(1000);
     dynamicGraph2.setGraphRangeX(0, 10);
     dynamicGraph2.setPosition(0, 0, 320, 166);
@@ -162,10 +158,29 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     textChargingCurrent.setWildcard(textChargingCurrentBuffer);
     textChargingCurrent.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZLXT));
 
+    modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_RSZ_MY_MODAL_BACKGROUND_ID), 75, 60);
+    modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    modalWindow1.setShadeAlpha(150);
+    modalWindow1.hide();
+
+    buttonCloseModal.setXY(53, 87);
+    buttonCloseModal.setBitmaps(touchgfx::Bitmap(BITMAP_RSZ_CLOSE_BUTTON_ID), touchgfx::Bitmap(BITMAP_RSZ_CLOSE_BUTTON_PRESSED_ID));
+    buttonCloseModal.setAction(buttonCallback);
+    modalWindow1.add(buttonCloseModal);
+
+    image1.setXY(59, 3);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_RSZ_INFO_ICON_ID));
+    modalWindow1.add(image1);
+
+    textChargingCompleted.setXY(7, 60);
+    textChargingCompleted.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textChargingCompleted.setLinespacing(0);
+    textChargingCompleted.setTypedText(touchgfx::TypedText(T___SINGLEUSE_86E1));
+    modalWindow1.add(textChargingCompleted);
+
     add(__background);
     add(Background);
     add(boxWithBorder1);
-    add(button1);
     add(dynamicGraph2);
     add(dynamicGraph1);
     add(toggleButton1);
@@ -174,6 +189,7 @@ ScreenGraphViewBase::ScreenGraphViewBase() :
     add(txtMaxValue);
     add(textChargingTme);
     add(textChargingCurrent);
+    add(modalWindow1);
 }
 
 void ScreenGraphViewBase::setupScreen()
@@ -188,14 +204,7 @@ void ScreenGraphViewBase::action1()
 
 void ScreenGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &button1)
-    {
-        //Interaction1
-        //When button1 clicked change screen to Screen1
-        //Go to Screen1 with screen transition towards East
-        application().gotoScreen1ScreenWipeTransitionEast();
-    }
-    else if (&src == &toggleButton1)
+    if (&src == &toggleButton1)
     {
         //Interaction2
         //When toggleButton1 clicked execute C++ code
@@ -204,5 +213,13 @@ void ScreenGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         dynamicGraph2.setVisible(!dynamicGraph2.isVisible());
         dynamicGraph1.invalidate();
         dynamicGraph2.invalidate();
+    }
+    else if (&src == &buttonCloseModal)
+    {
+        //Interaction3
+        //When buttonCloseModal clicked hide modalWindow1
+        //Hide modalWindow1
+        modalWindow1.setVisible(false);
+        modalWindow1.invalidate();
     }
 }

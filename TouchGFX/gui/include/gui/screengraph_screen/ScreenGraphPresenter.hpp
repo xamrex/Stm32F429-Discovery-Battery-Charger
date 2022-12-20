@@ -31,6 +31,7 @@ public:
     virtual void DisplayLastAndMaxVlt();
     virtual void DisplayRunningTime();
     virtual void DisplayCurrentValue();
+    virtual void DisplayChargingFinished();
 
 private:
     ScreenGraphPresenter();

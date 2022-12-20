@@ -37,6 +37,9 @@ if (ladowarka.narysujPunktNaWykresieMin){
 }
 #endif
 
+if(ladowarka.CzsasLadowaniaWSec>=ladowarka.ChargingTime*60*60){  //jesli czas ladowania jest wiekszy niz ustawiony pokaz modala
+	modelListener->DisplayChargingFinished();
+}
 
 
 /*************** Update min/max value **************************/

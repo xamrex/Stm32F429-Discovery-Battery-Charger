@@ -1239,6 +1239,11 @@ __weak void ZadanieDwa(void *argument)
 							//ladowarka.UstawioneNapiecieNaopAmpie=1;
 					}
 
+					/************** sprawdzenie czy pomiar nie ma sie juz zakonczyc*****************/
+					if (ladowarka.CzsasLadowaniaWSec>=ladowarka.ChargingTime*60*60){
+						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095);  //ustaw max napiecie zeby nie ladowac.
+					}
+
 
 
     osDelay(1); //to chyba ma zostac?

@@ -36,3 +36,7 @@ void ScreenGraphPresenter::DisplayCurrentValue()
 {
 	view.DisplayCurrentValue2();
 }
+void ScreenGraphPresenter::DisplayChargingFinished()
+{
+	view.DisplayChargingFinished2();
+}

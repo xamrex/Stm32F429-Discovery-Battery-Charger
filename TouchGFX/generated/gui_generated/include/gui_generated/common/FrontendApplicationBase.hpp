@@ -23,8 +23,6 @@ public:
     // Screen1
     void gotoScreen1ScreenNoTransition();
 
-    void gotoScreen1ScreenWipeTransitionEast();
-
     // ScreenGraph
     void gotoScreenGraphScreenWipeTransitionEast();
 
@@ -35,8 +33,6 @@ protected:
 
     // Screen1
     void gotoScreen1ScreenNoTransitionImpl();
-
-    void gotoScreen1ScreenWipeTransitionEastImpl();
 
     // ScreenGraph
     void gotoScreenGraphScreenWipeTransitionEastImpl();

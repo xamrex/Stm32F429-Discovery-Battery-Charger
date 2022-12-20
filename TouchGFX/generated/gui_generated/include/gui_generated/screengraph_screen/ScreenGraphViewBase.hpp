@@ -10,7 +10,6 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
-#include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/graph/GraphScroll.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -18,6 +17,9 @@
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/containers/ModalWindow.hpp>
+#include <touchgfx/Color.hpp>
+#include <touchgfx/widgets/Button.hpp>
 
 class ScreenGraphViewBase : public touchgfx::View<ScreenGraphPresenter>
 {
@@ -42,7 +44,6 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image Background;
     touchgfx::BoxWithBorder boxWithBorder1;
-    touchgfx::Button button1;
     touchgfx::GraphScroll<600> dynamicGraph2;
     touchgfx::GraphElementLine dynamicGraph2Line1;
     touchgfx::PainterRGB565 dynamicGraph2Line1Painter;
@@ -66,6 +67,10 @@ protected:
     touchgfx::TextAreaWithOneWildcard txtMaxValue;
     touchgfx::TextAreaWithOneWildcard textChargingTme;
     touchgfx::TextAreaWithOneWildcard textChargingCurrent;
+    touchgfx::ModalWindow modalWindow1;
+    touchgfx::Button buttonCloseModal;
+    touchgfx::Image image1;
+    touchgfx::TextArea textChargingCompleted;
 
     /*
      * Wildcard Buffers

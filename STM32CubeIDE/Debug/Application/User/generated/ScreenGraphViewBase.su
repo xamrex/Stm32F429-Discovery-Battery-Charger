@@ -106,10 +106,11 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:89:18:virtual void touchgfx::TextArea::setAlpha(uint8_t)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:127:18:virtual void touchgfx::TextArea::setXBaselineY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:403:41:virtual const UnicodeChar* touchgfx::TextArea::getWildcard2() const	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:46:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:81:41:virtual const UnicodeChar* touchgfx::TextAreaWithOneWildcard::getWildcard1() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<ScreenGraphPresenter>::~View()	0	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:26:13:ScreenGraphViewBase::~ScreenGraphViewBase()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:179:6:virtual void ScreenGraphViewBase::setupScreen()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:28:13:ScreenGraphViewBase::~ScreenGraphViewBase()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:195:6:virtual void ScreenGraphViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<ScreenGraphViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphScroll.hpp:76:7:touchgfx::GraphScroll<60>::~GraphScroll()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphScroll.hpp:76:7:touchgfx::GraphScroll<600>::~GraphScroll()	0	static
@@ -126,27 +127,27 @@ C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screen
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphScroll.hpp:76:7:virtual touchgfx::GraphScroll<600>::~GraphScroll()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphScroll.hpp:76:7:virtual touchgfx::GraphScroll<60>::~GraphScroll()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<ScreenGraphViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:26:13:virtual ScreenGraphViewBase::~ScreenGraphViewBase()	8	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/screengraph_screen/ScreenGraphViewBase.hpp:28:13:virtual ScreenGraphViewBase::~ScreenGraphViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1174:18:virtual void touchgfx::AbstractDataGraph::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:560:17:virtual int touchgfx::GraphElementGridX::getCorrectlyScaledGridInterval(const touchgfx::AbstractDataGraph*) const	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:621:17:virtual int touchgfx::GraphElementGridY::getCorrectlyScaledGridInterval(const touchgfx::AbstractDataGraph*) const	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1585:17:virtual int touchgfx::DynamicDataGraph::indexToDataPointYScaled(int16_t) const	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1579:17:virtual int touchgfx::DynamicDataGraph::indexToDataPointXScaled(int16_t) const	8	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:205:6:void ScreenGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	16	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:189:6:void ScreenGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:46:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	8	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:36:5:touchgfx::AbstractButton::AbstractButton()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:50:5:touchgfx::Image::Image(const touchgfx::Bitmap&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:828:15:static touchgfx::CWRUtil::Q5 touchgfx::CWRUtil::muldiv_toQ5(int32_t, int32_t, int32_t)	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1280:25:virtual touchgfx::CWRUtil::Q5 touchgfx::AbstractDataGraph::valueToScreenYQ5(int) const	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/AbstractDataGraph.hpp:1268:25:virtual touchgfx::CWRUtil::Q5 touchgfx::AbstractDataGraph::valueToScreenXQ5(int) const	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphElements.hpp:285:5:touchgfx::GraphElementGridBase::GraphElementGridBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:41:5:touchgfx::AbstractPainterRGB565::AbstractPainterRGB565()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/graph/GraphLabels.hpp:43:5:touchgfx::GraphLabelsBase::GraphLabelsBase()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:36:5:touchgfx::AbstractButton::AbstractButton()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:5:touchgfx::TextAreaWithOneWildcard::TextAreaWithOneWildcard()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:11:1:ScreenGraphViewBase::ScreenGraphViewBase()	184	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screengraph_screen/ScreenGraphViewBase.cpp:11:1:ScreenGraphViewBase::ScreenGraphViewBase()	192	static

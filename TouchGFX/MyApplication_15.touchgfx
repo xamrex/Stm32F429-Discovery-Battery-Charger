@@ -438,17 +438,6 @@
             "BorderSize": 1
           },
           {
-            "Type": "Button",
-            "Name": "button1",
-            "X": 187,
-            "Y": 189,
-            "Width": 170,
-            "Height": 60,
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
-            "Style": "Style4"
-          },
-          {
             "Type": "DynamicGraph",
             "Name": "dynamicGraph2",
             "Width": 320,
@@ -698,22 +687,54 @@
               "UseBuffer": true,
               "BufferSize": 4
             }
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "modalWindow1",
+            "Width": 320,
+            "Height": 240,
+            "Visible": false,
+            "FileName": "rsz_my_modal_background.png",
+            "ModalX": 75,
+            "ModalY": 60,
+            "ModalWidth": 170,
+            "ModalHeight": 120,
+            "Alpha": 150,
+            "Components": [
+              {
+                "Type": "Button",
+                "Name": "buttonCloseModal",
+                "X": 53,
+                "Y": 87,
+                "Width": 65,
+                "Height": 28,
+                "Pressed": "rsz_close_button_pressed.png",
+                "Released": "rsz_close_button.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image1",
+                "X": 59,
+                "Y": 3,
+                "Width": 50,
+                "Height": 50,
+                "RelativeFilename": "rsz_info_icon.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textChargingCompleted",
+                "X": 7,
+                "Y": 60,
+                "Width": 157,
+                "Height": 18,
+                "TextId": "__SingleUse_86E1",
+                "TextRotation": "0",
+                "AutoSize": true
+              }
+            ]
           }
         ],
         "Interactions": [
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "button1"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionWipe",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Screen1"
-            }
-          },
           {
             "InteractionName": "Interaction2",
             "Trigger": {
@@ -723,6 +744,17 @@
             "Action": {
               "Type": "ActionExecuteCode",
               "Code": "dynamicGraph1.setVisible(!dynamicGraph1.isVisible());\r\ndynamicGraph2.setVisible(!dynamicGraph2.isVisible());\r\ndynamicGraph1.invalidate();\r\ndynamicGraph2.invalidate();"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCloseModal"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "modalWindow1"
             }
           }
         ],
