@@ -129,7 +129,6 @@ void ZadanieDwa(void *argument);
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
 
 
-
 static uint8_t            I2C3_ReadData(uint8_t Addr, uint8_t Reg);
 static void               I2C3_WriteData(uint8_t Addr, uint8_t Reg, uint8_t Value);
 static uint8_t            I2C3_ReadBuffer(uint8_t Addr, uint8_t Reg, uint8_t *pBuffer, uint16_t Length);
@@ -222,7 +221,7 @@ int main(void)
 
 HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
 HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
-HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 3400); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
+HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
 
 
   /* USER CODE END 2 */
@@ -1196,8 +1195,8 @@ __weak void ZadanieDwa(void *argument)
 					/****** jesli minela sekunda ->10tickow co 100ms********/
 
 					if(liczbaPomiarow%10==0){ //jesli minela sekunda
-						ladowarka.BatteryVoltage=(value/10) * 3.3f / 4096.0f; // napiecie na baterii
-						ladowarka.ChargingCurrent=(value2/10) * 3.3f / 4096.0f; // napiecie na baterii i rezystorze,
+						ladowarka.BatteryVoltage=(value/10) * Vdd / 4096.0f; // napiecie na baterii
+						ladowarka.ChargingCurrent=(value2/10) * Vdd / 4096.0f; // napiecie na baterii i rezystorze,
 						ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; //	Jako ze rezystor jest 1Ohm, to prad jest rowny napiecu. wynik w [mA]
 
 						if (ladowarka.ChargeStarted){ //jesli zaczeto ladwowac
@@ -1230,8 +1229,13 @@ __weak void ZadanieDwa(void *argument)
 
 					/*************** generowanie napiecia ***************************/
 					if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
-
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 2700);  //ustaw poprawne napiece tutaj (3V)
+						/********* ustawienie poprawnego napiecia************/
+						int napiecie=4095;//domyslnie 0
+						if (ladowarka.LoadingCurrent==400) napiecie=3100;
+						else if (ladowarka.LoadingCurrent==300) napiecie=3250;
+						else if (ladowarka.LoadingCurrent==200) napiecie=3530;
+						else if (ladowarka.LoadingCurrent==100) napiecie=3700;
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, napiecie);  //ustaw poprawne napiece tutaj (3V)
 							//ladowarka.UstawioneNapiecieNaopAmpie=1;
 					}
 

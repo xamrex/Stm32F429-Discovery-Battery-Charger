@@ -28,7 +28,7 @@ void Screen1View::tearDownScreen()
 void Screen1View::ButtonUpClicked() //zwiekszenie wartosci pradu ladowania
 {
 
-	PradLadowania=PradLadowania+10;
+	PradLadowania=PradLadowania+100;
 	if (PradLadowania >400){
 	PradLadowania=400;}
 	Unicode::snprintf(txtPradLadowaniaBuffer,TXTPRADLADOWANIA_SIZE,"%d",PradLadowania);
@@ -36,9 +36,9 @@ void Screen1View::ButtonUpClicked() //zwiekszenie wartosci pradu ladowania
 }
 void Screen1View::ButtonDownClicked() //zwiekszenie wartosci pradu ladowania
 {
-	PradLadowania=PradLadowania-10;
-    if (PradLadowania <10){
-	PradLadowania=10;}
+	PradLadowania=PradLadowania-100;
+    if (PradLadowania <100){
+	PradLadowania=100;}
 	Unicode::snprintf(txtPradLadowaniaBuffer,TXTPRADLADOWANIA_SIZE,"%d",PradLadowania);
 	txtPradLadowania.invalidate();
 }
