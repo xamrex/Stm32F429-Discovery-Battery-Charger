@@ -17,9 +17,10 @@
   ******************************************************************************
   * TODO:
   *
-  * sprawdzic co sie dzieje jak skonczy sie pomiar.
-  *  zatrzyamc test po wybranym czasie ladowarka.ChargingTime
-  * zmienic jezyk na angielski
+  * dorobic co ma robic jak skonczy laodwac (dalej dodawac punkty na wykresie)
+  * po zakonoczynm czasie ladowania, napisac monit i  przejsc do innego view i tam dawac tylok plot z acutal value. (60 sec)
+  * * zmienic jezyk na angielski
+  *
   *
   */
 
@@ -1198,8 +1199,10 @@ __weak void ZadanieDwa(void *argument)
 						ladowarka.BatteryVoltage=(value/10) * Vdd / 4096.0f; // napiecie na baterii
 						ladowarka.ChargingCurrent=(value2/10) * Vdd / 4096.0f; // napiecie na baterii i rezystorze,
 						ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; //	Jako ze rezystor jest 1Ohm, to prad jest rowny napiecu. wynik w [mA]
+						if (ladowarka.ChargingCurrent <=0 ) ladowarka.ChargingCurrent=0;
 
-						if (ladowarka.ChargeStarted){ //jesli zaczeto ladwowac
+						// jesli zaczeto ladwoac
+						if (ladowarka.ChargeStarted && ladowarka.ChargingCompleted==0){ //jesli zaczeto ladwowac
 							if (ladowarka.CzsasLadowaniaWSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage;ladowarka.narysujPunktNaWykresieMin=1; }//dla 0 pomiaru dodaj od razy do tablicy oraz wyplotuj na obu wykreasch.
 
 
@@ -1218,6 +1221,8 @@ __weak void ZadanieDwa(void *argument)
 							}
 
 						}
+
+
 						liczbaPomiarow=0; //po 1 sek ustaw to na 0
 						value=0; //resetuj pomiar napiecia na baterii
 						value2=0; //resetuj  napiecie na baterii i rezystorze,
@@ -1240,7 +1245,7 @@ __weak void ZadanieDwa(void *argument)
 					}
 
 					/************** sprawdzenie czy pomiar nie ma sie juz zakonczyc*****************/
-					if (ladowarka.CzsasLadowaniaWSec>=ladowarka.ChargingTime*60*60){
+					if (ladowarka.ChargingCompleted){
 						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095);  //ustaw max napiecie zeby nie ladowac.
 					}
 

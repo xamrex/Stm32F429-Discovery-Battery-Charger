@@ -37,7 +37,7 @@ if (ladowarka.narysujPunktNaWykresieMin){
 }
 
 
-if((ladowarka.CzsasLadowaniaWSec>=ladowarka.ChargingTime*60*60) && (ladowarka.ChargingCompleted==0)){  //*60*60//jesli czas ladowania jest wiekszy niz ustawiony pokaz modala
+if((ladowarka.CzsasLadowaniaWSec>=ladowarka.ChargingTime*60*60) && (ladowarka.ChargingCompleted==0) && ladowarka.ChargeStarted==1){  //*60*60//jesli czas ladowania jest wiekszy niz ustawiony pokaz modala
 	modelListener->DisplayChargingFinished();
 	ladowarka.ChargingCompleted=1;
 }
