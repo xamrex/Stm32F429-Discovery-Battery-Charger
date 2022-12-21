@@ -3795,123 +3795,122 @@ __weak void ZadanieDwa(void *argument)
  8001844:	e9c6 1200 	strd	r1, r2, [r6]
   if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
  8001848:	4630      	mov	r0, r6
-  htim7.Init.Period = 100-1; //1000-1
- 800184a:	2263      	movs	r2, #99	; 0x63
- 800184c:	60f2      	str	r2, [r6, #12]
+  htim7.Init.Period = 1000-1; //1000-1
+ 800184a:	f240 32e7 	movw	r2, #999	; 0x3e7
+ 800184e:	60f2      	str	r2, [r6, #12]
   TIM_MasterConfigTypeDef sMasterConfig = {0};
- 800184e:	e9cd 440d 	strd	r4, r4, [sp, #52]	; 0x34
+ 8001850:	e9cd 440d 	strd	r4, r4, [sp, #52]	; 0x34
   htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
- 8001852:	61b4      	str	r4, [r6, #24]
+ 8001854:	61b4      	str	r4, [r6, #24]
   if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
- 8001854:	f006 fd3a 	bl	80082cc <HAL_TIM_Base_Init>
+ 8001856:	f006 fd39 	bl	80082cc <HAL_TIM_Base_Init>
   if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
- 8001858:	a90d      	add	r1, sp, #52	; 0x34
- 800185a:	4630      	mov	r0, r6
+ 800185a:	a90d      	add	r1, sp, #52	; 0x34
+ 800185c:	4630      	mov	r0, r6
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
- 800185c:	e9cd 440d 	strd	r4, r4, [sp, #52]	; 0x34
+ 800185e:	e9cd 440d 	strd	r4, r4, [sp, #52]	; 0x34
   if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
- 8001860:	f006 fd4e 	bl	8008300 <HAL_TIMEx_MasterConfigSynchronization>
+ 8001862:	f006 fd4d 	bl	8008300 <HAL_TIMEx_MasterConfigSynchronization>
   hdac.Instance = DAC;
- 8001864:	4a2c      	ldr	r2, [pc, #176]	; (8001918 <main+0x484>)
- 8001866:	f8c9 2000 	str.w	r2, [r9]
+ 8001866:	4a2c      	ldr	r2, [pc, #176]	; (8001918 <main+0x484>)
+ 8001868:	f8c9 2000 	str.w	r2, [r9]
   if (HAL_DAC_Init(&hdac) != HAL_OK)
- 800186a:	4648      	mov	r0, r9
+ 800186c:	4648      	mov	r0, r9
   DAC_ChannelConfTypeDef sConfig = {0};
- 800186c:	e9cd 440d 	strd	r4, r4, [sp, #52]	; 0x34
+ 800186e:	e9cd 440d 	strd	r4, r4, [sp, #52]	; 0x34
   if (HAL_DAC_Init(&hdac) != HAL_OK)
- 8001870:	f004 fc88 	bl	8006184 <HAL_DAC_Init>
+ 8001872:	f004 fc87 	bl	8006184 <HAL_DAC_Init>
   if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_2) != HAL_OK)
- 8001874:	4642      	mov	r2, r8
- 8001876:	a90d      	add	r1, sp, #52	; 0x34
- 8001878:	4648      	mov	r0, r9
+ 8001876:	4642      	mov	r2, r8
+ 8001878:	a90d      	add	r1, sp, #52	; 0x34
+ 800187a:	4648      	mov	r0, r9
   sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
- 800187a:	e9cd 440d 	strd	r4, r4, [sp, #52]	; 0x34
+ 800187c:	e9cd 440d 	strd	r4, r4, [sp, #52]	; 0x34
   if (HAL_DAC_ConfigChannel(&hdac, &sConfig, DAC_CHANNEL_2) != HAL_OK)
- 800187e:	f004 fcc1 	bl	8006204 <HAL_DAC_ConfigChannel>
+ 8001880:	f004 fcc0 	bl	8006204 <HAL_DAC_ConfigChannel>
   ADC_ChannelConfTypeDef sConfig = {0};
- 8001882:	4642      	mov	r2, r8
- 8001884:	4621      	mov	r1, r4
- 8001886:	a80d      	add	r0, sp, #52	; 0x34
- 8001888:	f01f f960 	bl	8020b4c <memset>
+ 8001884:	4642      	mov	r2, r8
+ 8001886:	4621      	mov	r1, r4
+ 8001888:	a80d      	add	r0, sp, #52	; 0x34
+ 800188a:	f01f f95f 	bl	8020b4c <memset>
   hadc2.Instance = ADC2;
- 800188c:	4a23      	ldr	r2, [pc, #140]	; (800191c <main+0x488>)
+ 800188e:	4a23      	ldr	r2, [pc, #140]	; (800191c <main+0x488>)
   hadc2.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
- 800188e:	4924      	ldr	r1, [pc, #144]	; (8001920 <main+0x48c>)
+ 8001890:	4923      	ldr	r1, [pc, #140]	; (8001920 <main+0x48c>)
   hadc2.Init.Resolution = ADC_RESOLUTION_12B;
- 8001890:	6094      	str	r4, [r2, #8]
+ 8001892:	6094      	str	r4, [r2, #8]
   hadc2.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
- 8001892:	f44f 3380 	mov.w	r3, #65536	; 0x10000
+ 8001894:	f44f 3380 	mov.w	r3, #65536	; 0x10000
   if (HAL_ADC_Init(&hadc2) != HAL_OK)
- 8001896:	4610      	mov	r0, r2
+ 8001898:	4610      	mov	r0, r2
   hadc2.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
- 8001898:	e9c2 1300 	strd	r1, r3, [r2]
+ 800189a:	e9c2 1300 	strd	r1, r3, [r2]
   hadc2.Init.ExternalTrigConv = ADC_SOFTWARE_START;
- 800189c:	e9c2 b40a 	strd	fp, r4, [r2, #40]	; 0x28
+ 800189e:	e9c2 b40a 	strd	fp, r4, [r2, #40]	; 0x28
   hadc2.Init.ScanConvMode = DISABLE;
- 80018a0:	6114      	str	r4, [r2, #16]
+ 80018a2:	6114      	str	r4, [r2, #16]
   hadc2.Init.ContinuousConvMode = ENABLE;
- 80018a2:	7615      	strb	r5, [r2, #24]
+ 80018a4:	7615      	strb	r5, [r2, #24]
   hadc2.Init.DiscontinuousConvMode = DISABLE;
- 80018a4:	f882 4020 	strb.w	r4, [r2, #32]
+ 80018a6:	f882 4020 	strb.w	r4, [r2, #32]
   hadc2.Init.DataAlign = ADC_DATAALIGN_RIGHT;
- 80018a8:	60d4      	str	r4, [r2, #12]
+ 80018aa:	60d4      	str	r4, [r2, #12]
   hadc2.Init.NbrOfConversion = 1;
- 80018aa:	61d5      	str	r5, [r2, #28]
+ 80018ac:	61d5      	str	r5, [r2, #28]
   hadc2.Init.DMAContinuousRequests = DISABLE;
- 80018ac:	f882 4030 	strb.w	r4, [r2, #48]	; 0x30
+ 80018ae:	f882 4030 	strb.w	r4, [r2, #48]	; 0x30
   hadc2.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
- 80018b0:	6155      	str	r5, [r2, #20]
+ 80018b2:	6155      	str	r5, [r2, #20]
   if (HAL_ADC_Init(&hadc2) != HAL_OK)
- 80018b2:	f004 fa4b 	bl	8005d4c <HAL_ADC_Init>
+ 80018b4:	f004 fa4a 	bl	8005d4c <HAL_ADC_Init>
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
- 80018b6:	4a19      	ldr	r2, [pc, #100]	; (800191c <main+0x488>)
+ 80018b8:	4a18      	ldr	r2, [pc, #96]	; (800191c <main+0x488>)
   sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
- 80018b8:	f8cd a03c 	str.w	sl, [sp, #60]	; 0x3c
+ 80018ba:	f8cd a03c 	str.w	sl, [sp, #60]	; 0x3c
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
- 80018bc:	4610      	mov	r0, r2
- 80018be:	a90d      	add	r1, sp, #52	; 0x34
+ 80018be:	4610      	mov	r0, r2
+ 80018c0:	a90d      	add	r1, sp, #52	; 0x34
   sConfig.Rank = 1;
- 80018c0:	e9cd 750d 	strd	r7, r5, [sp, #52]	; 0x34
+ 80018c2:	e9cd 750d 	strd	r7, r5, [sp, #52]	; 0x34
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
- 80018c4:	f004 fb60 	bl	8005f88 <HAL_ADC_ConfigChannel>
+ 80018c6:	f004 fb5f 	bl	8005f88 <HAL_ADC_ConfigChannel>
   MX_TouchGFX_Init();
- 80018c8:	f7fe fe8d 	bl	80005e6 <MX_TouchGFX_Init>
+ 80018ca:	f7fe fe8c 	bl	80005e6 <MX_TouchGFX_Init>
 HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
- 80018cc:	4630      	mov	r0, r6
- 80018ce:	f006 fbe0 	bl	8008092 <HAL_TIM_Base_Start_IT>
+ 80018ce:	4630      	mov	r0, r6
+ 80018d0:	f006 fbdf 	bl	8008092 <HAL_TIM_Base_Start_IT>
 HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
- 80018d2:	4641      	mov	r1, r8
- 80018d4:	4648      	mov	r0, r9
- 80018d6:	f004 fc68 	bl	80061aa <HAL_DAC_Start>
+ 80018d4:	4641      	mov	r1, r8
+ 80018d6:	4648      	mov	r0, r9
+ 80018d8:	f004 fc67 	bl	80061aa <HAL_DAC_Start>
 HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
- 80018da:	f640 73ff 	movw	r3, #4095	; 0xfff
- 80018de:	4622      	mov	r2, r4
- 80018e0:	4641      	mov	r1, r8
- 80018e2:	4648      	mov	r0, r9
- 80018e4:	f004 fcaf 	bl	8006246 <HAL_DAC_SetValue>
+ 80018dc:	f640 73ff 	movw	r3, #4095	; 0xfff
+ 80018e0:	4622      	mov	r2, r4
+ 80018e2:	4641      	mov	r1, r8
+ 80018e4:	4648      	mov	r0, r9
+ 80018e6:	f004 fcae 	bl	8006246 <HAL_DAC_SetValue>
   osKernelInitialize();
- 80018e8:	f006 fdea 	bl	80084c0 <osKernelInitialize>
+ 80018ea:	f006 fde9 	bl	80084c0 <osKernelInitialize>
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
- 80018ec:	4a0d      	ldr	r2, [pc, #52]	; (8001924 <main+0x490>)
- 80018ee:	480e      	ldr	r0, [pc, #56]	; (8001928 <main+0x494>)
- 80018f0:	4621      	mov	r1, r4
- 80018f2:	f006 fe1f 	bl	8008534 <osThreadNew>
- 80018f6:	4b0d      	ldr	r3, [pc, #52]	; (800192c <main+0x498>)
+ 80018ee:	4a0d      	ldr	r2, [pc, #52]	; (8001924 <main+0x490>)
+ 80018f0:	480d      	ldr	r0, [pc, #52]	; (8001928 <main+0x494>)
+ 80018f2:	4621      	mov	r1, r4
+ 80018f4:	f006 fe1e 	bl	8008534 <osThreadNew>
+ 80018f8:	4b0c      	ldr	r3, [pc, #48]	; (800192c <main+0x498>)
   TaskDwaHandle = osThreadNew(ZadanieDwa, NULL, &TaskDwa_attributes);
- 80018f8:	4a0d      	ldr	r2, [pc, #52]	; (8001930 <main+0x49c>)
+ 80018fa:	4a0d      	ldr	r2, [pc, #52]	; (8001930 <main+0x49c>)
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
- 80018fa:	6018      	str	r0, [r3, #0]
+ 80018fc:	6018      	str	r0, [r3, #0]
   TaskDwaHandle = osThreadNew(ZadanieDwa, NULL, &TaskDwa_attributes);
- 80018fc:	4621      	mov	r1, r4
- 80018fe:	480d      	ldr	r0, [pc, #52]	; (8001934 <main+0x4a0>)
- 8001900:	f006 fe18 	bl	8008534 <osThreadNew>
- 8001904:	4b0c      	ldr	r3, [pc, #48]	; (8001938 <main+0x4a4>)
- 8001906:	6018      	str	r0, [r3, #0]
+ 80018fe:	4621      	mov	r1, r4
+ 8001900:	480c      	ldr	r0, [pc, #48]	; (8001934 <main+0x4a0>)
+ 8001902:	f006 fe17 	bl	8008534 <osThreadNew>
+ 8001906:	4b0c      	ldr	r3, [pc, #48]	; (8001938 <main+0x4a4>)
+ 8001908:	6018      	str	r0, [r3, #0]
   osKernelStart();
- 8001908:	f006 fdf4 	bl	80084f4 <osKernelStart>
+ 800190a:	f006 fdf3 	bl	80084f4 <osKernelStart>
   while (1)
- 800190c:	e7fe      	b.n	800190c <main+0x478>
- 800190e:	bf00      	nop
+ 800190e:	e7fe      	b.n	800190e <main+0x47a>
  8001910:	20003bd4 	.word	0x20003bd4
  8001914:	40001400 	.word	0x40001400
  8001918:	40007400 	.word	0x40007400
