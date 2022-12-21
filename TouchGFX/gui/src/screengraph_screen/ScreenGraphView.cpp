@@ -43,11 +43,9 @@ void ScreenGraphView::DrawPoint2(){
 void ScreenGraphView::DrawPoint2Min(){
 #ifndef SIMULATOR
 	dynamicGraph2.addDataPoint(ladowarka.SredniaZOstatniejMin);
-	float minValue=2; //init value
-	if (ladowarka.SredniaZOstatniejMin<minValue) minValue=ladowarka.SredniaZOstatniejMin;
 
 
-	 dynamicGraph2.setGraphRangeY((floor(minValue*10)/10),(ceil(ladowarka.MaxBatteryVoltage*10)/10));
+	 dynamicGraph2.setGraphRangeY((floor(ladowarka.MinBatteryVotage*10)/10),(ceil(ladowarka.MaxBatteryVoltage*10)/10));
 
 		/************ update min max on Y scale*******************/
 

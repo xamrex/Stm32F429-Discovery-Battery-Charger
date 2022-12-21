@@ -224,6 +224,7 @@ int main(void)
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
   ladowarka.VccVoltage=3.3f;
+  ladowarka.MinBatteryVotage=1.4;
 HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
 HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
 HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
@@ -1271,6 +1272,7 @@ __weak void ZadanieDwa(void *argument)
 
 
 							if (ladowarka.BatteryVoltage>ladowarka.MaxBatteryVoltage) ladowarka.MaxBatteryVoltage=ladowarka.BatteryVoltage; //uaktualnij max wartosc.
+							if (ladowarka.BatteryVoltage<ladowarka.MinBatteryVotage) ladowarka.MinBatteryVotage=ladowarka.BatteryVoltage; //uaktualnij Min  wartosc.
 							ladowarka.CzsasLadowaniaWSec++; //jesli zaczal sie proces ladowana ziwekszja wartosc czas ladowania w sec
 							ladowarka.narysujPunktNaWykresie=1; //zezwol na narysowanie danej na wykresie
 
