@@ -17,8 +17,8 @@
   ******************************************************************************
   * TODO:
   *
-  * dorobic co ma robic jak skonczy laodwac (dalej dodawac punkty na wykresie)
-  * po zakonoczynm czasie ladowania, napisac monit i  przejsc do innego view i tam dawac tylok plot z acutal value. (60 sec)
+  *
+  * Dodac wykrywanie kiedy bat jest naladowana
   * * zmienic jezyk na angielski
   *
   *
@@ -164,6 +164,7 @@ float CountAvgFrom60sec(){
 		{
 			result+=ladowarka.PomiaryCoSec[i];
 		}
+		ladowarka.SredniaZOstatniejMin=result/60;
 	return result/60;
 }
 /***** OPIS PROGRAMU********************
@@ -697,7 +698,7 @@ static void MX_TIM7_Init(void)
   htim7.Instance = TIM7;
   htim7.Init.Prescaler = 8400-1;
   htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim7.Init.Period = 1000-1;
+  htim7.Init.Period = 100-1; //1000-1
   htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
   {
@@ -1202,8 +1203,8 @@ __weak void ZadanieDwa(void *argument)
 						if (ladowarka.ChargingCurrent <=0 ) ladowarka.ChargingCurrent=0;
 
 						// jesli zaczeto ladwoac
-						if (ladowarka.ChargeStarted && ladowarka.ChargingCompleted==0){ //jesli zaczeto ladwowac
-							if (ladowarka.CzsasLadowaniaWSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage;ladowarka.narysujPunktNaWykresieMin=1; }//dla 0 pomiaru dodaj od razy do tablicy oraz wyplotuj na obu wykreasch.
+						if (ladowarka.ChargeStarted ){ //jesli zaczeto ladwowac
+							if (ladowarka.CzsasLadowaniaWSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; ladowarka.SredniaZOstatniejMin = ladowarka.BatteryVoltage; ladowarka.narysujPunktNaWykresieMin=1; }//dla 0 pomiaru dodaj od razy do tablicy oraz wyplotuj na obu wykreasch.
 
 
 							if (ladowarka.BatteryVoltage>ladowarka.MaxBatteryVoltage) ladowarka.MaxBatteryVoltage=ladowarka.BatteryVoltage; //uaktualnij max wartosc.
@@ -1214,7 +1215,12 @@ __weak void ZadanieDwa(void *argument)
 							/********* dodawanie co 1 sek wartosc pomiaru do tabeli********/
 							ladowarka.PomiaryCoSec[sec0to59++]=ladowarka.BatteryVoltage;
 							if (sec0to59>59) {	//jesli mamy 10 elementow w tabeli (minelo 10sec) usrednij i dodaj wartosc do NapiecieBaterii
-								ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]=CountAvgFrom60sec(); // TO DO srednia z 10 pomiarow
+								//jesli ladujemy to dodaj wartosc do tablicy
+								CountAvgFrom60sec();
+								if (ladowarka.ChargingCompleted==0){
+									ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]=ladowarka.SredniaZOstatniejMin; // TO DO srednia z 10 pomiarow
+								}
+
 								sec0to59=0;
 
 								ladowarka.narysujPunktNaWykresieMin=1;//zezwol na narysowanie na wykresie minut.
@@ -1246,7 +1252,7 @@ __weak void ZadanieDwa(void *argument)
 
 					/************** sprawdzenie czy pomiar nie ma sie juz zakonczyc*****************/
 					if (ladowarka.ChargingCompleted){
-						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095);  //ustaw max napiecie zeby nie ladowac.
+						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, CurrentAfterCharging);  //ustaw max napiecie zeby nie ladowac.
 					}
 
 

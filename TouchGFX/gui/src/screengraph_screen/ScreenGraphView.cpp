@@ -42,9 +42,15 @@ void ScreenGraphView::DrawPoint2(){
 }
 void ScreenGraphView::DrawPoint2Min(){
 #ifndef SIMULATOR
-	dynamicGraph2.addDataPoint(ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]);
+	dynamicGraph2.addDataPoint(ladowarka.SredniaZOstatniejMin);
+	float minValue=2; //init value
+	if (ladowarka.SredniaZOstatniejMin<minValue) minValue=ladowarka.SredniaZOstatniejMin;
+
+
+	 dynamicGraph2.setGraphRangeY((floor(minValue*10)/10),(ceil(ladowarka.MaxBatteryVoltage*10)/10));
+
 		/************ update min max on Y scale*******************/
-	    dynamicGraph2.setGraphRangeY((floor(ladowarka.NapiecieBaterii[0]*10)/10),(ceil(ladowarka.MaxBatteryVoltage*10)/10) );
+
 
 	//1 -> czas ladowania od 9 do 59min
 	if (ladowarka.CzsasLadowaniaWSec>9*60 && ladowarka.CzsasLadowaniaWSec <59*60){ //jesli czas jest >9min i <59 min
@@ -54,12 +60,17 @@ void ScreenGraphView::DrawPoint2Min(){
 			dynamicGraph2MajorXAxisLabel.setInterval(10); //labelki co 10
 	}
 
-	if (ladowarka.CzsasLadowaniaWSec >59*60){ //jesli czas jest >59 min
+	else if ((ladowarka.CzsasLadowaniaWSec >59*60) && (ladowarka.ChargingCompleted==0) ){ //jesli czas jest >59 min
 			dynamicGraph2.setGraphRangeX(0,ladowarka.ChargingTime*60);
 			dynamicGraph2MajorXAxisGrid.setInterval(60); //major horizontal grid lines
 			dynamicGraph2MinorXAxisGrid.setInterval(10); //minor horizontal grid lines
 			dynamicGraph2MajorXAxisLabel.setInterval(60); //labelki co 10
 	}
+
+	else if(ladowarka.ChargingCompleted) 	{//maksymalna wartosc graphu keidy skonczy sie ladowanie oraz ustaw plot X,Y
+				dynamicGraph2.setGraphRangeX(0,600);
+			}
+
 
 #endif
 }
