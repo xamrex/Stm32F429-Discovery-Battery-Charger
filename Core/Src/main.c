@@ -73,6 +73,7 @@ LadowarkaStruct ladowarka;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc2;
 ADC_HandleTypeDef hadc3;
 
@@ -123,6 +124,7 @@ static void MX_TIM7_Init(void);
 static void MX_DAC_Init(void);
 static void MX_ADC2_Init(void);
 static void MX_ADC3_Init(void);
+static void MX_ADC1_Init(void);
 void TouchGFX_Task(void *argument);
 void ZadanieDwa(void *argument);
 
@@ -171,7 +173,7 @@ float CountAvgFrom60sec(){
 ** Na Pinie PA1 (ADC3_IN1 jest dokonoywany pomiar napiecia co 1000ms  -> Hdac3
 ** Na Pinie PA5 (DAC_Out2 jest generowane napiecie)
 ** Na Pinie PA2 ->(ADC2_IN2_  Pomiar napiecia na baterii i rezysotrze (roznica napiec przez wartosc rezystora to prad) Hdac2
-**
+**  ADC1 -> mierzenie Vref.
 ******KONIEC OPISU ***********************/
 
 static LCD_DrvTypeDef* LcdDrv;
@@ -218,6 +220,7 @@ int main(void)
   MX_DAC_Init();
   MX_ADC2_Init();
   MX_ADC3_Init();
+  MX_ADC1_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
   ladowarka.VccVoltage=3.3f;
@@ -322,6 +325,56 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.ScanConvMode = DISABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_VREFINT;
+  sConfig.Rank = 1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**
@@ -1179,6 +1232,7 @@ __weak void ZadanieDwa(void *argument)
 	  static int liczbaPomiarow=0; // number of adc measurements. if 10 then clear
 	  static volatile uint32_t value=0; //actual value of adc measurement on battery
 	  static volatile uint32_t value2=0; //actual value of adc measurement on battery  + resistor.
+	  static volatile uint32_t value3=0; //actual value of adc vrefint
 
 	  static int sec0to59=0;
 
@@ -1192,13 +1246,22 @@ __weak void ZadanieDwa(void *argument)
 					//pomiar napiecia na baterii i rezystorze
 					HAL_ADC_Start(&hadc2);
 					value2 += HAL_ADC_GetValue(&hadc2);
+
+					//pomiar napiecia na Vref
+					HAL_ADC_Start(&hadc1);
+					value3 += HAL_ADC_GetValue(&hadc1);
 					liczbaPomiarow++;
 
 					/****** jesli minela sekunda ->10tickow co 100ms********/
 
 					if(liczbaPomiarow%10==0){ //jesli minela sekunda
-						ladowarka.BatteryVoltage=(value/10) * ladowarka.VccVoltage / 4096.0f; // napiecie na baterii
-						ladowarka.ChargingCurrent=(value2/10) * ladowarka.VccVoltage / 4096.0f; // napiecie na baterii i rezystorze,
+						ladowarka.VccVoltage=(value3/10);  //vrefint voltage
+						ladowarka.VccVoltage=(Vref*4095.0f)/ladowarka.VccVoltage;
+
+						ladowarka.BatteryVoltage=(value/10) * ladowarka.VccVoltage / 4095.0f; // napiecie na baterii
+						ladowarka.ChargingCurrent=(value2/10) * ladowarka.VccVoltage / 4095.0f; // napiecie na baterii i rezystorze,
+
+
 						ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; //	Jako ze rezystor jest 1Ohm, to prad jest rowny napiecu. wynik w [mA]
 						if (ladowarka.ChargingCurrent <=0 ) ladowarka.ChargingCurrent=0;
 
@@ -1232,6 +1295,7 @@ __weak void ZadanieDwa(void *argument)
 						liczbaPomiarow=0; //po 1 sek ustaw to na 0
 						value=0; //resetuj pomiar napiecia na baterii
 						value2=0; //resetuj  napiecie na baterii i rezystorze,
+						value3=0; //resetuj  napiecie na internal ref voltage.
 					}
 
 
