@@ -253,7 +253,7 @@ HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napie
 
   /* creation of TaskDwa */
   TaskDwaHandle = osThreadNew(ZadanieDwa, NULL, &TaskDwa_attributes);
-
+  ladowarka.VccVoltage=3.13f; //set voltage
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -1197,8 +1197,8 @@ __weak void ZadanieDwa(void *argument)
 					/****** jesli minela sekunda ->10tickow co 100ms********/
 
 					if(liczbaPomiarow%10==0){ //jesli minela sekunda
-						ladowarka.BatteryVoltage=(value/10) * Vdd / 4096.0f; // napiecie na baterii
-						ladowarka.ChargingCurrent=(value2/10) * Vdd / 4096.0f; // napiecie na baterii i rezystorze,
+						ladowarka.BatteryVoltage=(value/10) * ladowarka.VccVoltage / 4096.0f; // napiecie na baterii
+						ladowarka.ChargingCurrent=(value2/10) * ladowarka.VccVoltage / 4096.0f; // napiecie na baterii i rezystorze,
 						ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; //	Jako ze rezystor jest 1Ohm, to prad jest rowny napiecu. wynik w [mA]
 						if (ladowarka.ChargingCurrent <=0 ) ladowarka.ChargingCurrent=0;
 
