@@ -1316,11 +1316,20 @@ __weak void ZadanieDwa(void *argument)
 							//ladowarka.UstawioneNapiecieNaopAmpie=1;
 					}
 
-					/************** sprawdzenie czy pomiar nie ma sie juz zakonczyc*****************/
-					if (ladowarka.ChargingCompleted){
-						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, CurrentAfterCharging);  //ustaw max napiecie zeby nie ladowac.
+					/*********************** zabezpiecznie ************************/
+					if (ladowarka.BatteryVoltage>MaxBattVoltage){
+						ladowarka.NoBattFlag=1;
+						ladowarka.ChargingCompleted=1;
 					}
 
+					/************** sprawdzenie czy pomiar nie ma sie juz zakonczyc*****************/
+					if (ladowarka.ChargingCompleted==1 && ladowarka.NoBattFlag==0 ){
+						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, CurrentAfterCharging);  //ustaw napiecie doladowywania ladowac.
+					}
+
+					if (ladowarka.NoBattFlag==0 ){
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095);  //Brak baterii - nie laduj.
+						}
 
 
     osDelay(1); //to chyba ma zostac?
