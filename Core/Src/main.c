@@ -18,7 +18,7 @@
   * TODO:
   *
   *
-  * Dodac wykrywanie kiedy bat jest naladowana
+  * zmienic na screenie godzinowym zeby nie bylo /100 a przez /50 zaokragalnie.
   * * zmienic jezyk na angielski
   *
   *
@@ -219,6 +219,7 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -238,9 +239,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
   ladowarka.VccVoltage=3.3f;
   ladowarka.MinBatteryVotage=1.4;
-HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
-HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
-HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
+  HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
+  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
+  HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
+
 
 
   /* USER CODE END 2 */
@@ -862,6 +864,9 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOG, Led_green_Pin|Led_Red_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : PC2 */
   GPIO_InitStruct.Pin = GPIO_PIN_2;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -882,6 +887,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : Led_green_Pin Led_Red_Pin */
+  GPIO_InitStruct.Pin = Led_green_Pin|Led_Red_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
 }
 
@@ -1269,6 +1281,7 @@ __weak void ZadanieDwa(void *argument)
 					/****** jesli minela sekunda ->10tickow co 100ms********/
 
 					if(liczbaPomiarow%10==0){ //jesli minela sekunda
+
 						ladowarka.VccVoltage=(value3/10);  //vrefint voltage
 						ladowarka.VccVoltage=(Vref*4095.0f)/ladowarka.VccVoltage;
 
@@ -1315,8 +1328,6 @@ __weak void ZadanieDwa(void *argument)
 						value3=0; //resetuj  napiecie na internal ref voltage.
 					}
 
-
-
 					}
 
 					/*************** generowanie napiecia when batt voltage is low set current to 1/2 value***************************/
@@ -1331,12 +1342,26 @@ __weak void ZadanieDwa(void *argument)
 							ladowarka.UstawioneNapiecieNaopAmpie=1;
 					}
 
-					/*********************** zabezpiecznie przed przeładowaniem ************************/
+					/*********************** zabezpiecznie przed przeładowaniem -> Max battery Voltage***********************/
 					if (ladowarka.BatteryVoltage>MaxBattVoltage){
 						ladowarka.ChargingCompleted=1;
 					}
 
+					/*********************** zabezpiecznie przed przeładowaniem -> dV/dT***********************/
+					if(ladowarka.CzsasLadowaniaWSec > 20*60){ //jesli czas ladowania jest wiekszy niz 20min
+						//sprawrzenie czy aktualny ->pomiar[20] jest niższy niz 19min temu ->pomiar [1], oraz czy aktualnyPomiar-1min ->pomiar[19] jest niższy niż 20 min temu ->pomiar[0]
+						if ( (ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60])  < (ladowarka.NapiecieBaterii[(ladowarka.CzsasLadowaniaWSec/60)-19]) ){
+							HAL_GPIO_WritePin(Led_green_GPIO_Port, Led_green_Pin,GPIO_PIN_SET); //to be deleted
+								if ( ladowarka.NapiecieBaterii[((ladowarka.CzsasLadowaniaWSec/60)-1)]  < (ladowarka.NapiecieBaterii[(ladowarka.CzsasLadowaniaWSec/60)-20]) ){
+									HAL_GPIO_WritePin(Led_Red_GPIO_Port, Led_Red_Pin,GPIO_PIN_SET); //to be deleted
+									ladowarka.ChargingCompleted=1;
+								}
+						}
+					}
+
 					/************** sprawdzenie czy pomiar nie ma sie juz zakonczyc*****************/
+					if(ladowarka.ChargeStarted==1 && (ladowarka.CzsasLadowaniaWSec >= ladowarka.ChargingTime*60*60)) ladowarka.ChargingCompleted=1;
+
 					if (ladowarka.ChargingCompleted==1){
 						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(CurrentAfterCharging));  //ustaw napiecie doladowywania.
 					}
