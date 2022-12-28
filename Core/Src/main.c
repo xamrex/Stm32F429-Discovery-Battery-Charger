@@ -169,6 +169,19 @@ float CountAvgFrom60sec(){
 		ladowarka.SredniaZOstatniejMin=result/60;
 	return result/60;
 }
+
+int SetCurrent(int current){	//set voltage on OpAmp to get proper current.
+				//Votage=a*current+b
+				int a= -2;
+				int b=3900;
+				int napiecie;
+
+				napiecie=a*current+b;
+				if (napiecie <3100) napiecie = 3100;
+				if (napiecie >4095) napiecie = 4095;
+
+	return napiecie;
+}
 /***** OPIS PROGRAMU********************
 ** Na Pinie PA1 (ADC3_IN1 jest dokonoywany pomiar napiecia co 1000ms  -> Hdac3
 ** Na Pinie PA5 (DAC_Out2 jest generowane napiecie)
@@ -1266,6 +1279,8 @@ __weak void ZadanieDwa(void *argument)
 						ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; //	Jako ze rezystor jest 1Ohm, to prad jest rowny napiecu. wynik w [mA]
 						if (ladowarka.ChargingCurrent <=0 ) ladowarka.ChargingCurrent=0;
 
+						if (ladowarka.BatteryVoltage<MinBattVoltage){ladowarka.NoBattFlag=1;} else {ladowarka.NoBattFlag=0;}
+
 						// jesli zaczeto ladwoac
 						if (ladowarka.ChargeStarted ){ //jesli zaczeto ladwowac
 							if (ladowarka.CzsasLadowaniaWSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; ladowarka.SredniaZOstatniejMin = ladowarka.BatteryVoltage; ladowarka.narysujPunktNaWykresieMin=1; }//dla 0 pomiaru dodaj od razy do tablicy oraz wyplotuj na obu wykreasch.
@@ -1304,30 +1319,29 @@ __weak void ZadanieDwa(void *argument)
 
 					}
 
-					/*************** generowanie napiecia ***************************/
-					if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
-						/********* ustawienie poprawnego napiecia************/
-						int napiecie=4095;//domyslnie 0
-						if (ladowarka.LoadingCurrent==400) napiecie=3100;
-						else if (ladowarka.LoadingCurrent==300) napiecie=3250;
-						else if (ladowarka.LoadingCurrent==200) napiecie=3530;
-						else if (ladowarka.LoadingCurrent==100) napiecie=3700;
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, napiecie);  //ustaw poprawne napiece tutaj (3V)
-							//ladowarka.UstawioneNapiecieNaopAmpie=1;
+					/*************** generowanie napiecia when batt voltage is low set current to 1/2 value***************************/
+					if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 && ladowarka.BatteryVoltage<MinBattVltgForFastCharging){
+						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent/2));
 					}
 
-					/*********************** zabezpiecznie ************************/
+					/*************** generowanie napiecia fast charging***************************/
+					else if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
+						/********* ustawienie poprawnego napiecia************/
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent));  //ustaw poprawne napiece tutaj (3V)
+							ladowarka.UstawioneNapiecieNaopAmpie=1;
+					}
+
+					/*********************** zabezpiecznie przed przeładowaniem ************************/
 					if (ladowarka.BatteryVoltage>MaxBattVoltage){
-						ladowarka.NoBattFlag=1;
 						ladowarka.ChargingCompleted=1;
 					}
 
 					/************** sprawdzenie czy pomiar nie ma sie juz zakonczyc*****************/
-					if (ladowarka.ChargingCompleted==1 && ladowarka.NoBattFlag==0 ){
-						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, CurrentAfterCharging);  //ustaw napiecie doladowywania ladowac.
+					if (ladowarka.ChargingCompleted==1){
+						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(CurrentAfterCharging));  //ustaw napiecie doladowywania.
 					}
 
-					if (ladowarka.NoBattFlag==0 ){
+					if (ladowarka.NoBattFlag==1 ){
 							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095);  //Brak baterii - nie laduj.
 						}
 

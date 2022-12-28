@@ -46,10 +46,8 @@ void Screen1View::ButtonUpTimeClicked() //zwiekszenie wartosci pradu ladowania
 {
 
 	ChargingTime=ChargingTime+1;
-	#ifndef SIMULATOR
-	if (ChargingTime >MaxChargingTime){
-		ChargingTime=MaxChargingTime;}
-#endif
+	if (ChargingTime >10){
+		ChargingTime=10;}
 	Unicode::snprintf(txtChargingTimeBuffer,TXTCHARGINGTIME_SIZE,"%d",ChargingTime);
 	txtChargingTime.invalidate();
 }
