@@ -42,7 +42,7 @@ void ScreenGraphView::DrawPoint2(){
 }
 void ScreenGraphView::DrawPoint2Min(){
 #ifndef SIMULATOR
-	dynamicGraph2.addDataPoint(ladowarka.SredniaZOstatniejMin);
+	dynamicGraph2.addDataPoint(ladowarka.AverageFromLastMin);
 
 
 	 dynamicGraph2.setGraphRangeY((floor(ladowarka.MinBatteryVotage*10)/10),(ceil(ladowarka.MaxBatteryVoltage*10)/10));
@@ -51,14 +51,14 @@ void ScreenGraphView::DrawPoint2Min(){
 
 
 	//1 -> czas ladowania od 9 do 59min
-	if (ladowarka.CzsasLadowaniaWSec>9*60 && ladowarka.CzsasLadowaniaWSec <59*60){ //jesli czas jest >9min i <59 min
+	if (ladowarka.ChargingTimeInSec>9*60 && ladowarka.ChargingTimeInSec <59*60){ //jesli czas jest >9min i <59 min
 		dynamicGraph2.setGraphRangeX(0,60);
 			dynamicGraph2MajorXAxisGrid.setInterval(10); //major horizontal grid lines
 			dynamicGraph2MinorXAxisGrid.setInterval(2); //minor horizontal grid lines
 			dynamicGraph2MajorXAxisLabel.setInterval(10); //labelki co 10
 	}
 
-	else if ((ladowarka.CzsasLadowaniaWSec >59*60) && (ladowarka.ChargingCompleted==0) ){ //jesli czas jest >59 min
+	else if ((ladowarka.ChargingTimeInSec >59*60) && (ladowarka.ChargingCompleted==0) ){ //jesli czas jest >59 min
 			dynamicGraph2.setGraphRangeX(0,ladowarka.ChargingTime*60);
 			dynamicGraph2MajorXAxisGrid.setInterval(60); //major horizontal grid lines
 			dynamicGraph2MinorXAxisGrid.setInterval(10); //minor horizontal grid lines
@@ -96,7 +96,7 @@ void ScreenGraphView::DisplayChargingFinished2(){
 void ScreenGraphView::DisplayRunningTime2(){
 #ifndef SIMULATOR
 	int sec, h, m, s;
-	sec=ladowarka.CzsasLadowaniaWSec;
+	sec=ladowarka.ChargingTimeInSec;
 	h = (sec/3600);
 	m = (sec -(3600*h))/60;
 	s = (sec -(3600*h)-(m*60));
@@ -108,9 +108,9 @@ void ScreenGraphView::DisplayRunningTime2(){
 
 float ScreenGraphView::countMin(){
 #ifndef SIMULATOR
-	float results= ladowarka.PomiaryCoSec[0]; //domyslna wartocs
+	float results= ladowarka.MeasurementsEverySec[0]; //domyslna wartocs
 	for (int i=0;i<59;i++){
-		if ((ladowarka.PomiaryCoSec[i] < results) && ladowarka.PomiaryCoSec[i]!=0)  results=ladowarka.PomiaryCoSec[i];
+		if ((ladowarka.MeasurementsEverySec[i] < results) && ladowarka.MeasurementsEverySec[i]!=0)  results=ladowarka.MeasurementsEverySec[i];
 	}
 
 	return (floor(results*100)/100);
@@ -122,7 +122,7 @@ float ScreenGraphView::countMax(){
 #ifndef SIMULATOR
 	float results= 0; //domyslna wartocs
 	for (int i=0;i<59;i++){
-		if (ladowarka.PomiaryCoSec[i] > results)  results=ladowarka.PomiaryCoSec[i];
+		if (ladowarka.MeasurementsEverySec[i] > results)  results=ladowarka.MeasurementsEverySec[i];
 	}
 
 	return (ceil(results*100)/100);

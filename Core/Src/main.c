@@ -163,9 +163,9 @@ float CountAvgFrom60sec(){
 	volatile float result;
 		for (uint8_t i=0;i<60;i++)
 		{
-			result+=ladowarka.PomiaryCoSec[i];
+			result+=ladowarka.MeasurementsEverySec[i];
 		}
-		ladowarka.SredniaZOstatniejMin=result/60;
+		ladowarka.AverageFromLastMin=result/60;
 	return result/60;
 }
 
@@ -1261,8 +1261,8 @@ __weak void ZadanieDwa(void *argument)
 
 	  static int sec0to59=0;
 
-		if(ladowarka.Minelo100ms){ //interruption form timer7
-			ladowarka.Minelo100ms=0; //clear flag
+		if(ladowarka.Passed100ms){ //interruption form timer7
+			ladowarka.Passed100ms=0; //clear flag
 
 					//Masure batt voltage
 					HAL_ADC_Start(&hadc3);
@@ -1295,29 +1295,29 @@ __weak void ZadanieDwa(void *argument)
 
 						// if charging started
 						if (ladowarka.ChargeStarted ){
-							if (ladowarka.CzsasLadowaniaWSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; ladowarka.SredniaZOstatniejMin = ladowarka.BatteryVoltage; ladowarka.narysujPunktNaWykresieMin=1; }//for measurement 0 add results to array immediatly, and plot it on both graphs
+							if (ladowarka.ChargingTimeInSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; ladowarka.AverageFromLastMin = ladowarka.BatteryVoltage; ladowarka.PlotPointOnMinutesGraph=1; }//for measurement 0 add results to array immediatly, and plot it on both graphs
 
 
 							if (ladowarka.BatteryVoltage>ladowarka.MaxBatteryVoltage) ladowarka.MaxBatteryVoltage=ladowarka.BatteryVoltage; //update  max battery voltage value.
 							if (ladowarka.BatteryVoltage<ladowarka.MinBatteryVotage) ladowarka.MinBatteryVotage=ladowarka.BatteryVoltage; //update Min battery voltage value.
 
 							if(ladowarka.ChargingCompleted==0){
-							ladowarka.CzsasLadowaniaWSec++; //if charging is ongoing, update charging time (add 1sec)
+							ladowarka.ChargingTimeInSec++; //if charging is ongoing, update charging time (add 1sec)
 							}
-							ladowarka.narysujPunktNaWykresie=1; //allow to plot  on graph
+							ladowarka.PlotPointOnSecGraph=1; //allow to plot  on graph
 
 							/********* every 1 sec add result to array********/
-							ladowarka.PomiaryCoSec[sec0to59++]=ladowarka.BatteryVoltage;
+							ladowarka.MeasurementsEverySec[sec0to59++]=ladowarka.BatteryVoltage;
 							if (sec0to59>59) {	// if there is 10 elements in array (10 sec passed) average it, and put into NapiecieBaterii array
 								//jesli ladujemy to dodaj wartosc do tablicy
 								CountAvgFrom60sec();
 								if (ladowarka.ChargingCompleted==0){
-									ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]=ladowarka.SredniaZOstatniejMin; // average
+									ladowarka.NapiecieBaterii[ladowarka.ChargingTimeInSec/60]=ladowarka.AverageFromLastMin; // average
 								}
 
 								sec0to59=0;
 
-								ladowarka.narysujPunktNaWykresieMin=1;//allow to plot on graph.
+								ladowarka.PlotPointOnMinutesGraph=1;//allow to plot on graph.
 							}
 
 						}
@@ -1332,15 +1332,15 @@ __weak void ZadanieDwa(void *argument)
 					}
 
 					/*************** Generate OpAmp voltage when batt voltage is low -> set current to 1/2 value***************************/
-					if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 && ladowarka.BatteryVoltage<MinBattVltgForFastCharging){
+					if(ladowarka.ChargeStarted==1 && ladowarka.OpAmpVoltageSet==0 && ladowarka.BatteryVoltage<MinBattVltgForFastCharging){
 						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent/2));
 					}
 
 					/*************** generate nominal opamp voltage***************************/
-					else if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //if START button on GUI pressed and op amp voltage is not set yet.
+					else if(ladowarka.ChargeStarted==1 && ladowarka.OpAmpVoltageSet==0 ) { //if START button on GUI pressed and op amp voltage is not set yet.
 						/********* Set proper voltage to have proper charging current************/
 							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent));
-							ladowarka.UstawioneNapiecieNaopAmpie=1;
+							ladowarka.OpAmpVoltageSet=1;
 					}
 
 					/*********************** Safery mecahnizm over precharging -> Max battery Voltage***********************/
@@ -1349,11 +1349,11 @@ __weak void ZadanieDwa(void *argument)
 					}
 
 					/*********************** Safery mecahnizm  over precharging> dV/dT***********************/
-					if(ladowarka.CzsasLadowaniaWSec > 20*60){ //if chargin time is longer than 20min
+					if(ladowarka.ChargingTimeInSec > 20*60){ //if chargin time is longer than 20min
 						//check if masurement [20] is lower than 19mins ago -> masurement[1], and if actual measurement-1min -> masurement[19] is lower than 20 mins ago -> measurement[0]
-						if ( (ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60])  < (ladowarka.NapiecieBaterii[(ladowarka.CzsasLadowaniaWSec/60)-19]) ){
+						if ( (ladowarka.NapiecieBaterii[ladowarka.ChargingTimeInSec/60])  < (ladowarka.NapiecieBaterii[(ladowarka.ChargingTimeInSec/60)-19]) ){
 							HAL_GPIO_WritePin(Led_green_GPIO_Port, Led_green_Pin,GPIO_PIN_SET); //to be deleted
-								if ( ladowarka.NapiecieBaterii[((ladowarka.CzsasLadowaniaWSec/60)-1)]  < (ladowarka.NapiecieBaterii[(ladowarka.CzsasLadowaniaWSec/60)-20]) ){
+								if ( ladowarka.NapiecieBaterii[((ladowarka.ChargingTimeInSec/60)-1)]  < (ladowarka.NapiecieBaterii[(ladowarka.ChargingTimeInSec/60)-20]) ){
 									HAL_GPIO_WritePin(Led_Red_GPIO_Port, Led_Red_Pin,GPIO_PIN_SET); //to be deleted
 									ladowarka.ChargingCompleted=1;
 								}
@@ -1361,7 +1361,7 @@ __weak void ZadanieDwa(void *argument)
 					}
 
 					/************** check if chargin should be stopped*****************/
-					if(ladowarka.ChargeStarted==1 && (ladowarka.CzsasLadowaniaWSec >= ladowarka.ChargingTime*60*60)) ladowarka.ChargingCompleted=1;
+					if(ladowarka.ChargeStarted==1 && (ladowarka.ChargingTimeInSec >= ladowarka.ChargingTime*60*60)) ladowarka.ChargingCompleted=1;
 
 					if (ladowarka.ChargingCompleted==1){
 						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(CurrentAfterCharging));  //Sets CurrentAfterCharging
@@ -1395,7 +1395,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM7){ //timer co 100ms
-	  ladowarka.Minelo100ms=1;
+	  ladowarka.Passed100ms=1;
   }
 
   /* USER CODE END Callback 1 */
