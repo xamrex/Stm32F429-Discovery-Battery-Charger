@@ -3,12 +3,12 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:10:13:Screen1View::~Screen1View()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:24:6:virtual void Screen1View::tearDownScreen()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:70:6:virtual void Screen1View::ButtonStartClicked()	0	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:71:6:virtual void Screen1View::ButtonStartClicked()	0	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:28:6:virtual void Screen1View::ButtonUpClicked()	8	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:37:6:virtual void Screen1View::ButtonDownClicked()	8	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:45:6:virtual void Screen1View::ButtonUpTimeClicked()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:54:6:virtual void Screen1View::ButtonDownTimeClicked()	8	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:55:6:virtual void Screen1View::ButtonDownTimeClicked()	8	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:19:6:virtual void Screen1View::setupScreen()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:63:6:virtual void Screen1View::DisplayBatteryVoltage()	16	static
+C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:64:6:virtual void Screen1View::DisplayBatteryVoltage()	16	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:10:13:virtual Screen1View::~Screen1View()	8	static
 C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:10:1:Screen1View::Screen1View()	8	static

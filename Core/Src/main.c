@@ -16,10 +16,9 @@
   *
   ******************************************************************************
   * TODO:
-  *
-  *
   * zmienic na screenie godzinowym zeby nie bylo /100 a przez /50 zaokragalnie.
-  * * zmienic jezyk na angielski
+  * zmienic jezyk na angielski
+  *
   *
   *
   */
@@ -182,12 +181,12 @@ int SetCurrent(int current){	//set voltage on OpAmp to get proper current.
 
 	return napiecie;
 }
-/***** OPIS PROGRAMU********************
-** Na Pinie PA1 (ADC3_IN1 jest dokonoywany pomiar napiecia co 1000ms  -> Hdac3
-** Na Pinie PA5 (DAC_Out2 jest generowane napiecie)
-** Na Pinie PA2 ->(ADC2_IN2_  Pomiar napiecia na baterii i rezysotrze (roznica napiec przez wartosc rezystora to prad) Hdac2
+/***** DESCRIPTION START********************
+** On Pin PA1 (ADC3_IN1 voltage measurement every 100ms  -> Hdac3
+** On Pin PA5 (DAC_Out2 it generates voltage to OpAmp)
+** On Pin  PA2 ->(ADC2_IN2_  Voltage measurement on battery + resistor [shant] -> charging Current its [voltage on battAndResistor minus Voltage on bat DIVIDED by resistor value] - Hdac2
 **  ADC1 -> mierzenie Vref.
-******KONIEC OPISU ***********************/
+******END OF DESCRIPTION  ***********************/
 
 static LCD_DrvTypeDef* LcdDrv;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */  
@@ -240,8 +239,8 @@ int main(void)
   ladowarka.VccVoltage=3.3f;
   ladowarka.MinBatteryVotage=1.4;
   HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
-  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //ustaw max napiecie na ADC, zeby nie plynal zaden prad !ZMIENIC
-  HAL_TIM_Base_Start_IT(&htim7); //uruchomienie timera 7 (przerwanie co 1 sek)
+  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //sets max voltage on opAmp to not charge battery.
+  HAL_TIM_Base_Start_IT(&htim7); //timer seven start
 
 
 
@@ -1262,94 +1261,96 @@ __weak void ZadanieDwa(void *argument)
 
 	  static int sec0to59=0;
 
-		if(ladowarka.Minelo100ms){ //jesli zostalo wykryte przerwanie z liniczka7
-			ladowarka.Minelo100ms=0; //kasuj flage
+		if(ladowarka.Minelo100ms){ //interruption form timer7
+			ladowarka.Minelo100ms=0; //clear flag
 
-					//pomiar napiecia baterii
+					//Masure batt voltage
 					HAL_ADC_Start(&hadc3);
 					value += HAL_ADC_GetValue(&hadc3);
 
-					//pomiar napiecia na baterii i rezystorze
+					//Measure batt and resistor voltage
 					HAL_ADC_Start(&hadc2);
 					value2 += HAL_ADC_GetValue(&hadc2);
 
-					//pomiar napiecia na Vref
+					//Measure Vref voltage
 					HAL_ADC_Start(&hadc1);
 					value3 += HAL_ADC_GetValue(&hadc1);
 					liczbaPomiarow++;
 
-					/****** jesli minela sekunda ->10tickow co 100ms********/
+					/****** after 1sec ->10ticks every 100ms********/
 
-					if(liczbaPomiarow%10==0){ //jesli minela sekunda
+					if(liczbaPomiarow%10==0){ //After 1 minute
 
 						ladowarka.VccVoltage=(value3/10);  //vrefint voltage
 						ladowarka.VccVoltage=(Vref*4095.0f)/ladowarka.VccVoltage;
 
-						ladowarka.BatteryVoltage=(value/10) * ladowarka.VccVoltage / 4095.0f; // napiecie na baterii
-						ladowarka.ChargingCurrent=(value2/10) * ladowarka.VccVoltage / 4095.0f; // napiecie na baterii i rezystorze,
+						ladowarka.BatteryVoltage=(value/10) * ladowarka.VccVoltage / 4095.0f; //Batt voltage
+						ladowarka.ChargingCurrent=(value2/10) * ladowarka.VccVoltage / 4095.0f; // Batt+resistor voltage
 
 
-						ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; //	Jako ze rezystor jest 1Ohm, to prad jest rowny napiecu. wynik w [mA]
+						ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; // Resistor is 1Ohm, so current equals Voltage, its multipled by 1000 to have result in [mA]
 						if (ladowarka.ChargingCurrent <=0 ) ladowarka.ChargingCurrent=0;
 
 						if (ladowarka.BatteryVoltage<MinBattVoltage){ladowarka.NoBattFlag=1;} else {ladowarka.NoBattFlag=0;}
 
-						// jesli zaczeto ladwoac
-						if (ladowarka.ChargeStarted ){ //jesli zaczeto ladwowac
-							if (ladowarka.CzsasLadowaniaWSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; ladowarka.SredniaZOstatniejMin = ladowarka.BatteryVoltage; ladowarka.narysujPunktNaWykresieMin=1; }//dla 0 pomiaru dodaj od razy do tablicy oraz wyplotuj na obu wykreasch.
+						// if charging started
+						if (ladowarka.ChargeStarted ){
+							if (ladowarka.CzsasLadowaniaWSec<1) {ladowarka.NapiecieBaterii[0]=ladowarka.BatteryVoltage; ladowarka.SredniaZOstatniejMin = ladowarka.BatteryVoltage; ladowarka.narysujPunktNaWykresieMin=1; }//for measurement 0 add results to array immediatly, and plot it on both graphs
 
 
-							if (ladowarka.BatteryVoltage>ladowarka.MaxBatteryVoltage) ladowarka.MaxBatteryVoltage=ladowarka.BatteryVoltage; //uaktualnij max wartosc.
-							if (ladowarka.BatteryVoltage<ladowarka.MinBatteryVotage) ladowarka.MinBatteryVotage=ladowarka.BatteryVoltage; //uaktualnij Min  wartosc.
-							ladowarka.CzsasLadowaniaWSec++; //jesli zaczal sie proces ladowana ziwekszja wartosc czas ladowania w sec
-							ladowarka.narysujPunktNaWykresie=1; //zezwol na narysowanie danej na wykresie
+							if (ladowarka.BatteryVoltage>ladowarka.MaxBatteryVoltage) ladowarka.MaxBatteryVoltage=ladowarka.BatteryVoltage; //update  max battery voltage value.
+							if (ladowarka.BatteryVoltage<ladowarka.MinBatteryVotage) ladowarka.MinBatteryVotage=ladowarka.BatteryVoltage; //update Min battery voltage value.
 
+							if(ladowarka.ChargingCompleted==0){
+							ladowarka.CzsasLadowaniaWSec++; //if charging is ongoing, update charging time (add 1sec)
+							}
+							ladowarka.narysujPunktNaWykresie=1; //allow to plot  on graph
 
-							/********* dodawanie co 1 sek wartosc pomiaru do tabeli********/
+							/********* every 1 sec add result to array********/
 							ladowarka.PomiaryCoSec[sec0to59++]=ladowarka.BatteryVoltage;
-							if (sec0to59>59) {	//jesli mamy 10 elementow w tabeli (minelo 10sec) usrednij i dodaj wartosc do NapiecieBaterii
+							if (sec0to59>59) {	// if there is 10 elements in array (10 sec passed) average it, and put into NapiecieBaterii array
 								//jesli ladujemy to dodaj wartosc do tablicy
 								CountAvgFrom60sec();
 								if (ladowarka.ChargingCompleted==0){
-									ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]=ladowarka.SredniaZOstatniejMin; // TO DO srednia z 10 pomiarow
+									ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60]=ladowarka.SredniaZOstatniejMin; // average
 								}
 
 								sec0to59=0;
 
-								ladowarka.narysujPunktNaWykresieMin=1;//zezwol na narysowanie na wykresie minut.
+								ladowarka.narysujPunktNaWykresieMin=1;//allow to plot on graph.
 							}
 
 						}
 
 
-						liczbaPomiarow=0; //po 1 sek ustaw to na 0
-						value=0; //resetuj pomiar napiecia na baterii
-						value2=0; //resetuj  napiecie na baterii i rezystorze,
-						value3=0; //resetuj  napiecie na internal ref voltage.
+						liczbaPomiarow=0; //after 1 sec set it to 0
+						value=0; //reset batt voltage measurement
+						value2=0; //reset  Batt and resistor voltage
+						value3=0; //reset  Vrefin.
 					}
 
 					}
 
-					/*************** generowanie napiecia when batt voltage is low set current to 1/2 value***************************/
+					/*************** Generate OpAmp voltage when batt voltage is low -> set current to 1/2 value***************************/
 					if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 && ladowarka.BatteryVoltage<MinBattVltgForFastCharging){
 						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent/2));
 					}
 
-					/*************** generowanie napiecia fast charging***************************/
-					else if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //jesli kliknieto przycik na GUI START   i nie ustawiono jeszce napiecia na op ampie
-						/********* ustawienie poprawnego napiecia************/
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent));  //ustaw poprawne napiece tutaj (3V)
+					/*************** generate nominal opamp voltage***************************/
+					else if(ladowarka.ChargeStarted==1 && ladowarka.UstawioneNapiecieNaopAmpie==0 ) { //if START button on GUI pressed and op amp voltage is not set yet.
+						/********* Set proper voltage to have proper charging current************/
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent));
 							ladowarka.UstawioneNapiecieNaopAmpie=1;
 					}
 
-					/*********************** zabezpiecznie przed przeładowaniem -> Max battery Voltage***********************/
+					/*********************** Safery mecahnizm over precharging -> Max battery Voltage***********************/
 					if (ladowarka.BatteryVoltage>MaxBattVoltage){
 						ladowarka.ChargingCompleted=1;
 					}
 
-					/*********************** zabezpiecznie przed przeładowaniem -> dV/dT***********************/
-					if(ladowarka.CzsasLadowaniaWSec > 20*60){ //jesli czas ladowania jest wiekszy niz 20min
-						//sprawrzenie czy aktualny ->pomiar[20] jest niższy niz 19min temu ->pomiar [1], oraz czy aktualnyPomiar-1min ->pomiar[19] jest niższy niż 20 min temu ->pomiar[0]
+					/*********************** Safery mecahnizm  over precharging> dV/dT***********************/
+					if(ladowarka.CzsasLadowaniaWSec > 20*60){ //if chargin time is longer than 20min
+						//check if masurement [20] is lower than 19mins ago -> masurement[1], and if actual measurement-1min -> masurement[19] is lower than 20 mins ago -> measurement[0]
 						if ( (ladowarka.NapiecieBaterii[ladowarka.CzsasLadowaniaWSec/60])  < (ladowarka.NapiecieBaterii[(ladowarka.CzsasLadowaniaWSec/60)-19]) ){
 							HAL_GPIO_WritePin(Led_green_GPIO_Port, Led_green_Pin,GPIO_PIN_SET); //to be deleted
 								if ( ladowarka.NapiecieBaterii[((ladowarka.CzsasLadowaniaWSec/60)-1)]  < (ladowarka.NapiecieBaterii[(ladowarka.CzsasLadowaniaWSec/60)-20]) ){
@@ -1359,19 +1360,19 @@ __weak void ZadanieDwa(void *argument)
 						}
 					}
 
-					/************** sprawdzenie czy pomiar nie ma sie juz zakonczyc*****************/
+					/************** check if chargin should be stopped*****************/
 					if(ladowarka.ChargeStarted==1 && (ladowarka.CzsasLadowaniaWSec >= ladowarka.ChargingTime*60*60)) ladowarka.ChargingCompleted=1;
 
 					if (ladowarka.ChargingCompleted==1){
-						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(CurrentAfterCharging));  //ustaw napiecie doladowywania.
+						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(CurrentAfterCharging));  //Sets CurrentAfterCharging
 					}
 
 					if (ladowarka.NoBattFlag==1 ){
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095);  //Brak baterii - nie laduj.
+							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095);  //No battery -> dont charge
 						}
 
 
-    osDelay(1); //to chyba ma zostac?
+    osDelay(1); //should stay??
   }
   /* USER CODE END ZadanieDwa */
 }
