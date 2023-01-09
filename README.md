@@ -10,10 +10,10 @@ To run this example with 400mA charging current, you need to replace 3.3V 150mA 
 Also some external components has to be connected to the board. 
 
 -Shchematic is shown bellow:  \
-![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/tree/master/doc/schematic.jpg)
+![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/blob/master/doc/schematic.png)
 
 -Change that needs to be performed on board:  \
-![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/tree/master/doc/changes.jpg)
+![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/blob/master/doc/changes.png)
 
 Get sratred
 -------
@@ -24,6 +24,6 @@ Get sratred
 
 Pics
 ----
-![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/tree/master/doc/mainscreen.jpg)
-![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/tree/master/doc/board1.jpg)
-![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/tree/master/doc/charging.jpg)
+![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/blob/master/doc/mainscreen.jpg)
+![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/blob/master/doc/board1.jpg)
+![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/blob/master/doc/charging.jpg)
