@@ -25,5 +25,4 @@ Get sratred
 Pics
 ----
 ![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/blob/master/doc/mainscreen.jpg)
-![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/blob/master/doc/board1.jpg)
 ![alt text](https://github.com/xamrex/Stm32Disco-BattCharger/blob/master/doc/charging.jpg)
