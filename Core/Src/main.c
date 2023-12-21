@@ -126,6 +126,7 @@ static void MX_ADC3_Init(void);
 static void MX_ADC1_Init(void);
 void TouchGFX_Task(void *argument);
 void ZadanieDwa(void *argument);
+int SetCurrent(int current);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -169,6 +170,58 @@ float CountAvgFrom60sec(){
 	return result/60;
 }
 
+
+int  SetProperVoltage(int current){
+	int counter = 0;
+	  static volatile uint32_t value=0; //actual value of adc measurement on battery
+	  static volatile uint32_t value2=0; //actual value of adc measurement on battery  + resistor.
+	  static volatile uint32_t value3=0; //actual value of adc vrefint
+
+	while ( (ladowarka.ChargingCurrent > ladowarka.LoadingCurrent*(1.00f + inrange)) || (ladowarka.ChargingCurrent < ladowarka.LoadingCurrent*(1.00f - inrange)))
+	{
+		counter++;
+		for (int i=0;i<10;i++){
+
+			HAL_ADC_Start(&hadc3);
+			HAL_ADC_PollForConversion(&hadc3, HAL_MAX_DELAY);
+			value += HAL_ADC_GetValue(&hadc3);
+
+			//Measure batt and resistor voltage
+			HAL_ADC_Start(&hadc2);
+			HAL_ADC_PollForConversion(&hadc2, HAL_MAX_DELAY);
+			value2 += HAL_ADC_GetValue(&hadc2);
+
+			//Measure Vref voltage
+			HAL_ADC_Start(&hadc1);
+			HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+			value3 += HAL_ADC_GetValue(&hadc1);
+
+		}
+		/****** after 10 measurements calcualte avg. **********/
+
+
+		ladowarka.VccVoltage=(value3/10);  //vrefint voltage
+		ladowarka.VccVoltage=(Vref*4095.0f)/ladowarka.VccVoltage;
+
+		ladowarka.BatteryVoltage=(value/10) * ladowarka.VccVoltage / 4095.0f; //Batt voltage
+		ladowarka.ChargingCurrent=(value2/10) * ladowarka.VccVoltage / 4095.0f; // Batt+resistor voltage
+		ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; // Resistor is 1Ohm, so current equals Voltage, its multipled by 1000 to have result in [mA]
+
+		//set proper current
+		if (ladowarka.ChargingCurrent < ladowarka.LoadingCurrent * (1.00f - inrange) ){ ladowarka.adjustment--;} //lower voltage = highest current
+		else if (ladowarka.ChargingCurrent > ladowarka.LoadingCurrent * (1.00f + inrange) ){ ladowarka.adjustment++;}
+
+		int setCrnt=SetCurrent(current)+ladowarka.adjustment;
+
+		HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, setCrnt);
+		//if voltage is highest or lowest return
+		if (setCrnt>4093 || setCrnt<2) return 0;
+		//clear values
+		value=0;value2=0;value3=0;
+	}
+	return counter;//return how many iterations has been done.
+
+}
 int SetCurrent(int current){	//set voltage on OpAmp to get proper current.
 				//Votage=a*current+b
 				int a= -2;
@@ -238,6 +291,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   ladowarka.VccVoltage=3.3f;
   ladowarka.MinBatteryVotage=1.4;
+  ladowarka.adjustment=0;
   HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
   HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //sets max voltage on opAmp to not charge battery.
   HAL_TIM_Base_Start_IT(&htim7); //timer seven start
@@ -1279,7 +1333,7 @@ __weak void ZadanieDwa(void *argument)
 
 					/****** after 1sec ->10ticks every 100ms********/
 
-					if(liczbaPomiarow%10==0){ //After 1 minute
+					if(liczbaPomiarow%10==0){ //After 1 sec
 
 						ladowarka.VccVoltage=(value3/10);  //vrefint voltage
 						ladowarka.VccVoltage=(Vref*4095.0f)/ladowarka.VccVoltage;
@@ -1336,11 +1390,12 @@ __weak void ZadanieDwa(void *argument)
 						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent/2));
 					}
 
-					/*************** generate nominal opamp voltage***************************/
+					/*************** generate nominal opamp voltage*************************** ONE TIME ONLY */
 					else if(ladowarka.ChargeStarted==1 && ladowarka.OpAmpVoltageSet==0 ) { //if START button on GUI pressed and op amp voltage is not set yet.
 						/********* Set proper voltage to have proper charging current************/
-							HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent));
-							ladowarka.OpAmpVoltageSet=1;
+						//HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent));
+						volatile int count=SetProperVoltage(ladowarka.LoadingCurrent);
+						ladowarka.OpAmpVoltageSet=1;
 					}
 
 					/*********************** Safery mecahnizm over precharging -> Max battery Voltage***********************/

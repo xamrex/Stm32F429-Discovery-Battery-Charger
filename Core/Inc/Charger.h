@@ -11,9 +11,11 @@
 #define Vref 1.21f					//vref from ECU
 #define CurrentAfterCharging 10 	//-> equals 10mA
 #define MaxChargingTime 12   		//12 hrs max charging time
-#define MaxBattVoltage 1.7f			//over this voltage it stops charging
-#define MinBattVltgForFastCharging 1.0f			//Minimum battery voltage for fast (nominal charging)
+#define MaxBattVoltage 1.6f			//over this voltage it stops charging
+#define MinBattVltgForFastCharging 0.9f			//Minimum battery voltage for fast (nominal charging)
 #define MinBattVoltage 0.7f					//min batt voltage to starts charging
+
+#define inrange 0.03f 			//charging current is ok within 3%
 
 typedef struct
 {
@@ -35,6 +37,8 @@ typedef struct
 	volatile float AverageFromLastMin;							//Average from last 1min
 	volatile float VccVoltage;										//Vcc Voltage
 	volatile int NoBattFlag;										//no battery flag or Voltage to high
+
+	volatile int adjustment; //for rests only.
 
 }LadowarkaStruct;
 
