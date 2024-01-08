@@ -1,5 +1,5 @@
 Application/User/gui/FrontendApplication.o: \
- C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/common/FrontendApplication.cpp \
+ C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/gui/src/common/FrontendApplication.cpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \

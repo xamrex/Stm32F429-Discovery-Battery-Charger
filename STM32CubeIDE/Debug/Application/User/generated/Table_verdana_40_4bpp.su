@@ -1,2 +1,2 @@
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/fonts/src/Table_verdana_40_4bpp.cpp:29:160:void __tcf_0()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/fonts/src/Table_verdana_40_4bpp.cpp:27:26:touchgfx::GeneratedFont& getFont_verdana_40_4bpp()	64	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/fonts/src/Table_verdana_40_4bpp.cpp:29:160:void __tcf_0()	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/fonts/src/Table_verdana_40_4bpp.cpp:27:26:touchgfx::GeneratedFont& getFont_verdana_40_4bpp()	64	static

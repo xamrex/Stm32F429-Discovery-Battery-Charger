@@ -1,5 +1,5 @@
 Application/User/stm32f4xx_it.o: \
- C:/TouchGFXProjects/MyApplication_15/Core/Src/stm32f4xx_it.c \
+ C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/Core/Src/stm32f4xx_it.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \

@@ -172,6 +172,9 @@ float CountAvgFrom60sec(){
 
 
 int  SetProperVoltage(int current){
+
+	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4300);  //loks like 2.4 is min boltage.
+	return;
 	int counter = 0;
 	  static volatile uint32_t value=0; //actual value of adc measurement on battery
 	  static volatile uint32_t value2=0; //actual value of adc measurement on battery  + resistor.
@@ -1387,7 +1390,7 @@ __weak void ZadanieDwa(void *argument)
 
 					/*************** Generate OpAmp voltage when batt voltage is low -> set current to 1/2 value***************************/
 					if(ladowarka.ChargeStarted==1 && ladowarka.OpAmpVoltageSet==0 && ladowarka.BatteryVoltage<MinBattVltgForFastCharging){
-						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent/2));
+						SetProperVoltage(ladowarka.LoadingCurrent/2);
 					}
 
 					/*************** generate nominal opamp voltage*************************** ONE TIME ONLY */
@@ -1419,7 +1422,7 @@ __weak void ZadanieDwa(void *argument)
 					if(ladowarka.ChargeStarted==1 && (ladowarka.ChargingTimeInSec >= ladowarka.ChargingTime*60*60)) ladowarka.ChargingCompleted=1;
 
 					if (ladowarka.ChargingCompleted==1){
-						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(CurrentAfterCharging));  //Sets CurrentAfterCharging
+						SetProperVoltage(CurrentAfterCharging); //Sets CurrentAfterCharging
 					}
 
 					if (ladowarka.NoBattFlag==1 ){

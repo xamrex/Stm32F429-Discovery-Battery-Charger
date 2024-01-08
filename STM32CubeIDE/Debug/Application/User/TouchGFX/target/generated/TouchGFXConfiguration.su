@@ -20,8 +20,8 @@
 ../../TouchGFX/gui/include/gui/common/FrontendHeap.hpp:6:7:FrontendHeap::~FrontendHeap()	8	static
 ../../TouchGFX/gui/include/gui/common/FrontendHeap.hpp:56:29:void __tcf_0()	8	static
 ../../TouchGFX/gui/include/gui/common/FrontendHeap.hpp:6:7:virtual FrontendHeap::~FrontendHeap()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/generated/TouchGFXConfiguration.cpp:42:6:void touchgfx_init()	32	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/generated/TouchGFXConfiguration.cpp:62:6:void touchgfx_components_init()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/generated/TouchGFXConfiguration.cpp:66:6:void touchgfx_taskEntry()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/generated/TouchGFXConfiguration.cpp:75:1:cpp)	16	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/generated/TouchGFXConfiguration.cpp:75:1:cpp)	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/generated/TouchGFXConfiguration.cpp:42:6:void touchgfx_init()	32	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/generated/TouchGFXConfiguration.cpp:62:6:void touchgfx_components_init()	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/generated/TouchGFXConfiguration.cpp:66:6:void touchgfx_taskEntry()	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/generated/TouchGFXConfiguration.cpp:75:1:cpp)	16	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/generated/TouchGFXConfiguration.cpp:75:1:cpp)	0	static
