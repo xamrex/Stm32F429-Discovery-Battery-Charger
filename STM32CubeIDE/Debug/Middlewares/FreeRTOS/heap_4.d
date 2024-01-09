@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/heap_4.o: \
- C:/TouchGFXProjects/MyApplication_15/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
+ C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

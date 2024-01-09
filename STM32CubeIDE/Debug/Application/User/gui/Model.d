@@ -1,5 +1,5 @@
 Application/User/gui/Model.o: \
- C:/TouchGFXProjects/MyApplication_15/TouchGFX/gui/src/model/Model.cpp \
+ C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/gui/src/model/Model.cpp \
  ../../TouchGFX/gui/include/gui/model/Model.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
  ../../Core/Inc/Charger.h

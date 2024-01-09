@@ -1,5 +1,5 @@
 Application/User/generated/Screen1ViewBase.o: \
- C:/TouchGFXProjects/MyApplication_15/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp \
+ C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

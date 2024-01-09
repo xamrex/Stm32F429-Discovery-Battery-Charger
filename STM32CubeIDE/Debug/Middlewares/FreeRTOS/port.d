@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/port.o: \
- C:/TouchGFXProjects/MyApplication_15/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
+ C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

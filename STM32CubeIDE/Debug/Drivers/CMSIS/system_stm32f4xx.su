@@ -1,2 +1,2 @@
-C:/TouchGFXProjects/MyApplication_15/Core/Src/system_stm32f4xx.c:166:6:SystemInit	0	static
-C:/TouchGFXProjects/MyApplication_15/Core/Src/system_stm32f4xx.c:221:6:SystemCoreClockUpdate	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/Core/Src/system_stm32f4xx.c:166:6:SystemInit	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/Core/Src/system_stm32f4xx.c:221:6:SystemCoreClockUpdate	0	static

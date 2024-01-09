@@ -1387,7 +1387,7 @@ __weak void ZadanieDwa(void *argument)
 
 					/*************** Generate OpAmp voltage when batt voltage is low -> set current to 1/2 value***************************/
 					if(ladowarka.ChargeStarted==1 && ladowarka.OpAmpVoltageSet==0 && ladowarka.BatteryVoltage<MinBattVltgForFastCharging){
-						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(ladowarka.LoadingCurrent/2));
+						SetProperVoltage(ladowarka.LoadingCurrent/2);
 					}
 
 					/*************** generate nominal opamp voltage*************************** ONE TIME ONLY */
@@ -1419,7 +1419,7 @@ __weak void ZadanieDwa(void *argument)
 					if(ladowarka.ChargeStarted==1 && (ladowarka.ChargingTimeInSec >= ladowarka.ChargingTime*60*60)) ladowarka.ChargingCompleted=1;
 
 					if (ladowarka.ChargingCompleted==1){
-						HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, SetCurrent(CurrentAfterCharging));  //Sets CurrentAfterCharging
+						SetProperVoltage(CurrentAfterCharging);  //Sets CurrentAfterCharging
 					}
 
 					if (ladowarka.NoBattFlag==1 ){

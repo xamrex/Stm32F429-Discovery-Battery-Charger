@@ -8,16 +8,16 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1189:18:virtual void touchgfx::HAL::InvalidateCache()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1199:18:virtual void touchgfx::HAL::FlushCache()	0	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:35:7:TouchGFXHAL::~TouchGFXHAL()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:35:6:virtual void TouchGFXHAL::initialize()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:46:6:virtual void TouchGFXHAL::taskEntry()	8	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:35:6:virtual void TouchGFXHAL::initialize()	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:46:6:virtual void TouchGFXHAL::taskEntry()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:638:18:virtual void touchgfx::HAL::backPorchExited()	8	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:68:11:virtual uint16_t* TouchGFXHAL::getTFTFrameBuffer() const	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:83:6:virtual void TouchGFXHAL::setTFTFrameBuffer(uint16_t*)	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:100:6:virtual void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect&)	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:116:6:virtual void TouchGFXHAL::configureInterrupts()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:129:6:virtual void TouchGFXHAL::enableInterrupts()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:142:6:virtual void TouchGFXHAL::disableInterrupts()	0	static
-C:/TouchGFXProjects/MyApplication_15/TouchGFX/target/TouchGFXHAL.cpp:156:6:virtual void TouchGFXHAL::enableLCDControllerInterrupt()	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:68:11:virtual uint16_t* TouchGFXHAL::getTFTFrameBuffer() const	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:83:6:virtual void TouchGFXHAL::setTFTFrameBuffer(uint16_t*)	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:100:6:virtual void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect&)	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:116:6:virtual void TouchGFXHAL::configureInterrupts()	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:129:6:virtual void TouchGFXHAL::enableInterrupts()	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:142:6:virtual void TouchGFXHAL::disableInterrupts()	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/target/TouchGFXHAL.cpp:156:6:virtual void TouchGFXHAL::enableLCDControllerInterrupt()	0	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:106:18:virtual void TouchGFXHAL::flushFrameBuffer()	0	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:35:7:virtual TouchGFXHAL::~TouchGFXHAL()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:320:28:virtual touchgfx::BlitOperations touchgfx::HAL::getBlitCaps()	0	static

@@ -29,8 +29,8 @@ void Screen1View::ButtonUpClicked() //zwiekszenie wartosci pradu ladowania
 {
 
 	PradLadowania=PradLadowania+100;
-	if (PradLadowania >400){
-	PradLadowania=400;}
+	if (PradLadowania >500){
+	PradLadowania=500;}
 	Unicode::snprintf(txtPradLadowaniaBuffer,TXTPRADLADOWANIA_SIZE,"%d",PradLadowania);
 	txtPradLadowania.invalidate();
 }
