@@ -292,6 +292,7 @@ int main(void)
   ladowarka.VccVoltage=3.3f;
   ladowarka.MinBatteryVotage=1.4;
   ladowarka.adjustment=0;
+  ladowarka.Totalcharge=0;
   HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
   HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, 4095); //sets max voltage on opAmp to not charge battery.
   HAL_TIM_Base_Start_IT(&htim7); //timer seven start
@@ -1345,6 +1346,9 @@ __weak void ZadanieDwa(void *argument)
 						ladowarka.ChargingCurrent=(ladowarka.ChargingCurrent-ladowarka.BatteryVoltage)*1000; // Resistor is 1Ohm, so current equals Voltage, its multipled by 1000 to have result in [mA]
 						if (ladowarka.ChargingCurrent <=0 ) ladowarka.ChargingCurrent=0;
 
+						//calcualte total charge
+						ladowarka.Totalcharge+=(ladowarka.ChargingCurrent/3600);
+
 						if (ladowarka.BatteryVoltage<MinBattVoltage){ladowarka.NoBattFlag=1;} else {ladowarka.NoBattFlag=0;}
 
 						// if charging started
@@ -1357,6 +1361,8 @@ __weak void ZadanieDwa(void *argument)
 
 							if(ladowarka.ChargingCompleted==0){
 							ladowarka.ChargingTimeInSec++; //if charging is ongoing, update charging time (add 1sec)
+
+
 							}
 							ladowarka.PlotPointOnSecGraph=1; //allow to plot  on graph
 

@@ -21,6 +21,7 @@ typedef struct
 {
 	volatile float BatteryVoltage;  //Battery voltage shown on main screen -> its avg from 10 readings.
 	volatile float MaxBatteryVoltage ; // Max batt voltage
+	volatile float Totalcharge; ///total charge
 	volatile float MinBatteryVotage;
 	volatile int LoadingCurrent; //charging current 				VALUE FROM GIU
 	volatile int ChargingTime; //Max czas ladowania baterii   	    VALUE FROM GIU [in Hours]

@@ -110,6 +110,7 @@
                 <option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.script.1868040549" name="Linker Script (-T)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.script" value="${workspace_loc:/${ProjName}/STM32F429ZITX_FLASH.ld}" valueType="string"/>
                 <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.directories.5232811042" name="Library search path (-L)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.directories" useByScannerDiscovery="false" valueType="libPaths">
                   <listOptionValue builtIn="false" value="C:/TouchGFXProjects/MyApplication_15/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
+                  <listOptionValue builtIn="false" value="C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
                 </option>
                 <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.libraries.8924843761" name="Libraries (-l)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.libraries" useByScannerDiscovery="false" valueType="libs">
                   <listOptionValue builtIn="false" value=":libtouchgfx-float-abi-hard.a"/>
@@ -236,6 +237,7 @@
                   <listOptionValue builtIn="false" value="&quot;D:/git/STM32F429I-DISCO/STM32F429I-DISCO/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc&quot;"/>
                   <listOptionValue builtIn="false" value="&quot;C:/Dev/STM32F429I-DISCO/stm32f429i-disco/STM32F429I-DISCO/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc&quot;"/>
                   <listOptionValue builtIn="false" value="C:/TouchGFXProjects/MyApplication_15/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
+                  <listOptionValue builtIn="false" value="C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
                 </option>
                 <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.libraries.1604841792" name="Libraries (-l)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.option.libraries" valueType="libs">
                   <listOptionValue builtIn="false" value=":libtouchgfx-float-abi-hard.a"/>

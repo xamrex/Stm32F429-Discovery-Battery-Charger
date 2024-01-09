@@ -13,6 +13,6 @@ C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger
 C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:31:32:touchgfx::Unicode::UnicodeChar touchgfx::TextProvider::getNextLigature(touchgfx::TextDirection)	8	static
 C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:45:6:void touchgfx::TextProvider::initializeInternal()	0	static
 C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:50:6:)	32	static
-C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:102:6:static void touchgfx::Texts::setLanguage(touchgfx::LanguageId)	16	static
-C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:132:6:static void touchgfx::Texts::setTranslation(touchgfx::LanguageId, const void*)	0	static
-C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:137:39:const UnicodeChar* touchgfx::Texts::getText(touchgfx::TypedTextId) const	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:103:6:static void touchgfx::Texts::setLanguage(touchgfx::LanguageId)	16	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:133:6:static void touchgfx::Texts::setTranslation(touchgfx::LanguageId, const void*)	0	static
+C:/Users/Xamrex/Documents/Projekty/STM32f429/Stm32F429-Discovery-Battery-Charger/TouchGFX/generated/texts/src/Texts.cpp:138:39:const UnicodeChar* touchgfx::Texts::getText(touchgfx::TypedTextId) const	0	static

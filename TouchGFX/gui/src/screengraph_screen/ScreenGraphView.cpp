@@ -85,6 +85,11 @@ void ScreenGraphView::DisplayCurrentValue2(){
 #ifndef SIMULATOR
 	Unicode::snprintfFloat(textChargingCurrentBuffer,TEXTCHARGINGCURRENT_SIZE,"%3f",ladowarka.ChargingCurrent);
 	textChargingCurrent.invalidate();
+
+
+	//calculate
+	Unicode::snprintfFloat(textChargedBuffer,TEXTCHARGED_SIZE,"%.1f",ladowarka.Totalcharge);
+	textCharged.invalidate();
 #endif
 }
 

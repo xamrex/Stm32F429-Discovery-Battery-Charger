@@ -71,6 +71,7 @@ protected:
     touchgfx::Button buttonCloseModal;
     touchgfx::Image image1;
     touchgfx::TextArea textChargingCompleted;
+    touchgfx::TextAreaWithOneWildcard textCharged;
 
     /*
      * Wildcard Buffers
@@ -83,6 +84,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textChargingTmeBuffer[TEXTCHARGINGTME_SIZE];
     static const uint16_t TEXTCHARGINGCURRENT_SIZE = 4;
     touchgfx::Unicode::UnicodeChar textChargingCurrentBuffer[TEXTCHARGINGCURRENT_SIZE];
+    static const uint16_t TEXTCHARGED_SIZE = 9;
+    touchgfx::Unicode::UnicodeChar textChargedBuffer[TEXTCHARGED_SIZE];
 
 private:
 

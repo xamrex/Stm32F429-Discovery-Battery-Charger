@@ -6,6 +6,12 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_X5RG" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">123</Translation>
+      </Text>
+      <Text Id="__SingleUse_QHLO" Alignment="Right" TypographyId="Small">
+        <Translation Language="GB">Total Charge: &lt;value&gt; [mAh]</Translation>
+      </Text>
       <Text Id="__SingleUse_86E1" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Charging completed!</Translation>
       </Text>

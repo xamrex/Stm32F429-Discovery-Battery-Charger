@@ -732,6 +732,21 @@
                 "AutoSize": true
               }
             ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textCharged",
+            "X": 160,
+            "Y": 183,
+            "Width": 153,
+            "Height": 15,
+            "TextId": "__SingleUse_QHLO",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_X5RG",
+              "UseBuffer": true,
+              "BufferSize": 9
+            }
           }
         ],
         "Interactions": [
